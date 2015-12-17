@@ -1,5 +1,6 @@
 # CNIT 120
-## Presenation for Chapter 1
+##Presentations transcribed in reveal.js
+
 
 * git clone or download zip (you can use Windows .zip extractor or third party tool like 7zip to extract archive).
 * open the "index.html" to view presentation.
