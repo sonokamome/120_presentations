@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Chapter 1 Presentation.</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <!-- Slide 1 Introduction -->
+        <section>
+          <h2>Chapter 1</h2>
+          <h3>Mastering Security Basics</h3>
+            <img src="../reveal.js_chpt01/assets/images/sec_plus_2.jpg" style="position: absolute; right: 610px;" alt="Security+ textbook by Darril Gibson">
+            <div style="position:absolute; left: 441px;">
+              <p>Comptia Security+:</p>
+              <p>Get Certified Get Ahead:</p>
+              <p> SY0-401 Study Guide</p>
+              <p>by Darril Gibson</p>
+            </div>
+        </section>
+        
+        <!-- Slide 2 Understanding Core Security Goals-->
+        <section>
+          <h2>Understanding Core Seucrity Goals</h2>
+        </section>
+
+        <!-- Slide 3 The CIA of Security-->
+        <section>
+          <h2>The C.I.A of Security</h2>
+          <h3>Confidentiality</h3>
+          <svg height="480" width="502">
+            <polygon points="250,10 0,480 500,480" style="stroke: white; stroke-width: 3" />
+          </svg>
+          <h3 style="position: absolute; left: 81px;">Integrity</h3>
+          <h3 style="position: absolute; left: 622px;">Availability</h3>
+        </section>
+        
+        <!-- Slide 4 Confidentiality-->
+        <section>
+          <h2>Confidentiality</h2>
+          <ul>
+            <li>
+              Prevents aunauthroized disclosures of data
+            </li>
+            <li>
+              Ensures that data is only viewable by authorized users
+              <ul>
+                <li>Such as Personally Identifiable Information (PII)</li>
+              </ul>
+            </li>
+            <li>
+              Some methods
+              <ul>
+                <li>Encryption</li>
+                <ul>
+                  <li>Ex: Advanced Encryption Standard (AES)</li>
+                </ul>
+                <li>Access controls</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 5 Access Controls -->
+        <section>
+          <h2>Access Controls</h2>
+          <ul>
+            <li>
+              Identifycation
+              <ul>
+                <li>Username: Who are you?</li>
+                <li>A claim, not proof</li>
+              </ul>
+            </li>
+            <li>
+              Authentication
+              <ul>
+                <li>Proof of identity</li>
+                <li>Often by providing a password</li>
+              </ul>
+            </li> 
+            <li>
+              Authoriztion
+              <ul>
+                <li>Granting access to resources</li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            
+          </ul>
+        </section>
+
+        <!-- Slide 6 Steganography -->
+        <section>
+          <h2>Steganography</h2>
+          <ul>
+            <li>
+              Hiding data within other data
+              <ul>
+                <li>Ex. a secret message inside an image</li>
+              </ul>
+            </li>
+            <li>
+              "Hiding data in plain sight"
+            </li>
+            <li>
+              Observers won't even know a message is being sent
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 7 Integrity -->
+        <section>
+          <h2>Integrity</h2>
+          <ul>
+            <li>Assures that data has not been modified, tampered with, or corrupted</li>
+            <li>Only authorized user should modify data</li>
+            <li>
+              Hashing assures integrity
+              <ul>
+                <li>Hash types: MD5, SHA-1, HMAC</li>
+                <li>If data changes, the hash value changes</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 8 Hash  value for Download -->
+        <section>
+          <h2>Hash Value for Download</h2>
+          <img src="../reveal.js_chpt01/assets/images/Kali_hash_example_2.png" alt="">
+        </section>
+        
+        <!-- Slide 9 Digital Signatures -->
+        <section>
+          <h2>Digital Signatures</h2>
+          <ul>
+            <li>Makes a legal agreement</li>
+            <li>Like a handwritten signature</li>
+            <li>Provides authentication</li>
+            <li>Also provides non-repudiation</li>
+          </ul>
+        </section>
+        
+        <!-- Slide 10 Non-Repudiation -->
+        <section>
+          <h2>Non-Repudiation</h2>
+          <ul>
+            <li>Prevents entities from denying that they took an action</li>
+            <li>Examples: signin a home loan, making a credit card purchase</li>
+            <li>
+              Techniques
+              <ul>
+                <li>Digital signatures</li>
+                <li>Audit logs</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 11 Certificates and PKI (Public Key Infrastructure) -->
+        <section>
+          <h2>Certificates and PKI <br> (Public Key Infrastructure)</h2>
+          <ul>
+            <li>
+              Certificates prove the identity of a server or user
+              <ul>
+                <li>Contain encryption keys</li>
+              </ul>
+            </li>
+            <li>
+              Certificates are managed by a PKI
+              <ul>
+                <li>A group of companies that issue and verify certificates</li>
+                <li>Analogous to credit card companies</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 12 Availability -->
+        <section>
+          <h2>Availability</h2>
+          <ul>
+            <li>
+              Data and services are available when needed
+              <ul>
+                <li>Remove SPOF (Single Point of Failure)</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 13 Availability -->
+        <section>
+          <h2>Availability</h2>
+          <ul>
+            <li>
+              Techniques:
+              <ul>
+                <li>Disk redundancies (RAID)</li>
+                <li>Server redundancies (clusters)</li>
+                <li>Load balancing</li>
+                <li>Site redundancies</li>
+                <li>Backups</li>
+                <li>Alternate power</li>
+                <li>Cooling systems</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 14 Balancing CIA -->
+        <section>
+          <h2>Balancing C.I.A</h2>
+          <ul>
+            <li>You can never have perfect security</li>
+            <li>Increasing one item lowers others</li>
+            <li>
+              Increasing confidentiality generally lowers availability
+              <ul>
+                <li>Example: long, complex passwords that are easily forgotten</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 15 Patching -->
+        <section>
+          <h2>Patching</h2>
+          <ul>
+            <li>Software requires frequent updates</li>
+            <li>
+              Patch Management
+              <ul>
+                <li>Testing patches to make sure they aren't harmful</li>
+                <li>Deploying them to all devices</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 16 Safety -->
+        <section>
+          <h2>Safety</h2>
+          <ul>
+            <li>
+              Safety of people
+              <ul>
+                <li>Escape plans and routes for fire, earthquake, etc.</li>
+                <li>Drills and training</li>
+              </ul>
+            </li>
+            <li>
+              Safety of assets
+              <ul>
+                <li>Physical security controls</li>
+                <li>Fences, lighting, locks, CCTV (closed-circuit television) systems</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 17 Fail-Open -->
+        <section>
+          <h2>Fail-Open</h2>
+          <ul>
+            <li>
+              When power fails, exit doors commonly fail in an open state
+              <ul>
+                <li>So people aren't trapped inside</li>
+              </ul>
+            </li>
+            <li>
+              This lowers safety of material assets, but increases safety of people
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 18 Defense in Depth -->
+        <section>
+          <h2>Defense of Depth</h2>
+          <ul>
+            <li>
+              Layers of Protection
+            </li>
+            <li>
+              Example
+              <ul>
+                <li>Firewall</li>
+                <li>Antivirus</li>
+                <li>Deep Freeze</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 19 Intro to Basic Risk Concepts -->
+        <section>
+          <h2>Introducing Basic Risk Concepts</h2>
+        </section>
+        
+        <!-- Slide 20 Risk -->
+        <section>
+          <h2>Risk</h2>
+          <ul>
+            <li>
+              Risk
+              <ul>
+                <li>The likelihood of a <strong>threat exploiting</strong> a <strong>vulnerability</strong>, resulting in a loss</li>
+              </ul>
+            </li>
+            <li>
+              Threat
+              <ul>
+                <li>A circumstance or event that has the potential to compromize confidentiality, integrity</li>
+              </ul>
+            </li>
+            <li>
+              Vulnerability
+              <ul>
+                <li>A weakness</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 21 Risk Mitigation-->
+        <section>
+          <h2>Risk Mitigation</h2>
+          <ul>
+            <li>Reduces chances that a threat will exploit a vulnerability</li>
+            <li>Done by implementing <strong>controls</strong> (also called countermeasures and safeguards)</li>
+            <li>
+              Even if a threat can't be prevented, like a tornado
+              <ul>
+                <li>Risk can still be reduced with controls, like insurance, evacuation plans, etc.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 22 Controls -->
+        <section>
+          <h2>Controls</h2>
+          <ul>
+            <li>
+              <strong>Access controls</strong>
+              <ul>
+                <li>After <strong>Authentication</strong>, only authorized users can perfom critical tasks</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Business continuity</strong> and <strong>Disaster Recovery Plans</strong>
+              <ul>
+                <li>Reduced the impact of disasters</li>
+              </ul>
+            </li>
+            <li>
+              Antivirus software
+              <ul>
+                <li>Reduces the impact of malware</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 23 Exploring Authentication Concepts -->
+        <section>
+          <h2>Exploring Authentication Concepts</h2>
+        </section>
+        
+        <!-- Slide 24 Identification, Authentication, and Authorization-->
+        <section>
+          <h2>Identification, Authentication, and Authorization</h2>
+          <ul>
+            <li>
+              Identification
+              <ul>
+                <li>state your name (without proving it)</li>
+              </ul>
+            </li>
+            <li>
+              Authentication
+              <ul>
+                <li>Proves your identity (with a password, fingerprint, etc.)</li>
+              </ul>
+            </li>
+            <li>
+              Authorization
+              <ul>
+                <li>Grants access to resources based on the user's proven identity</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 25 Identity Proofing -->
+        <section>
+          <h2>Identity Proofing</h2>
+          <ul>
+            <li>
+              Verifying that people are who they claim to be prior to issuing them credentials
+              <ul>
+                <li>Or when replacing lost credentials</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../reveal.js_chpt01/assets/images/yahoo_email_reset.png" alt="Yahoo email reset page">
+        </section>
+        
+        <!-- Slide 26 Identity Proofing -->
+        <section>
+          <h2>Sarah Palin's Email</h2>
+          <ul>
+            <li>Link Chapter 1a</li>
+          </ul>
+          <br>
+          <img src="../reveal.js_chpt01/assets/images/Sara_Palin_email_2.png" alt="Sara Palin email hack report excerpt">
+        </section>
+        
+        <!-- Slide 27 Five Factors of Authentication -->
+        <section>
+          <h2>Five Factors of Authentication</h2>
+          <ul>
+            <li>
+              Something you <strong>know</strong> (weakest)
+              <ul>
+                <li>Such as a password</li>
+              </ul>
+            </li>
+            <li>
+              Something you <strong>have</strong>
+              <ul>
+                <li>Such as a smart card</li>
+              </ul>
+            </li>
+            <li>
+              Something you <strong>are</strong> (strongest)
+              <ul>
+                <li>Such as a fingerprint</li>
+              </ul>
+            </li>
+            <li>
+              Somewhere you are
+              <ul>
+                <li>Such as geolocation</li>
+              </ul>
+            </li>
+            <li>
+              Something you do
+              <ul>
+                <li>Such as gestures on a touch screen</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 28 Password Rules -->
+        <section>
+          <h2>Password Rules</h2>
+          <ul>
+            <li>
+              Passwords should be strong
+              <ul>
+                <li>At least 8 characters, with three of: uppercase, lowercase, numbers, and symbols</li>
+              </ul>
+            </li>
+            <li>Change passwords regularly</li>
+            <li>Verify a user's identity before resetting a password</li>
+            <li>Don't reuse passwords</li>
+            <li>Implement account lockout policies</li>
+            <li>Change default passwords</li>
+          </ul>
+        </section>
+        
+        <!-- Slide 29 Password Rules-->
+        <section>
+          <h2>Passowrd Rules</h2>
+          <ul>
+            <li>Don't write down passwords</li>
+            <li>Dont't share passwords</li>
+          </ul>
+        </section>
+        
+        <!-- Slide 30 Passowrd Rules -->
+        <section>
+          <h2>Password Rules</h2>
+          <ul>
+            <li>
+              Password History
+              <ul>
+                <li>Remembers previous passwords so users cannot re-use them</li>
+              </ul>
+            </li>
+            <li>
+              Account Lockout Policies
+              <ul>
+                <li>
+                  Account lockout threshold
+                  <ul>
+                    <li>The maximum number of times a wrong password can be entered (typically 5)</li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Account lockout duration
+                  <ul>
+                    <li>How long an account is locked (typically 30 min)</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 31 Previous Logon Notification -->
+        <section>
+          <h2>Previous logon Notification</h2>
+          <ul>
+            <li>Gmail has it, at the bottom of the screen</li>
+          </ul>
+          <img src="../reveal.js_chpt01/assets/images/Previous_logon_notification_2.png" alt="Logon notification">
+        </section>
+        
+        <!-- Slide 32 Creating Strong Passwords -->
+        <section>
+          <h2>Creating strong Passwords</h2>
+          <ul>
+            <li>At least 8 characters long</li>
+            <li>Isn't in a dictionary</li>
+            <li>
+              Contains three of these character types:
+              <ul>
+                <li>Uppercase letters (A-Z)</li>
+                <li>Lowercase letters (a-z)</li>
+                <li>Numbers (0-9)</li>
+                <li>Special characters like (@#$%)</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 33 Changing Default Passwords-->
+        <section>
+          <h2>Changing Default Passwords</h2>
+          <ul>
+            <li>
+              Many devices have default passwords
+              <ul>
+                <li>Like routers</li>
+              </ul>
+            </li>
+            <li>
+              These must be changed before use
+              <ul>
+                <li>"Hardening"</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 34 Something You Have-->
+        <section>
+          <h2>Something You Have</h2>
+          <ul>
+            <li>
+              Smart Card
+              <ul>
+                <li>Contains a certificate</li>
+                <li>Read by a card readre</li>
+                <li>Image from made-in-china.com</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            <img src="../reveal.js_chpt01/assets/images/card_reader_2.png" alt="card reader">
+          </p>
+        </section>
+        
+        <!-- Slide 35 Smart Cards -->
+        <section>
+          <h2>Smart Cards</h2>
+          <ul>
+            <li>
+              Embedded certificate
+            </li>
+            <li>
+              Public Key Infrastructure
+              <ul>
+                <li>Allows issuance and management of certificates</li>
+              </ul>
+            </li>
+            <li>
+              CAC (Common Access Card)
+              <ul>
+                <li>Used by US Department of Defense</li>
+              </ul>
+            </li>
+            <li>
+              PIV (Personal Identity Verification)
+              <ul>
+                <li>Used by US federal agencies</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 36 Something You Have -->
+        <section>
+          <h2>Something You Have</h2>
+          <ul>
+            <li>
+              Token or Key Fob
+              <ul>
+                <li>Imagefrom tokenguard.com</li>
+                <img src="../reveal.js_chpt01/assets/images/RSA_SecurID_2.png" alt="RSA SecurID Key">
+              </ul>
+            </li>
+            <li>
+              HOTP (HMAC-based One-Time Password)
+              <ul>
+                <li>Open standard using a secret key and an incrementing counter</li>
+                <li>HMAC hash used to create 6 or 8 digit value</li>
+                <li>Password remains valid till it is used</li>
+              </ul>
+            </li>
+            <li>
+              TOTP (Time-based One-Time Password)
+              <ul>
+                <li>Uses a timestamp insteaed of a counter</li>
+                <li>Password expires every 30 seconds</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 37 Symantec iPad App-->
+        <section>
+          <h2>Symantic iPad App</h2>
+          <img src="../reveal.js_chpt01/assets/images/Symantec_iPad_App.png" alt="Symantec iPad App">
+        </section>
+        
+        <!-- Slide 38 Something You Are (Biometrics) -->
+        <section>
+          <h2>Something You Are (Biometrics)</h2>
+          <ul>
+            <li>
+              Fingerprint, handprint, palm scanner
+              <ul>
+                <li>Image from amazon.com</li>
+                <img src="../reveal.js_chpt01/assets/images/SanDisk_Cruzer_Biometrics_2.png" alt="SanDisk Cruzer with thumbprint scanner">
+              </ul>
+            </li>
+            <li>
+              Retinal scanners
+              <ul>
+                <li>Uncomfortable for some people</li>
+              </ul>
+            </li>
+            <li>
+              Iris scanners
+              <ul>
+                <li>Easier to use</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 39 False acceptance and False Rejection-->
+        <section>
+          <h2>False Acceptance and False Rejection</h2>
+          <ul>
+            <li>
+              False Acceptance Rate
+              <ul>
+                <li>Incorrectly identifying an unauthorized user as authorized</li>
+              </ul>
+            </li>
+            <li>
+              False Rejection Rate
+              <ul>
+                <li>Incorrectly rejecting an authorized user</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../reveal.js_chpt01/assets/images/CER_graph_2.png" alt="CER graph">
+        </section>
+        
+        <!-- Slide 40 Somewhere You Are -->
+        <section>
+          <h2>Somewhere You Are</h2>
+          <ul>
+            <li>
+              IP address
+              <ul>
+                <li>Gives general location</li>
+                <li>May block logins from unexpected nations</li>
+              </ul>
+            </li>
+            <li>
+              MAC address
+              <ul>
+                <li>Identifies a specific device</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 41 Something You Do -->
+        <section>
+          <h2>Something You Do</h2>
+          <ul>
+            <li>
+              Windows 8 picture passwords
+              <ul>
+                <li>Gestures such as tapping or drawing lines</li>
+              </ul>
+            </li>
+            <li>
+              Keystroke dynamics when typing
+            </li>
+            <li>
+              Also called "behavioral biometrics"
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 42 Multifactor Authentication -->
+        <section>
+          <h2>Multifactor Authentication</h2>
+          <ul>
+            <li>
+              More than of
+              <ul>
+                <li>Something you know</li>
+                <li>Something you have</li>
+                <li>Something you are</li>
+              </ul>
+            </li>
+            <li>
+              Two similar factors is <strong>not</strong> two-factor authentication
+              <ul>
+                <li>Such as password and PIN</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 43 Comparing Authentication Services -->
+        <section>
+          <h2>Comparing Authentication Services</h2>
+        </section>
+        
+        <!-- Slide 44 Authentication Services -->
+        <section>
+          <h2>Authentication Services</h2>
+          <ul>
+            <li>
+              Kerberos
+              <ul>
+                <li>Used in Windows Active Directory Domains</li>
+                <li>Used in UNIX realms</li>
+                <li> Developed at MIT</li>
+                <li>Prevents Man-in-the-Middle attacks and replay attacks</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 45 Kerberos Requirements -->
+        <section>
+          <h2>Kerberos Requirements</h2>
+          <ul>
+            <li>
+              A method of issuing tickets used for authentication
+              <ul>
+                <li>Key Distribution Center (KDC) grants tickets-granting-tickets, which are presented to request tickets used to access objects</li>
+              </ul>
+            </li>
+            <li>Time synchronization within five minutes</li>
+            <li>
+              A database of subjects or users
+              <ul>
+                <li>Microsoft's Active Directory</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 46 Kerberos Details -->
+        <section>
+          <h2>Kerberos Details</h2>
+          <ul>
+            <li>
+              When a user logs on
+              <ul>
+                <li>The KDC issues a ticket-granting-ticket with a lifetime of ten hours</li>
+              </ul>
+            </li>
+            <li>Kerberos uses port 88 (TCP & UDP)</li>
+            <li>Kerberos uses symmetric cryptography</li>
+          </ul>
+        </section>
+        
+        <!-- Slide 47 LDAP (Lightweight Directory Access Protocol) -->
+        <section>
+          <h2>LDAP <br> (Lightweight Directory Access Protocols)</h2>
+          <ul>
+            <li>Formats and methods to query directories</li>
+            <li>Used by Active Directory</li>
+            <li>An extension of the X.500 standard</li>
+            <li>LDAP v2 can use SSL encryption</li>
+            <li>LDAP V3 can use TLS encryption</li>
+            <li>LDAP uses ports 389 (unencrypted) or 636 (encrypted [TCP and UDP])</li>
+          </ul>
+        </section>
+        
+        <!-- Slide 48 Example LDAP String -->
+        <section>
+          <h2>Example LDAP String</h2>
+          <img src="../reveal.js_chpt01/assets/images/LDAP_example.png" alt="LDAP example">
+        </section>
+        
+        <!-- Slide 49 Single Sign-On -->
+        <section>
+          <h2>Single Sign-On</h2>
+          <ul>
+            <li>Users can access multiple systems after providing credentials only once</li>
+            <li>
+              Federated Identity Management System
+              <ul>
+                <li>Provides central authentication in nonhomogenous environments</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../reveal.js_chpt01/assets/images/comment_section_example.png" alt="comment section">
+        </section>
+        
+        <!-- Slide 50 SSO and  Transitive Trusts -->
+        <section>
+          <h2>SSO and Transitive Trusts</h2>
+          <ul>
+            <li>
+              Parent domain trusts two child domains
+              <ul>
+                <li>Training and Blog</li>
+              </ul>
+            </li>
+            <li>
+              Therefore the two child domains trust one another
+              <ul>
+                <li>This is called a Transitive Trust</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 51 SSO and Transitive Trusts -->
+        <section>
+          <h2>SSO and Transitive Trusts</h2>
+          <img src="../reveal.js_chpt01/assets/images/SSO_Transitive.png" alt="SOO Transitive Trust image demo">
+        </section>
+        
+        <!-- Slide 52 SSO and a Federation-->
+        <section>
+          <h2>SSO and a Federation</h2>
+          <ul>
+            <li>
+              Federated Identity Management System
+              <ul>
+                <li>You can log into a blog comment system with Facebook</li>
+                <li>Identity information from one system is accepted at another without repeating the login process</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 53 SSO and SAML -->
+        <section>
+          <h2>SSO and SAML</h2>
+          <ul>
+            <li>
+              Security Assertion Markup Language
+              <ul>
+                <li>An extensible Markup Language (XML) - data based format used for SOO on Web browsers</li>
+              </ul>
+            </li>
+            <li>
+              SAML defines three roles
+              <ul>
+                <li><strong>Principal</strong> - typically a user</li>
+                <li><strong>Identity provider</strong> -managers identity information</li>
+                <li><strong>Service provider</strong> - provides service to principals</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 54 SAML and Authorization-->
+        <section>
+          <h2>SAML and Authorization</h2>
+          <ul>
+            <li>SAML provides authentication</li>
+            <li>Authorization is a separate issue</li>
+            <li>
+              However, SAML can be used to transfer authrization data between systems
+              <ul>
+                <li>So it can be used for SSO authentication and authorization</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 55 Authentication RAS (Remote Access Service) Clients -->
+        <section>
+          <h2>Authenticating RAS <br> (Remote Access Services) Clients</h2>
+        </section>
+        
+        <!-- Slide 56 Remote Access -->
+        <section>
+          <h2>Remote Access</h2>
+          <ul>
+            <li>clients connect through VPN (Virutal Private Network) or dial up</li>
+            <li>A VPN allows a client to access a private network over apublic netowrk, usually the Internet</li>
+          </ul>
+        </section>
+        
+        <!-- Slide 57 Remote Access Authentication Methods -->
+        <section>
+          <ul>
+            <li>
+              PAP (Password Authentication Protocol)
+              <ul>
+                <li>Passwords sent in cleartext, rarely used</li>
+              </ul>
+            </li>
+            <li>
+              CHAP (Challenge Handshake Protocol)
+              <ul>
+                <li>Server Challenges the client</li>
+                <li>Client responds with appropriate authentication information</li>
+              </ul>
+            </li>
+            <li>
+              MS-CHAP
+              <ul>
+                <li>Microsoft's implementation from CHAP</li>
+                <li>Deprecated</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 58 MS-CHAP iamge example-->
+        <section>
+          <h2>MS CHAP</h2>
+          <img src="../reveal.js_chpt01/assets/images/MS_CHAP_2.png" alt="MS CHAP demo">
+        </section>
+        
+        <!-- Slide 59 Remote Access Authentication Methods-->
+        <section>
+          <h2>Remote Access Authentication Methods</h2>
+          <ul>
+            <li>
+              MS-CHAPv2
+              <ul>
+                <li>More secure than MS-CHAP</li>
+                <li>Seriously broken by Moxie Marlinspike at Defcon in 2012 (Link Ch 4f)</li>
+                <li>He recommends using certificate authentication instead</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../reveal.js_chpt01/assets/images/MS_CHAPv2_crack.png" alt="MS-CHAPv2 crack img">
+        </section>
+        
+        <!-- Slide 60 Remote Access Authentication Methods -->
+        <section>
+          <h2>Remote Access Authentication Methods</h2>
+          <ul>
+            <li>
+              RADIUS (Remote Authentication Dial-in User Service)
+              <ul>
+                <li>Central authentication for multiple remote access servers</li>
+                <li>Encrypts passwords, but not the entire authentication process</li>
+                <li>Uses UDP</li>
+              </ul>
+            </li>
+            <li>
+              Diameter
+              <ul>
+                <li>An improvement over RADIUS</li>
+                <li>Supports Extensible Authentication Protocol</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 61 RAIDUS Image demo-->
+        <section>
+          <h2>RADIUS Demo</h2>
+          <img src="../reveal.js_chpt01/assets/images/RADIUS_demo.png" alt="RADIUS setup demo">
+        </section>
+        
+        <!-- Slide 62 Remote Access Authentication Methods -->
+        <section>
+          <h2>Access Authentication Methods</h2>
+          <ul>
+            <li>
+              TACACS (Terminal Access Controller Access-Control System)
+              <ul>
+                <li>Was used in UNIX systems, rare today</li>
+              </ul>
+            </li>
+            <li>
+              TACACS+
+              <ul>
+                <li>Cisco proprietary alternatives to RADIUS</li>
+                <li>Interacts with Kerberos</li>
+                <li>Encrypts the entier authentication process</li>
+                <li>Uses TCP</li>
+                <li>Uses multiple challenges and repsonses during a session</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide 63 AAA Protocols: Authentication, Authorization, and Accounting-->
+        <section>
+          <h2>AAA Protocols:</h2>
+          <h2>Authentication, Authorization, and Accounting</h2>
+          <ul>
+            <li>
+              Authentication
+              <ul>
+                <li>Verifies as user's identification</li>
+              </ul>
+            </li>
+            <li>
+              Authorization
+              <ul>
+                <li>Determines if a user should have access</li>
+              </ul>
+            </li>
+            <li>
+              Accounting
+              <ul>
+                <li>Tracks user access with logs</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Slide AAA Protocols: Authenciation, Authorization, and Accounting-->
+        <section>
+          <h2>AAA Protocols:</h2>
+          <h2>Authentication, Authorization, and Accounting</h2>
+          <ul>
+            <li>RADIUS and TACACS+ are both AAA protocols</li>
+            <li>Kerberos doesn't provide accounting, but is sometimes called an AAA protocol</li>
+          </ul>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
