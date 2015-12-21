@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Chapter 2 Presentation.</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <!-- Slide 1 Introduction -->
+        <section>
+          <h2>Chapter 2</h2>
+          <h3>Exploring Control Types and Methods</h3>
+            <img src="../chapter 02/assets/images/Picture1.png" style="position: absolute; right: 610px;" alt="Security+ textbook by Darril Gibson">
+            <div style="position:absolute; left: 441px;">
+              <p>Comptia Security+:</p>
+              <p>Get Certified Get Ahead:</p>
+              <p> SY0-401 Study Guide</p>
+              <p>by Darril Gibson</p>
+            </div>
+        </section>
+
+        
+        <!-- Slide 2 Jérôme Kerviel-->
+        <section>
+          <h2>Jérôme Kerviel</h2>
+          <ul>
+            <li>Rogue trader, lost €4.9 billion</li>
+            <li>Largest fraud in banking history at that time</li>
+            <li>Worked in the compliance department of a French bank</li>
+            <li>Defeated security at his bank by concealing transactions with other transactions with other transactions</li>
+            <li>Arrested in Jan 2008, out and working at a consulting firm in April 2008 - Links Ch7a, 7b</li>
+          </ul>
+          <img src="../chapter 02/assets/images/Picture2.png" alt="Jérôme Kerviel" href="" style="position: absolute; right: 53px;">
+        </section>
+
+        
+        <!-- Slide 3 Understanding Control Types Title slide -->
+        <section>
+          <h2>Understanding Control Types</h2>
+        </section>
+
+        <!-- Slide 4 Risk Slide -->
+        <section>
+          <h2>Risk</h2>
+          <ul>
+            <li> <strong>Risk</strong>
+              <ul>
+                <li>The likelihood that a threat will exploit a <strong>vulnerability</strong>, resulting in a loss</li>
+              </ul>
+            </li>
+            <li> <strong>Risk Management</strong>
+                <ul>
+                  <li>Using controls to reduce risk</li>
+                </ul>
+            </li>
+            <li> <strong>Controls</strong>
+              <ul>
+                <li> Also called countermeasures of safeguards</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 5 Types of Controls -->
+        <section>
+          <h2>Types of Controls</h2>
+          <ul>
+            <li> <strong>Technical</strong>
+              <ul>
+                <li>Uses technology to reduce vulnerabilities</li>
+              </ul>
+            </li>
+            <li> <strong>Management</strong>
+              <ul>
+                <li>Primarily administrative</li>
+              </ul>
+            </li>
+            <li> <strong>Operational</strong>
+              <ul>
+                <li>Ensure that day-to-day operations comply with security plan</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        
+        <!-- Slide 6 Examples of Technical Controls -->
+        <section>
+          <h2>Examples of Technical Controls</h2>
+          <ul>
+            <li><strong>Encryption</strong></li>
+            <li><strong>Antivirus software</strong></li>
+            <li><strong>Intrusion Detection Systems</strong>
+              <ul>
+                <li>Monitors a network or host for network-based threats</li>
+              </ul>
+            </li>
+            <li><strong>Firewalls</strong>
+              <ul>
+                <li>Restrict network traffic with rules</li>
+              </ul>
+            </li>
+            <li><strong>Least Privilege</strong>
+              <ul>
+                <li>users have only enough permissions to do their job, but not more</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 7 Examples of Management Controls -->
+        <section>
+          <h2>Risk Assessments</h2>
+          <ul>
+            <li><strong>Risk Assessments</strong>
+              <ul>
+                <li>Quantitative risk assessment
+                  <ul>
+                    <li>Uses cost and asset values to determine monetary risk</li>
+                  </ul>
+                </li>
+                <li>Qualitative analysis
+                  <ul>
+                    <li>Categorizes and rates risks</li>
+                    <li>"High risk", "Medium risk", "Low risk"</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        
+        <!-- Slide 8 Examples of Management Controls-->
+        <section>
+          <h2>Examples of Management Controls</h2>
+          <ul>
+            <li><strong>Vulnerability Assessments</strong>
+              <ul>
+                <li>Finds weaknesses, such as missin patches</li>
+              </ul>
+            </li>
+            <li><strong>Penetration tests</strong>
+              <ul>
+                <li>Exploit vulnerabilities to demont</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 9 Examples of Operational Controls-->
+        <section>
+          <h2>Examples of Operational Controls</h2>
+          <ul>
+            <li><strong>Awareness adn Training</strong>
+              <ul>
+                <li>Maintain password security</li>
+                <li>Clean desk policy</li>
+                <li>Understand phishing and malware</li>
+              </ul>
+            </li>
+            <li><strong>Configuration Management</strong>
+              <ul>
+                <li>Record performance baselines</li>
+                <li>Change management</li>
+              </ul>
+            </li>
+            <li><strong>Contingency Planning</strong>
+              <ul>
+                <li>Prepare for outages</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 10 Examples of Operational Controls-->
+        <section>
+          <h2>Examples of Operational Controls</h2>
+          <ul>
+            <li><strong>Media Protection</strong>
+              <ul>
+                <li>Physical media like USB flash drives, hard drives, and backup tapes</li>
+              </ul>
+            </li>
+            <li><strong>Physical and Environmental Protection</strong>
+              <ul>
+                <li>Cameras</li>
+                <li>Door Locks</li>
+                <li>Heating and ventilation systems</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 11 NIST (National Institute of Standards and Technologies)-->
+        <section>
+          <h2>NIST (National Institute of Standards and Technologies)</h2>
+          <ul>
+            <li>Publishes Special Publications with security guidance (SP 800 series)</li>
+            <li>Unfortunately, NIST has been caught red-handed several times recommending insecure protocols to make the NSA's spying job easier</li>
+            <li>Their credibility is still high in the USA, however</li>
+          </ul>
+        </section>
+
+        <!-- Slide 12 Control Goals-->
+        <section>
+          <h2>Control Goals</h2>
+          <ul>
+            <li><strong>Preventative Controls</strong>
+              <ul>
+                <li>Prevent an incident from occuring</li>
+              </ul>
+            </li>
+            <li><strong>Detective Controls</strong>
+              <ul>
+                <li>Detect when a vulnerability has been exploited</li>
+                <li>Cannot predict an incident</li>
+                <li>Cannot prevent an incident</li>
+              </ul>
+            </li>
+            <li><strong>Corrective</strong>
+              <ul>
+                <li>Reverse the impact of an incident after it occurs</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 13 Controls Goals-->
+        <section>
+          <h2>Controls Goals</h2>
+          <ul>
+            <li><strong>Deterrent Controls</strong>
+              <ul>
+                <li>Discourage an attacker from causing an incident</li>
+              </ul>
+            </li>
+            <li><strong>Compensating Controls</strong>
+              <ul>
+                <li>Alternative controls used when a primary control is not feasible</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        
+        <!-- Slide 14 Examples of Preventative Controls-->
+        <section>
+          <h2>Examples of Preventative Controls</h2>
+          <ul>
+            <li><strong>Hardening</strong>
+              <ul>
+                <li>Making systems more secure than defualt</li>
+                <li>Removing and disabling</li>
+                <li>Patches and updates</li>
+                <li>Enabling firewalls</li>
+              </ul>
+            </li>
+            <li><strong>Security awareness and training</strong></li>
+          </ul>
+        </section>
+
+        <!-- Slide 15 Examples of Preventative Controls-->
+        <section>
+          <h2>Examples of Preventative Controls</h2>
+          <ul>
+            <li><strong>Security Guards</strong>
+              <ul>
+                <li>attacker is less likely to attempt <strong>social engineering</strong> and less likely to succeed</li>
+              </ul>
+            </li>
+            <li><strong>Change Management</strong>
+              <ul>
+                <li>All changes most go through a change management process</li>
+                <li>Prevents ad-hoc configuration errors</li>
+                <li>Examples: promoting users to Administrator casually; installing a rogue Wi-Fi access point</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 16 Examples of Preventative Controls-->
+        <section>
+          <h2>Examples of Preventative Controls</h2>
+          <ul>
+            <li><strong>Account Disablement Policy</strong>
+              <ul>
+                <li>When an employee is terminated</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 17 Examples of Detective Controls-->
+        <section>
+          <h2>Examples of Detective Controls</h2>
+          <ul>
+            <li><strong>Log Monitoring</strong>
+              <ul>
+                <li>Firewall logs, server logs, </li>
+              </ul>
+            </li>
+            <li><strong>Trend analysis</strong>
+              <ul>
+                <li>Monitoring alerts from an Intrusion Detection System (IDS) can tedtect a trend of increased attacks on a specific system</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 18 Examples of Detective Controls II -->
+        <section>
+          <h2>Examples of Detective Controls</h2>
+          <ul>
+            <li><strong>Security Audit</strong>
+              <ul>
+                <li>Examines the security posture of an organization</li>
+                <li>Password audit</li>
+                <li>User permission saudit</li>
+              </ul>
+            </li>
+            <li><strong>Video Surveillance</strong>
+              <ul>
+                <li>Records activity and detects what occurred</li>
+                <li>Visible cameras can also act as a preventative control, deterring attacks</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 19 Examples of Detective Controls III -->
+        <section>
+          <h2>Examples of Detective Controls</h2>
+          <ul>
+            <li><strong>Motion detection</strong>
+              <ul>
+                <li>Physical security</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 20 Comparing Detection and Prevention Controls-->
+        <section>
+          <h2>Comparing Detection and Prevention Controls</h2>
+          <ul>
+            <li><strong>Detective Control</strong>
+              <ul>
+                <li>Can't predict or prevent an incident</li>
+                <li>Ex: video surveillance</li>
+              </ul>
+            </li>
+            <li><strong>Preventive control</strong>
+              <ul>
+                <li>Stops an incident from occurring</li>
+                <li>Ex: guards</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 21 Corrective Controls-->
+        <section>
+          <h2>Corrective Controls</h2>
+          <ul>
+            <li>Attempt to reverse the impact of an incident after it has occurred</li>
+          </ul>
+        </section>
+
+        <!-- Slide 22 Examples of Corrective Controls-->
+        <section>
+          <h2>Examples of Corrective Controls</h2>
+          <ul>
+            <li><strong>Active IDS</strong>
+              <ul>
+                <li>Detect attacks and modifies the environment to block them</li>
+              </ul>
+            </li>
+            <li><strong>Backups and System Recovery</strong>
+              <ul>
+                <li>When data is lost, backups ensure that it can be recovered</li>
+                <li>System recovery restores damaged systems to operation</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 23 Deterrent Controls-->
+        <section>
+          <h2>Deterrent Controls</h2>
+          <ul>
+            <li><strong>Attempt to discourage a threat</strong>
+              <ul>
+                <li>Discourage potential attackers from attacking</li>
+                <li>Discourage employees from violating security</li>
+              </ul>
+            </li>
+            <li><strong>Examples</strong>
+              <ul>
+                <li>cable locks on laptops
+                  <ul>
+                    <li>image from technolytell.com</li>
+                  </ul>
+                </li>
+                <li>Hardware locks on doors to server rooms, or server racks</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../chapter 02/assets/images/Picture1.jpg" alt="Kingston cable lock">
+        </section>
+
+        <!-- Slide 24 Compensating Controls-->
+        <section>
+          <h2>Compensating Controls</h2>
+          <ul>
+            <li><strong>Alternative controls used intead of primary control</strong></li>
+            <li><strong>Example</strong>
+              <ul>
+                <li>Company wants to use smart cards for two-factor authentication</li>
+                <li>New employees, while wating to get a smart card, are permitted to use the Time-based One-Time password (TOTP) as a compensating control</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 25 Combining Control Types and Goals-->
+        <section>
+          <h2>Combining Control Types and Goals</h2>
+          <ul>
+            <li><strong>Types</strong>
+              <ul>
+                <li>Technical</li>
+                <li>Management</li>
+                <li>Operational</li>
+              </ul>
+            </li>
+            <li><strong>Goals</strong>
+              <ul>
+                <li>Preventive</li>
+                <li>Detective</li>
+                <li>Corrective</li>
+                <li>Deterrent</li>
+                <li>Compensating</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 26 Comparing Physical Security Controls-->
+        <section>
+          <h2>Comparing Physical Security Controls</h2>
+          <ul>
+            <li><strong>Perimeter</strong>
+              <ul>
+                <li>Fence around teh whole campus</li>
+                <li>security guards at gates</li>
+              </ul>
+            </li>
+            <li><strong>Building</strong>
+              <ul>
+                <li>Guards and locked doors</li>
+                <li>Lighting and video cameras at entrances and exits</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 27 Comparing Physical Security Controls-->
+        <section>
+          <h2>Comparing Physical Security Controls</h2>
+          <ul>
+            <li><strong>Secure work areas</strong>
+              <ul>
+                <li>For classified or restricted-access tasks</li>
+              </ul>
+            </li>
+            <li><strong>Server and network rooks</strong>
+              <ul>
+                <li>Locking a wiring closer</li>
+              </ul>
+            </li>
+            <li><strong>Hardware</strong>
+              <ul>
+                <li>Locking server cabinets</li>
+                <li>Cable locks for laptops</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 28 Door Access Ssytems-->
+        <section>
+          <h2>Door Access Ssytems</h2>
+          <ul>
+            <li><strong>Cipher locks</strong>
+              <ul>
+                <li>Image from mssparky.com</li>
+              </ul>
+            </li>
+            <li><strong>Proximity Cards</strong>
+              <ul>
+                <li>image from beresfordco.com</li>
+              </ul>
+            </li>
+            <li><strong>Biometrics</strong></li>
+          </ul>
+          <div style="float:right;">
+            <img src="../chapter 02/assets/images/Picture3.png" alt="Cipher lock"style="display:flex; width: 290px;">
+            <img src="../chapter 02/assets/images/Picture4.png" alt="Proximity cards" style="display: flex;">
+          </div>
+        </section>
+
+        <!-- Slide 29 ID Badges-->
+        <section>
+          <h2>ID Badges</h2>
+          <ul>
+            <li>Image from pimall.com</li>
+          </ul>
+          <div style="float: right;">
+            <img src="../chapter 02/assets/images/Picture2.jpg" alt="ID badge" style="display: flex; position:relative; right: 100px;">
+          </div>
+        </section>
+
+        <!-- Slide 30 Tailgating-->
+        <section>
+          <h2>Tailgating</h2>
+          <ul>
+            <li>Follwing a person through a secure door</li>
+            <li>Also called piggybacking</li>
+            <li>To prevent this, use mantraps, turnstiles</li>
+          </ul>
+        </section>
+
+        <!-- Slide 31 Turnstile-->
+        <section>
+          <h2>Turnstile</h2>
+          <img src="../chapter 02/assets/images/Picture3.jpg" alt="Turnstile">
+          <ul>
+            <li>Image from sunshinetek.en.made-in-china.com</li>
+          </ul>
+        </section>
+
+        <!-- Slide 32 Man Trap-->
+        <section>
+          <h2>Man Trap</h2>
+          <img src="../chapter 02/assets/images/Picture4.jpg" alt="Man Trap">
+          <ul>
+            <li>Image from flagerchat.com</li>
+          </ul>
+        </section>
+
+        <!-- Slide 33 Physical Access List and Logs-->
+        <section>
+          <h2>Physical Access List and Logs</h2>
+          <ul>
+            <li><strong>Access List</strong>
+              <ul>
+                <li>Specifies who is allowed to enter</li>
+                <li>Enforced by guards</li>
+              </ul>
+            </li>
+            <li><strong>Log</strong>
+              <ul>
+                <li>Records who went in and out</li>
+                <li>Video surveillance is most reliable</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 34 Video Surveillance (CCTV)-->
+        <section>
+          <h2>Video Surveillance (CCTV)</h2>
+          <ul>
+            <li>Most reliable proof of a person's location</li>
+            <li>Only record in public areas</li>
+            <li>Notify employees of the surveillance</li>
+            <li>Do Not record audio
+              <ul>
+                <li>It's often illegal without consent of all parties</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 35 Motion Detection And...-->
+        <section>
+          <h2>Motion Detection And...</h2>
+          <ul>
+            <li><strong>Fence + Motion Detection</strong>
+              <ul>
+                <li>Detects attempts to climb the fence</li>
+                <li>Subject to false alarms from animals</li>
+              </ul>
+            </li>
+            <li><strong>Ligthing + Motion Detection</strong>
+              <ul>
+                <li>Motion detectors turn on bright lights</li>
+                <li>Must protect lights from intruders</li>
+              </ul>
+            </li>
+            <li><strong>Alarms + Motion Detection</strong>
+              <ul>
+                <li>Motion detected after hours sets off alarm</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 36 Barricades-->
+        <section>
+          <h2>Barricades</h2>
+          <ul>
+            <li><strong>Strong Barricades</strong>
+              <ul>
+                <li>Appropriate for military bases</li>
+                <li>Look too forbidding for commercial businesses</li>
+              </ul>
+            </li>
+            <li><strong>Bollards</strong>
+              <ul>
+                <li>Prevent vehicles from driving up to doors</li>
+                <li>Image from 1800bollards.com</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../chapter 02/assets/images/Picture5.jpg" alt="Barricades" style="width: 500px; height: auto;">
+        </section>
+
+        <!-- Slide 37 Signs-->
+        <section>
+          <h2>Signs</h2>
+          <ul>
+            <li>Deterrent contro, not preventative</li>
+          </ul>
+          <img src="../chapter 02/assets/images/Picture6.jpg" alt="Resticted Area Signage">
+        </section>
+
+        <!-- Slide 38 Hardware Locks-->
+        <section>
+          <h2>Hardware Locks</h2>
+          <ul>
+            <li>Cable locks for mobile computers</li>
+            <li>Locking cabinets for servers</li>
+            <li>Safe to secure small devices</li>
+          </ul>
+        </section>
+
+        <!-- Slide 39 Implementing Logical Access Controls-->
+        <section>
+          <h2>Implementing Logical Access Controls</h2>
+        </section>
+
+        <!-- Slide 40 Least Privilege-->
+        <section>
+          <h2>Least Privilege</h2>
+          <ul>
+            <li>A technical control implemented with access controls</li>
+            <li>Individuals and processes are granted only the right and permission they need
+              <ul>
+                <li>Don't let everyone log on as Administrator</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 41 Need To Know-->
+        <section>
+          <h2>Need To Know</h2>
+          <ul>
+            <li>Users areonly granted access to the data they needto know for their jobs</li>
+            <li>Spectacular failure: Bradley Manning
+              <ul>
+                <li>Image from nydailynews.com</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../chapter 02/assets/images/Picture7.jpg" alt="Bradley Manning" style="width: 260px;height: auto;">
+        </section>
+
+        <!-- Slide 42 Group Policy-->
+        <section>
+          <h2>Group Policy</h2>
+          <ul>
+            <li>Implemented on a Windows domain controller</li>
+            <li>Security settings affect all computers and user in the domain</li>
+            <li>Central point of administration</li>
+          </ul>
+        </section>
+
+        <!-- Slide 43 Password Policy-->
+        <section>
+          <h2>Password Policy</h2>
+          <img src="../chapter 02/assets/images/Picture5.png" alt="Local Security Policy">
+        </section>
+
+        <!-- Slide 44 Application Passwords-->
+        <section>
+          <h2>Application Passwords</h2>
+          <ul>
+            <li><strong>Service accounts</strong>
+              <ul>
+                <li>Used by automatic processes to fetch mail, update databases, etc.</li>
+                <li>Often use insecure or even default passowrds that are rarely or never changed</li>
+                <li>Should be governed by a password policy</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 45 Account Management-->
+        <section>
+          <h2>Account Management</h2>
+          <ul>
+            <li><strong>Creating Management, Disabling, or Terminating user accounts</strong></li>
+            <li><strong>Centralized Account Management</strong>
+              <ul>
+                <li>One point of administration</li>
+                <li>Windows domain controller, using LDAP</li>
+              </ul>
+            </li>
+            <li><strong>Decentralized</strong>
+              <ul>
+                <li>Accounts stored on each workstation locally</li>
+                <li>Windows workgroup</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 46 Disabling and Deleting Accounts-->
+        <section>
+          <h2>Disabling and Deleting Accounts</h2>
+          <ul>
+            <li><strong>Disabling inactive accounts</strong></li>
+            <li>
+              <ul>
+                <li>Terminated employees</li>
+              </ul>
+            </li>
+            <li><strong>Leave of Absence</strong>
+              <ul>
+                <li>Disable account temporarily</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 47 Prohibiting Generic Accounts-->
+        <section>
+          <h2>Prohibiting Generic Accounts</h2>
+          <ul>
+            <li>Disable Guest account</li>
+            <li>Don't let administrators share "Administrator" or "root" accounts</li>
+            <li>Otherwise logs don't identify who is using systems</li>
+          </ul>
+        </section>
+
+        <!-- Slide 48 Time-of-Day Restrictions-->
+        <section>
+          <h2>Time-of-Day Restrictions</h2>
+          <ul>
+            <li>Logon hours in Windows 7
+              <ul>
+                <li>Link Ch 2f</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../chapter 02/assets/images/Picture6.png" alt="Command line showing the use of 'net' command to check logon period of particular user">
+        </section>
+
+        <!-- Slide 49 Account Expiration and Access Review-->
+        <section>
+          <h2>Account Expiration and Access Review</h2>
+          <ul>
+            <li><strong>Account Expiration</strong>
+              <ul>
+                <li>Appropriate for temporary contract employees</li>
+              </ul>
+            </li>
+            <li><strong>Account Access Review</strong>
+              <ul>
+                <li>Log and audit times of logon and logoff</li>
+                <li>Detect password-guessing attacks</li>
+                <li>Monitor remote access logins</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 50 Credential Management-->
+        <section>
+          <h2>Credential Management</h2>
+          <ul>
+            <li>Also called "Password Managers"</li>
+            <li>Stores passwords securely, protected by a master password</li>
+            <li>Included in operating systems and browsers, or available for seperate download</li>
+          </ul>
+        </section>
+
+        <!-- Slide 51 Comparing Access Control Models-->
+        <section>
+          <h2>Comparing Access Control Models</h2>
+        </section>
+
+        <!-- Slide 52 RBAC, DAC, MAC-->
+        <section>
+          <h2>RBAC, DAC, MAC</h2>
+          <ul>
+            <li>Role-Based Access Control (RBAC)
+</li>
+            <li>Rule-Based Access Control (RBAC)</li>
+            <li>Discretionary Access Control (DAC)</li>
+            <li>Mandatory Access Control (MAC)</li>
+          </ul>
+        </section>
+
+        <!-- Slide 53 Subjects and Objects-->
+        <section>
+          <h2>Subjects and Objects</h2>
+          <ul>
+            <li><strong>Subject</strong>
+              <ul>
+                <li>Users or groups that will access an object</li>
+              </ul>
+            </li>
+            <li><strong>Object</strong>
+              <ul>
+                <li>A file, folder, share, printer, or other asset which subjects may want to access.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 54 Role-Based Access Control (RBAC) -->
+        <section>
+          <h2>Role-Based Access Control (RBAC)</h2>
+          <ul>
+            <li><strong>Commonly used in Windows domains</strong></li>
+            <li><strong>Users are grouped into Roles</strong>
+              <ul>
+                <li>Example: Manager, Technician, Sales, Financial</li>
+              </ul>
+            </li>
+            <li><strong>Rights and Permissions are assigned to Roles</strong>
+              <ul>
+                <li>Financial can access the payroll database, but Sales cannot</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 55 RBAC image example-->
+        <section>
+          <h2></h2>
+          <img src="../chapter 02/assets/images/Picture7.png" alt="RBAC model example" style="width:630px; height:auto;">
+        </section>
+
+        <!-- Slide 56 Rule-based Access Control (RBAC)-->
+        <section>
+          <h2>Rule-based Access Control (RBAC)</h2>
+          <ul>
+            <li>Rules define what is allowed
+              <ul>
+                <li>Examples: firewall rules, Parental Controls, Time-of-Day restrictions</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 57 Firewall Rules-->
+        <section>
+          <h2>Firewall Rules</h2>
+          <img src="../chapter 02/assets/images/Picture8.png" alt="Windows Firewall with Advanced Security window">
+        </section>
+
+        <!-- Slide 58 CISCO ACLs-->
+        <section>
+          <h2>CISCO ACLs</h2>
+          <img src="../chapter 02/assets/images/Picture9.png" alt="Cisco ACL ip access-list extended test prompt">
+          <ul>
+            <li>Link 2g</li>
+          </ul>
+        </section>
+
+        <!-- Slide 59 Discretionary Access Control (DAC)-->
+        <section>
+          <h2>Discretionary Access Control (DAC)</h2>
+          <ul>
+            <li>Each object has an <strong>owner</strong></li>
+            <li>The owner assigns access rights at their discretion</li>
+            <li>Used by Windows computers that are not in a corporate domain</li>
+          </ul>
+        </section>
+
+        <!-- Slide 60 Security Identifier (SID) -->
+        <section>
+          <h2>Security Identifier (SID)</h2>
+          <ul>
+            <li>Every Windows user is identified by a SID (Security Identifier)</li>
+          </ul>
+          <img src="../chapter 02/assets/images/Picture10.png" alt="Windows Command line showing the use of the 'whoami /user' command">
+        </section>
+
+        <!-- Slide 61 Discretionary Access Control List (DACL)-->
+        <section>
+          <h2>Discretionary Access Control List (DACL)</h2>
+          <ul>
+            <li><strong>Implicit deny</strong>
+              <ul>
+                <li>A user who is not on the list gets no access</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../chapter 02/assets/images/Picture11.png" alt="New Folder properties prompt window showing 'Security' options tab open">
+        </section>
+
+        <!-- Slide 62 [Blank]
+        <section>
+          <h2></h2>
+        </section>
+-->
+
+        <!-- Slide 63 Data Classification-->
+        <section>
+          <h2>Data Classification</h2>
+          <ul>
+            <li><strong>Classification determines how much protection the data requires</strong>
+              <ul>
+                <li>The access control model (RBAC, DAC, or MAC) helps determine how the data is protected</li>
+              </ul>
+            </li>
+            <li><strong>US Gov't uses these classifications</strong>
+              <ul>
+                <li>Top Secret</li>
+                <li>Secret</li>
+                <li>Confidential</li>
+                <li>Unclassified</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 64 Windows DAC-->
+        <section>
+          <h2>Windows DAC</h2>
+          <ul style="position: absolute;">
+            <li><strong>Owner of a folder can assign</strong>
+              <ul>
+                <li>Full Control</li>
+                <li>Read</li>
+                <li>Write</li>
+                <li>etc.</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../chapter 02/assets/images/Picture12.png" alt="New folder Properties window prompt" style="position: relative; top:200px; width: 300px;">
+        </section>
+
+        <!-- Slide 65 Windows 7 ACL-->
+        <section>
+          <h2>Windows 7 ACL</h2>
+          <img src="../chapter 02/assets/images/Picture13.png" alt="Windows 'Advanced Security Setting for New folder' prompt shown">
+        </section>
+
+        <!-- Slide 66 Defense Contractor Leaks Obama's Prez Ride to killjoys of Iran. Because, Queen.-->
+        <section>
+          <h2>Oop! (soz lulz)</h2>
+          <img src="../chapter 02/assets/images/Picture14.png" alt="DailyTech report of how a defense contract made a boo boo and made Iran know of the Prez's AFO copter.">
+        </section>
+
+        <!-- Slide 67 Mandatory Access Control (MAC)-->
+        <section>
+          <h2>Mandatory Access Control (MAC)</h2>
+          <ul>
+            <li>Most restrictive, used by military</li>
+            <li>Subjects and objects are <strong>classified</strong> by a higher authority
+              <ul>
+                <li>Top Secret</li>
+                <li>Secret</li>
+                <li>Confidential</li>
+                <li>Unclassified</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 68 Mandatory Access Control-->
+        <section>
+          <h2>Mandatory Access Control</h2>
+          <ul>
+            <li>Top Secret data mus stay on "Top Secret" devices, and only seen by personnel cleared for "Top Secret" access</li>
+          </ul>
+        </section>
+
+        
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
