@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Chapter 3 Presentation.</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Sam Bowne">
+    <meta name="transcriber" content="Sonokamome">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <!-- Slide 1 Introduction -->
+        <section>
+          <h2>Chapter 3</h2>
+          <h3>Reviewing Basic Networking Concepts</h3>
+            <img src="../chapter 02/assets/images/Picture1.png" style="position: absolute; right: 610px;" alt="Security+ textbook by Darril Gibson">
+            <div style="position:absolute; left: 441px;">
+              <p>Comptia Security+:</p>
+              <p>Get Certified Get Ahead:</p>
+              <p> SY0-401 Study Guide</p>
+              <p>by Darril Gibson</p>
+            </div>
+        </section>
+
+      <!-- Slide 2 Basic Connectivity Protocols-->
+      <section>
+        <h2>Basic Connectivity Protocols</h2>
+        <ul>
+          <li>TCP (Tranmission Control Protocol)</li>
+          <li>UDP (User Datagram Protocol)</li>
+          <li>IP (Internet Protocol)</li>
+          <li>ICMP (Internet Control Message Protocol)</li>
+          <li>ARP (Address Resolution Protocol)</li>
+          <li>NDP (Neighborh Discovery Protocol)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 3  TCP-->
+      <section>
+        <h2>TCP</h2>
+        <ul>
+          <li><strong>Connection-oriented: guaranteed delivery</strong></li>
+          <li><strong>Three-way handshake</strong>
+            <ul>
+              <li>SYN</li>
+              <li>SYN/ACK</li>
+              <li>ACK</li>
+            </ul>
+          </li>
+          <li><strong>SYN Flood Attack</strong>
+            <ul>
+              <li>Consumes server resources, creating a Denial of Service (DoS)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 4  UDP-->
+      <section>
+        <h2>UDP</h2>
+        <ul>
+          <li>Connectionless</li>
+          <li>No handshake</li>
+          <li>No guarantee of delivery</li>
+          <li>Often used for DoS attacksd</li>
+        </ul>
+      </section>
+
+      <!-- Slide 5  IP-->
+      <section>
+        <h2>IP</h2>
+        <ul>
+          <li><strong>Delivers packets to specified computer by IP address</strong></li>
+          <li><strong>IPv4: 32-bit address</strong>
+            <ul>
+              <li>192.168.1.1</li>
+            </ul>
+          </li>
+          <li>IPv6: 128-bit address
+            <ul>
+              <li>fe80:0:0:0:462a:60ff:fef6:278a</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 6 ICMP-->
+      <section>
+        <h2>ICMP</h2>
+        <ul>
+          <li>Connectivity tests
+            <ul>
+              <li>Ping</li>
+              <li>Pathping</li>
+              <li>Tracert</li>
+            </ul>
+          </li>
+          <li>Used in DoS attacks</li>
+          <li>Blocked by default by Windows XP SP2 and later firewalls</li>
+        </ul>
+      </section>
+
+      <!-- Slide 7 ARP-->
+      <section>
+        <h2>ARP</h2>
+        <ul>
+          <li><strong>Finds MAC address from IP address</strong></li>
+          <li><strong>ARP Poisoning</strong>
+            <ul>
+              <li>Sends false ARP messages</li>
+              <li>Redirects traffic from LAN</li>
+              <li>Commonly used for Man-In-The-Middle attacks</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 8 NDP-->
+      <section>
+        <h2>NDP</h2>
+        <ul>
+          <li>Replaces ARP for IPv6</li>
+          <li>Used for address autoconfiguration</li>
+          <li>Can be used for main-in-the-middle and DoS attacks on a LAN</li>
+        </ul>
+      </section>
+
+      <!-- Slide 9 Encryption Protocols-->
+      <section>
+        <h2>Encryption Protocols</h2>
+        <ul>
+          <li>SSH (Secure Shell) and SCP (Secure Copy)</li>
+          <li>SSL (Secure Sockets Layer)</li>
+          <li>TLS (Transaction Layer Security)</li>
+          <li>IPSec (Internet Protocol Security)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 10 SSH-->
+      <section>
+        <h2>SSH</h2>
+        <ul>
+          <li><strong>Used to encrypt Telnet</strong>
+            <ul>
+              <li>Telnet lacks encryption and uses port TCP 23</li>
+            </ul>
+          </li>
+          <li><strong>Also used for Secure Copy Protocol (SCP)</strong></li>
+          <li><strong>Runs on port TCP 22</strong></li>
+        </ul>
+      </section>
+
+      <!-- Slide 11 SSL-->
+      <section>
+        <h2>SSL</h2>
+        <ul>
+          <li><strong>Can be used to encrypt HTTP traffic, as HTTPS</strong>
+            <ul>
+              <li>Port TCP 443</li>
+            </ul>
+          </li>
+          <li><strong>Can also secure LDAP and LDAPS</strong>
+            <ul>
+              <li>Port TCP 636</li>
+            </ul>
+          </li>
+          <li>SSl is old and has security weaknesses</li>
+        </ul>
+      </section>
+
+      <!-- Slide 12  TLS-->
+      <section>
+        <h2>TLS</h2>
+        <ul>
+          <li><strong>Replacement for SSL</strong></li>
+          <li><strong>Runs on the same ports</strong>
+            <ul>
+              <li>HTTPS on TCP 443</li>
+              <li>LDAPS on TCP 636</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 13 IPSec-->
+      <section>
+        <h2>IPSec</h2>
+        <ul>
+          <li><strong>Native to IPv6 but back-ported to IPv4</strong></li>
+          <li><strong>Encapsulates and encrypts IP Packets</strong></li>
+          <li><strong>Two components</strong>
+            <ul>
+              <li>AH (Authentication Header)
+                <ul>
+                  <li>Protocol ID 51 (neither TCP nor UDP)</li>
+                </ul>
+              </li>
+              <li>ESP (Encapsulating Security Payload)
+                <ul>
+                  <li>Protocol ID 50</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 14 Application Protocols-->
+      <section>
+        <h2>Application Protocols</h2>
+        <ul>
+          <li>HTTP (Hypertext Transfer Protocol)</li>
+          <li>HTTPS (HTTP Secure)</li>
+          <li>FTP (File Transfer Protocol)</li>
+          <li>SFTP (FTP Secure)</li>
+          <li>FTPS (FTP Secure)</li>
+          <li>TFTP (Trivial File Transfer Protocol)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 15 Application Protocols-->
+      <section>
+        <h2>Application Protocols</h2>
+        <ul>
+          <li>Telnet</li>
+          <li>SNMP (Simple Network Management Protocol)</li>
+          <li>NetBIOS (Network Basic Input/Output System)</li>
+          <li>LDAP (Lightweight Directory Access Protocol)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 16 Application Protocols II-->
+      <section>
+        <h2>Application Protocols</h2>
+        <ul>
+          <li><strong>Kerberos</strong></li>
+          <li><strong>SQL Server (Structured Query Language)</strong></li>
+          <li><strong>RDP (Remote Desktop Protocol)</strong>
+            <ul>
+              <li>Used by Terminal Services</li>
+              <li>Also called Remote Desktop Service or Remote Administration</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 17 HTTP-->
+      <section>
+        <h2>HTTP</h2>
+        <ul>
+          <li>Normal Web browser traffic</li>
+          <li>Port TCP 80</li>
+          <li>Not encrypted</li>
+        </ul>
+      </section>
+
+      <!-- Slide 18 HTTPS-->
+      <section>
+        <h2>HTTPS</h2>
+        <ul>
+          <li>Encrypts traffic</li>
+          <li>Guarantees identity of server</li>
+          <li>Displays padlock on Web browser and HTTPS at start of URL</li>
+          <li>Uses SSL or TLS, port TCP 443</li>
+        </ul>
+      </section>
+
+      <!-- Slide 19 FTP-->
+      <section>
+        <h2>FTP</h2>
+        <ul>
+          <li><strong>Upload or download files</strong></li>
+          <li><strong>Data in cleartext, including passwords</strong></li>
+          <li><strong>Active mode</strong>
+            <ul>
+              <li>Ports TCP 20 for data and TCP 21 for control</li>
+            </ul>
+          </li>
+          <li><strong>Passive mode</strong>
+            <ul>
+              <li>Random port for data and TCP 21 for control</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 20 SFTP and FTPS-->
+      <section>
+        <h2>SFTP and FTPS</h2>
+        <ul>
+          <li><strong>SFTP</strong>
+            <ul>
+              <li>FTP over SSH</li>
+              <li>Port TCP 22</li>
+            </ul>
+          </li>
+          <li><strong>FTPS</strong>
+            <ul>
+              <li>FTP over SSL or TLS</li>
+              <li>Ports TCP 989 and 990</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 21 TFTP-->
+      <section>
+        <h2>TFTP</h2>
+        <ul>
+          <li>Uses UDP prot 69</li>
+          <li>No authentication at all</li>
+          <li>Used for IP phone and router firmware updates</li>
+          <li>Many attacks used it</li>
+        </ul>
+      </section>
+
+      <!-- Slide 22 Telnet-->
+      <section>
+        <h2>Telnet</h2>
+        <ul>
+          <li>Used to send command lines to remote systems</li>
+          <li>Uses no encryption, not even for passowrds</li>
+          <li>Port TCP 23</li>
+        </ul>
+      </section>
+
+      <!-- Slide 23 SNMP-->
+      <section>
+        <h2>SNMP</h2>
+        <ul>
+          <li>Used to monitor and manage network devices like routers, switches, and firewalls</li>
+          <li>Sends <em>traps</em> - signals notifying management systems of their status</li>
+          <li>Port UDP 161</li>
+          <li>SNMPv1 and v2 sent "community strings" (passwords) in cleartext</li>
+          <li>SNMPv3 encrypts passwords</li>
+        </ul>
+      </section>
+
+      <!-- Slide 24 NetBIOS-->
+      <section>
+        <h2>NetBIOS</h2>
+        <ul>
+          <li>Used to resolve Windows computer names like SERVER1 to IP addresses on Local Area Networks</li>
+          <li>A legacy protocol, replaced by DNS on most modern networks</li>
+          <li>Still used by Windows</li>
+          <li>Ports 137-139, both TCP and UDP</li>
+        </ul>
+      </section>
+
+      <!-- Slide 25 LDAP-->
+      <section>
+        <h2>LDAP</h2>
+        <ul>
+          <li><strong>Used for directories of users and objects on networks, inlcuding</strong>
+            <ul>
+              <li>Microsoft Active Directory</li>
+              <li>Novell Netware Directory Services</li>
+            </ul>
+          </li>
+          <li>Port TCP 389 (unencrypted)</li>
+          <li>Port TCP 636 (LDAPS, encrypted)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 26 Kerberos-->
+      <section>
+        <h2>Kerberos</h2>
+        <ul>
+          <li>Uses tickets for authentication</li>
+          <li>Used in Windows domains and some UNIX environments</li>
+          <li>Port 88, both TCP and UDP</li>
+        </ul>
+      </section>
+
+      <!-- Slide 27 SQL Server-->
+      <section>
+        <h2>SQL Server</h2>
+        <ul>
+          <li>Manages Databses</li>
+          <li>often has SSNs, email addresses,</li>
+          <li>Commonly hacked via SQL injection</li>
+          <li>Port TCP 1433 (Also UDP 1434)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 28 RDP-->
+      <section>
+        <h2>RDP</h2>
+        <ul>
+          <li>Remotely control a Windows computer</li>
+          <li>Service is called "Remote Amindinstration", "Terminal Services", or "Remote Destkop"</li>
+          <li>Port TCP 3389</li>
+          <li>Also used by Remote Assistance</li>
+        </ul>
+      </section>
+
+      <!-- Slide 29 Email Protocols-->
+      <section>
+        <h2>Email Protocols</h2>
+        <ul>
+          <li><strong>SMTP (Simple Mail Transfer Protocol)</strong>
+            <ul>
+              <li>Sends mail to other email servers</li>
+              <li>Port TCP 25</li>
+            </ul>
+          </li>
+          <li><strong>POP 3 (Post Office Protocol v3)</strong>
+            <ul>
+              <li>Moves incoming email to your local Inbox in clients like Outlook</li>
+              <li>Port TCP 110</li>
+            </ul>
+          </li>
+          <li>IMAP4 (Internet Message Access Protocol v4)
+            <ul>
+              <li>Moves incoming email to your local Inbox in clients like Outlook, or lets you view them on the server</li>
+              <li>Port TCP 143</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 30 Remote Access Protocols-->
+      <section>
+        <h2>Remote Access Protocols</h2>
+        <ul>
+          <li>PPP (Point-to-Point Protocol)</li>
+          <li>IPSec (Internet Protocol Security)</li>
+          <li>PPTP (Point-to-Point Tunneling Protocol)</li>
+          <li>L2TP (Layer 2 Tunneling Protocol)</li>
+          <li>RADIUS (Remote Authentication Dail-in User Service)</li>
+          <li>TACACS (terminal Access Controller Access-Control System)</li>
+          <li>TACACS+</li>
+        </ul>
+      </section>
+
+      <!-- Slide 31 PPP-->
+      <section>
+        <h2>PPP</h2>
+        <ul>
+          <li>Used to create dial-up connections to a server</li>
+          <li>Commonly used by clients to connect to an ISP</li>
+        </ul>
+      </section>
+
+      <!-- Slide 32 IPSec-->
+      <section>
+        <h2>IPSec</h2>
+        <ul>
+          <li>Can be used as a remote access tunneling protocol</li>
+          <li>To encrypted traffic, forming secure connections over the Internet</li>
+          <li>Uses IKE (Internet Key Exchange) over port UDP 500</li>
+        </ul>
+      </section>
+
+      <!-- Slide 33 PPTP-->
+      <section>
+        <h2>PPTP</h2>
+        <ul>
+          <li>Old VPN (Virtual Private Network) protocol</li>
+          <li>Included in Microsoft Windows</li>
+          <li>Has serious security flaws</li>
+          <li>Still commonly used</li>
+          <li>Port TCP 1723</li>
+        </ul>
+      </section>
+
+      <!-- Slide 34 L2TP-->
+      <section>
+        <h2>L2TP</h2>
+        <ul>
+          <li>Comines Microsoft's PPTP with Cisco's L2F</li>
+          <li>Often combined with IPSec for encryption</li>
+          <li>Port UDP 1701</li>
+        </ul>
+      </section>
+
+      <!-- Slide 35 RADIUS-->
+      <section>
+        <h2>RADIUS</h2>
+        <ul>
+          <li>Central authentication for remote access clients</li>
+          <li>Encrypts passwords only</li>
+        </ul>
+      </section>
+
+      <!-- Slide 36 TACACS/XTACACS-->
+      <section>
+        <h2>TACACS/XTACACS</h2>
+        <ul>
+          <li>Older network fauthentication protocols</li>
+          <li>TACACS is generic</li>
+          <li>XTACACS is Cisco proprietary</li>
+          <li>Port UDP 49 for both TACACS and XTACACS</li>
+        </ul>
+      </section>
+
+      <!-- Slide 37 TACACS+-->
+      <section>
+        <h2>TACACS+</h2>
+        <ul>
+          <li>Used by Cisco VPN concentrators</li>
+          <li>Encrypts entire authentication process</li>
+          <li>Multiple challenge responses for Authentication, Authorization, and Accounting (AAA)</li>
+          <li>Port TCP 49</li>
+        </ul>
+      </section>
+
+      <!-- Slide 38 IPv4, IPv6, and Subnetting-->
+      <section>
+        <h2>IPv4, IPv6, and Subnetting</h2>
+        <ul>
+          <li>See Binary Games in Projects (Extra Credit)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 39 DNS-->
+      <section>
+        <h2>DNS</h2>
+        <ul>
+          <li>Resolves host names like <em>www.ccsf.edu</em> into IP addresses like 147.144.1.212</li>
+          <li>Ports UDP 53 and TCP 53</li>
+          <li>Many security problems, which will be improved by switching to DNSSEC</li>
+        </ul>
+      </section>
+
+      <!-- Slide 40 Basic DNS Query-->
+      <section>
+        <h2>Basic DNS Query</h2>
+        <img src="../chapter 03/assets/images/Picture2.png" alt="Basic demonstration of a basic DNS Query">
+        <ul>
+          <li>Usually uses UDP port 53</li>
+          <li>For large responses, may use TCP port 53</li>
+        </ul>
+      </section>
+
+      <!-- Slide 41 DNS Records-->
+      <section>
+        <h2>DNS Records</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th>A</th>
+              <th>IPv4 Address</th>
+            </tr>
+            <tr>
+              <th>AAAA</th>
+              <th>IPv6 Address</th>
+            </tr>
+            <tr>
+              <th>PTR&#8224;&#8225;</th>
+              <th>Pointer record</th>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+              <p>&#8224;Used for reverse DNS lookups</p>
+              <p>&#8225;Commonly used to block spam email</p>
+        <br>
+        <br>
+        <table>
+          <tbody>
+            <tr>
+              <th>MX</th>
+              <th>Mail Exchange</th>
+            </tr>
+            <tr>
+              <th>CNAME*</th>
+              <th>Canonical Name</th>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+              <p>*Alternate name for a server</p>
+      </section>
+
+      <!-- Slide 42 DNS Server Software-->
+      <section>
+        <h2>DNS Server Software</h2>
+        <ul>
+          <li><strong>Berkeley Internet Name Domain (BIND)</strong>
+            <ul>
+              <li>Most common, runs on UNIX and Linux</li>
+            </ul>
+          </li>
+          <li><strong>Microsoft DNS</strong>
+            <ul>
+              <li>Used in Windows domains</li>
+              <li>Incredibly out-of-date and inefficient</li>
+              <li>Creates large amount of junk traffic on the Internet</li>
+              <li>Details in CNIT 40: DNS Security</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 43 DNS Zone Transfer-->
+      <section>
+        <h2>DNS Zone Transfer</h2>
+        <ul>
+          <li>Sends all information from a DNS server to the requester over TCP port 53</li>
+          <li>A security risk</li>
+          <li>Should only be allowed to trusted IP addresses</li>
+        </ul>
+      </section>
+
+      <!-- Slide 44 Dan Kaminsky-->
+      <section>
+        <h2>Dan Kaminsky</h2>
+        <ul>
+          <li>World-famous DNS expert</li>
+          <li>Found a serious flaw that enabled him to redirect Internet traffic</li>
+          <li>Kept it secret till Microsoft and other vendors patched it</li>
+          <li>Testified before Congress
+            <ul>
+              <li>Link Ch 3a</li>
+            </ul>
+          </li>
+        </ul>
+        <img src="../chapter 03/assets/images/Picture1.jpg" alt="Image of Dan Kaminsky">
+      </section>
+
+      <!-- Slide 45 Ports-->
+      <section>
+        <h2>Ports</h2>
+        <ul>
+          <li><strong>0-1023: Well-known ports</strong></li>
+          <li><strong>1024-49151: Registered ports</strong>
+            <ul>
+              <li>Registered by IANA for convenience</li>
+              <li>Example: SQL Server on 1433</li>
+            </ul>
+          </li>
+          <li><strong>49152-65535: Dynamic and private ports</strong>
+            <ul>
+              <li>"Ephemeral" ports for temporary use by any application</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 46 Image of commonly well known ports-->
+      <section>
+        <img src="../chapter 03/assets/images/Picture3.png" alt="Image of chartshwoing all the commonly well known ports">
+      </section>
+
+      <!-- Slide 47 Demo: Telnet to 147.144.1.2-->
+      <section>
+        <h2>Demo: Telnet to 147.144.1.2</h2>
+        <img src="../chapter 03/assets/images/Picture4.png" alt="Image of demo of Telnet to 147.144.1.2">
+        <img src="../chapter 03/assets/images/Picture5.png" alt="Image of demo of Telnet ot 147.144.1.2">
+      </section>
+
+      <!-- Slide 48 Firewalls-->
+      <section>
+        <h2>Firewalls</h2>
+        <ul>
+          <li>Block ports by protocol and number</li>
+          <li>For example, allowing TCP 80 but blocking UDP 69</li>
+        </ul>
+      </section>
+
+      <!-- Slide 49 Port Scanners-->
+      <section>
+        <h2>Port Scanners</h2>
+        <ul>
+          <li>Find open, closed, or filtered ports</li>
+          <li>Nmap</li>
+        </ul>
+        <img src="../chapter 03/assets/images/Picture2.png" alt="Image of ZenMap tool window showing port scan tools in action">
+      </section>
+
+      <!-- Slide 50 Comparing Ports and Protocol IDs-->
+      <section>
+        <h2>Comparing Ports and Protocol IDs</h2>
+        <ul>
+          <li>TCP and UDP use ports</li>
+          <li>There are other protocols that don't use ports, such as
+            <ul>
+              <li>ICMP</li>
+              <li>ESP</li>
+              <li>AH</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 51 IPv4 Header-->
+      <section>
+        <h2>IPv4 Header</h2>
+        <img src="../chapter 03/assets/images/Picture6.png" alt="image of chart showing the IPv4 header format">
+        <ul>
+          <li>Protocol is an 8-bit value in the header
+            <ul>
+              <li>6 for TCP</li>
+              <li>17 for UDP</li>
+            </ul>
+          </li>
+          <li>Same values for IPv6
+            <ul>
+              <li>Image from Wikipedia</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 52 Understanding Basic Network Devices-->
+      <section>
+        <h2>Understanding Basic Network Devices</h2>
+      </section>
+
+      <!-- Slide 53 IP Address Types-->
+      <section>
+        <h2>IP Address Types</h2>
+        <ul>
+          <li><strong>Unicast</strong>
+            <ul>
+              <li>One sender, on receiver</li>
+              <li>The most common type</li>
+            </ul>
+          </li>
+          <li>Broadcast
+            <ul>
+              <li>One sender to all devices on a LAN</li>
+              <li>IP 255.255.255.255 sends to all devices on LAN</li>
+              <li>147.144.255.255 sends to all devices in the 147.144.0.0 network</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 54 Hub-->
+      <section>
+        <h2>Hub</h2>
+        <ul>
+          <li>Commoon old 10 Mbps LANs</li>
+          <li>Zero intelligence</li>
+          <li>Whatever comes in on a port goes out all other ports</li>
+          <li>Each user can sniff traffic intended for others</li>
+        </ul>
+        <img src="../chapter 03/assets/images/Picture7.png" alt="Image of a 10/100 Fast Ethernet hub by Linksys">
+      </section>
+
+      <!-- Slide 55 Physical Port v. Logical Port-->
+      <section>
+        <h2>Physical Port v. Logical Port</h2>
+        <ul>
+          <li>Physical prot is a socket you can plug</li>
+          <li>Logical port is a number used to direct TCP or UDP traffic</li>
+        </ul>
+      </section>
+
+      <!-- Slide 56 Switch-->
+      <section>
+        <h2>Switch</h2>
+        <ul>
+          <li>Replaces hubs in almost all LANs now</li>
+          <li>Learns which devices are connected to each port</li>
+          <li>Sends traffic only to the correct port, after learning where the devices are
+          <ul>
+            <li>At first, it acts like a hub while learning</li>
+          </ul>
+          </li>
+          <li>Image from Cisco</li>
+        </ul>
+        <img src="../chapter 03/assets/images/Picture3.jpg" alt="Image of a Cisco Catalyst 3560-CG series PoE switch">
+      </section>
+
+      <!-- Slide 57 Security Benefits of Switches-->
+      <section>
+        <h2>Security Benefits of Switches</h2>
+        <ul>
+          <li><strong>Reduces the threat of sniffing attacks</strong>
+            <ul>
+              <li>Because devices dont'get other devices' traffic</li>
+            </ul>
+          </li>
+          <li><strong>Can be defated by <em>flooding</em> with random MAC addresses</strong>
+            <ul>
+              <li>Switch runs out of RAM for switching table and acts like a hub instead</li>
+            </ul>
+          </li>
+          <li>Can also be defated by <strong>ARP poisoning</strong></li>
+        </ul>
+      </section>
+
+      <!-- Slide 58 Physical Security of a Switch-->
+      <section>
+        <h2>Physical Security of a Switch</h2>
+        <ul>
+          <li>Put the switch in a locked wiring closet</li>
+          <li>Prevents attacker from accessing:
+            <ul>
+              <li><strong>Console port</strong> used to manage to switch</li>
+              <li><strong>Monitor port</strong> used to sniff all traffic</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 59 STP (Sapnning Tree Protocol)-->
+      <section>
+        <h2>STP (Sapnning Tree Protocol)</h2>
+        <ul>
+          <li>if wire allow traffic to flow in loops, this can lead to a <strong>broadcast storm</strong></li>
+          <li>To prevent this,switches use
+            <ul>
+              <li>STP (Spanning Tree Protocol) or</li>
+              <li>RSTP (Rapid Spanning Tree Protocol)</li>
+            </ul>
+          </li>
+          <li>Blocks unneeded prots to prevent loops</li>
+          <li>Included in all swtiches and on by default</li>
+        </ul>
+      </section>
+
+      <!-- Slide 60 VLAN (Virutal Local Area Network)-->
+      <section>
+        <h2>VLAN (Virutal Local Area Network)</h2>
+        <ul>
+          <li>At CCSF, The CNIT Dept. computers are in several different room and buildings
+            <ul>
+              <li>SCIE 37, CLOU 218, SCIE 214, etc.</li>
+            </ul>
+          </li>
+          <li>But they are all in the same subnet, and see one another as on the same LAN</li>
+          <li>Switches sort traffic by adding a VLAN TAG to each ethernet frame</li>
+        </ul>
+      </section>
+
+      <!-- Slide 61 Port Seucrity-->
+      <section>
+        <h2>Port Seucrity</h2>
+        <ul>
+          <li>Port Security
+            <ul>
+              <li>Only allow a device with the approved MAC address to connect to each port</li>
+              <li>Common in wireless and wired networks</li>
+            </ul>
+          </li>
+          <li>BUT: MAC addresses can be sniffed and spoofed</li>
+          <li>They are transmitted in plaintext with each frame</li>
+        </ul>
+      </section>
+
+      <!-- Slide 62 802.1x Port Security-->
+      <section>
+        <h2>802.1x Port Security</h2>
+        <ul>
+          <li>Requires authentication from a user before connecting them to the LAN
+            <ul>
+              <li>Can be used in wireless and wired networks</li>
+            </ul>
+          </li>
+          <li>Uses a RADIUS server to store credentials for each user
+            <ul>
+              <li>Supports Extensible Authentication Protocol (EAP) which can use multiple authentication methods, including digital certificates</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 63 Router-->
+      <section>
+        <h2>Router</h2>
+        <ul>
+          <li>Connect network segments together
+            <ul>
+              <li>For example, a LAN to the Internet</li>
+            </ul>
+          </li>
+          <li>Don't forward broadcasts
+            <ul>
+              <li>Reduce "noise" traffic on segments</li>
+            </ul>
+          </li>
+          <li>Computers can act as routers
+            <ul>
+              <li>But most networks use hardware routers</li>
+            </ul>
+          </li>
+          <li>Image from Cisco</li>
+        </ul>
+        <img src="../chapter 03/assets/images/Picture4.jpg" alt="Image of a Cisco 1941 series hardware router" style="width: 830px; height: 260px;">
+      </section>
+
+      <!-- Slide 64 ACLs (Access Control Lists)-->
+      <section>
+        <h2>ACLs (Access Control Lists)</h2>
+        <ul>
+          <li>Packet filtering</li>
+          <li>Traffic that is nto alowed is usually discarded</li>
+        </ul>
+        <img src="../chapter 03/assets/images/Picture8.png" alt="Image of a access control list">
+      </section>
+
+      <!-- Slide 65 Routers and Firewalls-->
+      <section>
+        <h2>Routers and Firewalls</h2>
+        <ul>
+          <li>Routers can filter traffic in simple ways
+            <ul>
+              <li>By protocol, port, or address</li>
+            </ul>
+          </li>
+          <li>Early firewalls filtered the same way</li>
+          <li>Firewalls are much more advanced now</li>
+        </ul>
+      </section>
+
+      <!-- Slide 66 Home Router-->
+      <section>
+        <h2>Home Router</h2>
+        <ul>
+          <li>You can also use a <em>router</em> or <em>residential gateway</em>, which typicallyads network address translation (NAT) capabilities and security measures</li>
+        </ul>
+        <img src="../chapter 03/assets/images/Picture9.png" alt="Image of a home router by Belkin">
+      </section>
+
+      <!-- Slide 67 Firewall-->
+      <section>
+        <h2>Firewall</h2>
+        <ul>
+          <li>Filters traffic, both inbound and outbound</li>
+          <li>Host-based Firewall
+            <ul>
+              <li>Protects a single host from intrusion</li>
+              <li>Example: Windows Firewall</li>
+            </ul>
+          </li>
+          <li>Network-based Firewall
+            <ul>
+              <li>Protects a whole network</li>
+            </ul>
+          </li>
+          <li>Image from Palo Alto Netowrks</li>
+        </ul>
+        <img src="../chapter 03/assets/images/Picture10.png" alt="Image of a network based router by Palo Alto netowkrs; model PA-5060" style="width: 500px; height: auto;">
+      </section>
+
+      <!-- Slide 68 Firewall Rules-->
+      <section>
+        <h2>Firewall Rules</h2>
+        <ul>
+          <li>For simple packet-filtering, they are similar to router access lists</li>
+          <li>Uses a deny any, deny any rule at the end for <strong>implicit deny</strong></li>
+        </ul>
+        <img src="../chapter 03/assets/images/Picture11.png" alt="Image of a frirewall's">
+      </section>
+
+      <!-- Slide 69 Web Application Firewall-->
+      <section>
+        <h2>Web Application Firewall</h2>
+        <ul>
+          <li>Specifically designed to stop SQL Injection and other web App attacks
+            <ul>
+              <li>Including NOP SLDE, commonly used in buffer overlfow attacks</li>
+            </ul>
+          </li>
+          <li>Example: modsecurity for Apache</li>
+        </ul>
+      </section>
+
+      <!-- Slide 70 Advanced Firewalls-->
+      <section>
+        <h2>Advanced Firewalls</h2>
+        <ul>
+          <li>First generation
+            <ul>
+              <li>Filters packets with ACL</li>
+            </ul>
+          </li>
+          <li>Second generation
+            <ul>
+              <li>Stateful inspection</li>
+              <li>Packets in ESTABLISHED sessions can be treated differently</li>
+            </ul>
+          </li>
+          <li>Third generation
+            <ul>
+              <li>Layer 7 inspection, such as WAF</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 71 Next-Generation Firewalls -->
+      <section>
+        <h2>Next-Generation Firewalls</h2>
+        <ul>
+          <li>Integrate with Active Directory domains</li>
+          <li>Recognize traffic regardless of port
+            <ul>
+              <li>BitTorrent</li>
+              <li>Facebook</li>
+              <li>Streaming media</li>
+              <li>Games</li>
+            </ul>
+          </li>
+          <li>Included in Unified Threat Management appliances</li>
+        </ul>
+      </section>
+
+      <!-- Slide 72 Firewall Logs and Log Analysis-->
+      <section>
+        <h2>Firewall Logs and Log Analysis</h2>
+        <ul>
+          <li>Firewalls log all blocked traffic, all allowed traffic, or both</li>
+          <li>Splunk (link Ch 3b)</li>
+          <li>AlientVault OSSIM (Link Ch 3c)</li>
+        </ul>
+      <img src="../chapter 03/assets/images/Picture12.png" alt="Splunk Logo">
+      <img src="../chapter 03/assets/images/Picture13.png" alt="OSSIM by AlienVault logo">
+      </section>
+
+      <!-- Slide 73 Network Seperation-->
+      <section>
+        <h2>Network Seperation</h2>
+        <ul>
+          <li>Use routers, VLANs, and Firewalls to control traffic flow</li>
+          <li>For example, at CCSF, these network segments are seperated
+            <ul>
+              <li>Accounting</li>
+              <li>Administration</li>
+              <li>Student labs</li>
+              <li>Wireless</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 74 Protecting the network Perimeter-->
+      <section>
+        <h2>Protecting the network Perimeter</h2>
+      </section>
+
+      <!-- Slide 75 DMZ (Demilitarized Zone)-->
+      <section>
+        <h2>DMZ (Demilitarized Zone)</h2>
+        <ul>
+          <li>A semi-trusted zone between a private network and the Internet</li>
+          <li>Provides <em>defense in depth</em> for internal network</li>
+        </ul>
+      </section>
+
+      <!-- Slide 76 DMZ (Demilitarized Zone) II-->
+      <section>
+        <h2>DMZ (Demilitarized Zone) II</h2>
+        <img src="../chapter 03/assets/images/Picture14.png" alt="Image of a Demilitarized setup in a public facing network">
+      </section>
+
+      <!-- Slide 77 Public and Private IPv4 Addresses-->
+      <section>
+        <h2>Public and Private IPv4 Addresses</h2>
+        <ul>
+          <li>Public Ip addresses are used to send and receive Internet traffic</li>
+          <li>They aren't free, but leased from Internet Service Providers</li>
+          <li>Private addresses can't be used on the Internet, but are free for use on private networks</li>
+        </ul>
+      </section>
+
+      <!-- Slide 78 RFC 1918 Private Addresses-->
+      <section>
+        <h2>RFC 1918 Private Addresses</h2>
+        <ul>
+          <li>10.0.0.1 - 10.255.255.254</li>
+          <li>172.16.0.1 - 172.21.255.254</li>
+          <li>192.168.0.1 - 192.168.255.254</li>
+        </ul>
+      </section>
+
+      <!-- Slide 79 NAT (Network Address Tranlation)-->
+      <section>
+        <h2>NAT (Network Address Tranlation)</h2>
+        <img src="../chapter 03/assets/images/Picture15.png" alt="Image demonstrating how Network Address Translation works">
+      </section>
+
+      <!-- Slide 80 NAT-->
+      <section>
+        <h2>NAT</h2>
+        <ul>
+          <li>Nat allows many clients to share a single public IP address
+            <ul>
+              <li>By also performing PAT (Port Address Translation)</li>
+              <li>Cost savings</li>
+            </ul>
+          </li>
+          <li>Hides local IP addresses
+            <ul>
+              <li>Provides some protection</li>
+              <li>users can't run unauthorized servers</li>
+            </ul>
+          </li>
+          <li>NAT breaks some network services
+            <ul>
+              <li>IPSec and many others</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 81 Proxy Server-->
+      <section>
+        <h2>Proxy Server</h2>
+        <ul>
+          <li>Clients cannot connect directly to the Internet</li>
+          <li>Requests go to Proxy, which fetches the content (if it's permitted)</li>
+        </ul>
+        <img src="../chapter 03/assets/images/Picture16.png" alt="Image showing how a proxy server is set and where it's set ">
+      </section>
+
+      <!-- Slide 82 Caching Proxy-->
+      <section>
+        <h2>Caching Proxy</h2>
+        <ul>
+          <li>If many clients request the same page
+            <ul>
+              <li>such as yahoo.com</li>
+            </ul>
+          </li>
+          <li>The proxy only fetches one copy, and distributes it to all the clients</li>
+          <li>Makes network seem faster</li>
+        </ul>
+      </section>
+
+      <!-- Slide 83 Unified Threat Management-->
+      <section>
+        <h2>Unified Threat Management</h2>
+        <ul>
+          <li>Web security Gateway or UTM Security Appliances
+            <ul>
+              <li>Combines many security functions, such as</li>
+              <li>URL filtering</li>
+              <li>Firewall</li>
+              <li>Antivirus</li>
+              <li>Spam-blocking</li>
+              <li>Content-filtering</li>
+              <li>Data Loss Prevention (DLP)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 84 Spam Filters-->
+      <section>
+        <h2>Spam Filters</h2>
+        <img src="../chapter 03/assets/images/Picture17.png" alt="Image from 'Barracuda spam and virus firewall'">
+        <ul>
+          <li>Google's Postini is very good too</li>
+        </ul>
+      </section>
+
+      <!-- Slide 85 OSI Model-->
+      <section>
+        <h2>OSI Model</h2>
+        <img src="../chapter 03/assets/images/Picture18.png" alt="Image showing the OSI model and its layers">
+        <ul>
+          <li>Image from Wikipedia</li>
+        </ul>
+      </section>
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
