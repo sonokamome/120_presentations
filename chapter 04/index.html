@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Chapter 4 Presentation.</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Sam Bowne">
+    <meta name="transcriber" content="Sonokamome">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <!-- Slide 1 Introduction -->
+        <section>
+          <h2>Chapter 4</h2>
+          <h3>Securing Your Network</h3>
+            <img src="../chapter 02/assets/images/Picture1.png" style="position: absolute; right: 610px;" alt="Security+ textbook by Darril Gibson">
+            <div style="position:absolute; left: 441px;">
+              <p>Comptia Security+:</p>
+              <p>Get Certified Get Ahead:</p>
+              <p> SY0-401 Study Guide</p>
+              <p>by Darril Gibson</p>
+            </div>
+        </section>
+
+      <!-- Slide 2 Understanding IDSs and IPSs-->
+      <section>
+        <h2>Understanding IDSs and IPSs</h2>
+      </section>
+
+      <!-- Slide 3 IDS v. IPS-->
+      <section>
+        <h2>IDS v. IPS</h2>
+        <ul>
+          <li>IDS detects attacks but does not stop them
+            <ul>
+              <li>Detective technical control</li>
+              <li>Passive IDS merely logs attacks, and/or sends alerts</li>
+              <li>Active IDS may send alerts and change environment</li>
+            </ul>
+          </li>
+          <li>IPS stops attacks in progress
+            <ul>
+              <li>Preventative techincal control</li>
+              <li>Similar to Active IDS</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 4 HIDS v. NIDS-->
+      <section>
+        <h2>HIDS v. NIDS</h2>
+        <ul>
+          <li>HIDS (Host-based IDS)
+            <ul>
+              <li>Installed on a server or workstation</li>
+            </ul>
+          </li>
+          <li>NIDS (Network-based IDS)
+            <ul>
+              <li>Installed on a network device, such as a router or switch</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 5 Packet Sniffing -->
+      <section>
+        <h2>Packet Sniffing </h2>
+        <ul>
+          <li>Wireshark and other tools show packets one-by-one</li>
+          <li>Useful for debugging</li>
+          <li>Can steal passwords of the wire
+            <ul>
+              <li>Especially if they are sent without encryption</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 6 Wall of Sheep-->
+      <section>
+        <h2>Wall of Sheep</h2>
+        <ul>
+          <li>Displays passwords captured at Defcon</li>
+        </ul>
+        <img src="../chapter 04/assets/images/Picture1.jpg" alt="Image of the 'Wall of Sheep'" style="width: 530px; height:auto;">
+      </section>
+
+      <!-- Slide 7 Signatures v. Anomalies-->
+      <section>
+        <h2>Signatures v. Anomalies</h2>
+        <ul>
+          <li>Signature-based monitoring recognizes known attack patterns
+            <ul>
+              <li>Also called definition-based</li>
+            </ul>
+          </li>
+          <li>Anomaly-based monitoring detects abnormal behavior based on a baseline
+            <ul>
+              <li>Also valled behavior-based or heuristics-based</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 8 Active IDS v. IPS-->
+      <section>
+        <h2>Active IDS v. IPS</h2>
+        <ul>
+          <li>Both react to an attack in some manner</li>
+          <li>IPS must be placed in line with the traffic to prevent the attack</li>
+        </ul>
+      </section>
+
+      <!-- Slide 9 HIDS-->
+      <section>
+        <h2>HIDS</h2>
+        <ul>
+          <li>Additional software on a workstation or server</li>
+          <li>Can detect attacks on the local system</li>
+          <li>Can monitor changes to operating system files</li>
+          <li>Protects only one host</li>
+        </ul>
+      </section>
+
+      <!-- Slide 10 SYN Flood Demo Notes-->
+      <section>
+        <h2>SYN Flood Demo Notes</h2>
+        <ul>
+          <li>On Mac OS X:
+            <ul>
+              <li>Preferences, click Sharing, turn on Printer Sharing</li>
+              <li>watch "netstat -anp tcp | grep 631"</li>
+            </ul>
+          </li>
+          <li>On Kali Linux:
+            <ul>
+              <li>iptables -A OUTPUT -p tcp --tcp-flags RST RST -j DROP</li>
+              <li>scapy</li>
+              <li>send(IP(dst="192.168.1.213")/TCP(dport=631, sport=(1000,1100))</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 11 SYN Flood-->
+      <section>
+        <h2>SYN Flood</h2>
+        <img src="../chapter 04/assets/images/Picture2.png" alt="Image of screenshot of SYN Flood demo">
+      </section>
+
+      <!-- Slide 12 NIDS-->
+      <section>
+        <h2>NIDS</h2>
+        <ul>
+          <li>Can only see network traffic, not OS files</li>
+          <li>Unableto decrypt encrypted traffic
+            <ul>
+              <li>Unless your network performs a man-in-the-middle SSL attack</li>
+              <li>Commonly done in modern corporations</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 13 NIDS configuration-->
+      <section>
+        <h2>NIDS configuration</h2>
+        <img src="../chapter 04/assets/images/Picture3.png" alt="Image NIDS configuration setup">
+      </section>
+
+      <!-- Slide 14 Detection Methods-->
+      <section>
+        <h2>Detection Methods</h2>
+        <ul>
+          <li>Signature-based
+            <ul>
+              <li>Uses a databse of predefined traffic patterns</li>
+              <li>Database requires frequent updates</li>
+            </ul>
+          </li>
+          <li>Anomaly-based
+            <ul>
+              <li>Needs to measure a performance baseline</li>
+              <li>Baseline must be updated if network is changed</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 15 Data Sources and Trends-->
+      <section>
+        <h2>Data Sources and Trends</h2>
+        <ul>
+          <li>IDS collects data from various sources
+            <ul>
+              <li>Firewall logs</li>
+              <li>System logs</li>
+              <li>Application logs</li>
+              <li>May monitor logs in real time</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 16 Reporting-->
+      <section>
+        <h2>Reporting</h2>
+        <ul>
+          <li>Alarms
+            <ul>
+              <li>Also called Alerts</li>
+              <li>Indicates that an interseting event was detected</li>
+              <li>Does not always indicate a real attack</li>
+            </ul>
+          </li>
+          <li>Goal
+            <ul>
+              <li>Set threshold low enough to detect all real attacks, but</li>
+              <li>High enough to avoid too may false positives</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 17 False Positive v. False Negatives-->
+      <section>
+        <h2>Positive v. False Negatives</h2>
+        <ul>
+          <li>False positive
+            <ul>
+              <li>Alert on nonthreatening events</li>
+            </ul>
+          </li>
+          <li>False negative
+            <ul>
+              <li>Real attack, but no alert</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 18 IDS Threshold-->
+      <section>
+        <h2>IDS Threshold</h2>
+        <ul>
+          <li>Number of events required to cause an alert
+            <ul>
+              <li>Example: 50 incomplete TCP handshakes per minute from the same IP</li>
+            </ul>
+          </li>
+          <li>There are no established rules for thresholds
+            <ul>
+              <li>Must be "tuned" by administrators</li>
+            </ul>
+          </li>
+          <li>Untuned security devices tend to produce many false positives</li>
+        </ul>
+      </section>
+
+      <!-- Slide 19 IDS Responses-->
+      <section>
+        <h2>IDS Responses</h2>
+        <ul>
+          <li>Passive (Alerts personnel)
+            <ul>
+              <li>Pop-up window</li>
+              <li>Central monitor</li>
+              <li>E-mail</li>
+              <li>Page or text messages</li>
+            </ul>
+          </li>
+          <li>Active
+            <ul>
+              <li>Alerts personnel</li>
+              <li>Modify ACL on Firewall</li>
+              <li>Divert attack to a honeypot or other safe environment</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 20 Honeypot-->
+      <section>
+        <h2>Honeypot</h2>
+        <ul>
+          <li>Appears to be a server worth hacking into</li>
+          <li>Has no valuable data</li>
+          <li>Often used to collect knowledge about3 attackers</li>
+        </ul>
+      </section>
+
+      <!-- Slide 21 Image Honeypot II image 4a-->
+      <section>
+        <img src="../chapter 04/assets/images/Picture4.png" alt="Image of Symantec Connect website">
+        <ul>
+          <li>Link Ch 4a</li>
+        </ul>
+      </section>
+
+      <!-- Slide 22 Honeypot III image 4b-->
+      <section>
+      <img src="../chapter 04/assets/images/Picture5.png" alt="Image of Microsoft Honeypot setup 4b">
+      <ul>
+        <li>Link Ch 4b</li>
+      </ul>
+      </section>
+
+      <!-- Slide 23 Honeypot IV image 4c-->
+      <section>
+      <img src="../chapter 04/assets/images/Picture6.png" alt="Image of Microsoft Honeypot news of Microsoft recommending personal Honeypots to Fend off Hackers" style="width: 850px; height: auto;">
+      <ul>
+        <li>Link Ch 4c</li>
+      </ul>
+      </section>
+
+      <!-- Slide 24 Honeynet V image 4d-->
+      <section>
+        <h2>Microsoft Proposes Personal Honeypots</h2>
+        <img src="../chapter 04/assets/images/Picture7.jpg" alt="Microsoft personal Honeypots" style="width: 750px; height: auto;">
+      </section>
+
+      <!-- Slide 25 Honeynet VI image 4e-->
+      <section>
+      <ul>
+        <li>A group of virtual servers appearing to be a live network</li>
+      </ul>
+        <img src="../chapter 04/assets/images/Picture8.png" alt="Image of 'The Honeynet Project' website">
+      </section>
+
+      <!-- Slide 26 Counterattacks-->
+      <section>
+        <h2>Counterattacks</h2>
+        <ul>
+          <li>Some active IDS systems attack the attacker back</li>
+          <li>Legal problems</li>
+          <li>Likely that you are attacking another innocent victim</li>
+        </ul>
+      </section>
+
+      <!-- Slide 27 Securing Wireless Networks-->
+      <section>
+        <h2>Securing Wireless Networks</h2>
+      </section>
+
+      <!-- Slide 28 Securing Wireless Networks II-->
+      <section>
+        <img src="../chapter 04/assets/images/Picture9.png" alt="Images showing a diagram setup for securing a wireless network" style="width: 780px; height auto;">
+      </section>
+
+      <!-- Slide 29 Wireless Standards-->
+      <section>
+        <h2>Wireless Standards</h2>
+        <table>
+          <thead>
+            <tr>
+              <td>Protocol</td>
+              <td>Max. Speed</td>
+              <td>Frequency</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>802.11a</td>
+              <td>54 Mbps</td>
+              <td>5 GHz</td>
+            </tr>
+            <tr>
+              <td>802.11b</td>
+              <td>11 Mbps</td>
+              <td>2.4 GHz</td>
+            </tr>
+            <tr>
+              <td>802.11g</td>
+              <td>54 Mbps</td>
+              <td>2.4 GHz</td>
+            </tr>
+            <tr>
+              <td>802.11n</td>
+              <td>200 Mbps</td>
+              <td>2.4 or 5 GHz</td>
+            </tr>
+            <tr>
+              <td>802.11ac</td>
+              <td>866.7 Mbps</td>
+              <td>5 GHz</td>
+            </tr>
+            <tr>
+              <td>802.11ad</td>
+              <td>6.75 GBps</td>
+              <td>60 GHz</td>
+            </tr>
+          </tbody>
+        </table>
+        <h4>From Wikipedia</h4>
+      </section>
+
+      <!-- Slide 30 Wireless Footprint-->
+      <section>
+        <h2>Wireless Footprint</h2>
+        <ul>
+          <li>High power makes a large footprint
+            <ul>
+              <li>Easier for users to connect</li>
+              <li>Easier for attackers to snoop on</li>
+            </ul>
+          </li>
+          <li>Careful antenna placement</li>
+          <li>Metal in walls</li>
+          <li>Directional antennas such as a Yagi increase range of reception</li>
+        </ul>
+      </section>
+
+      <!-- Slide 31 Site Surveys and Antenna Placement-->
+      <section>
+        <h2>Site Surveys and Antenna Placement</h2>
+        <ul>
+          <li>Site Survey
+            <ul>
+              <li>Examine wireless environment to identify potential problems</li>
+              <li>Set up a WAP and measure signal strength from various locations</li>
+              <li>Also performed to detect
+                <ul>
+                  <li>Rogue access points</li>
+                  <li>Jamming</li>
+                  <li>Evil twins</li>
+                  <li>Interference</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 32 Security Protocols-->
+      <section>
+        <h2>Security Protocols</h2>
+        <ul>
+          <li>WEP - Broken and unsafe to use</li>
+          <li>WPA - Much safer, stronger with AES than TKIP</li>
+          <li>WPA2 - Best security currently available, especially in Enterprise mode with 80.2x or RADIUS server</li>
+        </ul>
+      </section>
+
+      <!-- Slide 33 WEP (Wired Equivalent Privacy)-->
+      <section>
+        <h2>WEP (Wired Equivalent Privacy)</h2>
+        <ul>
+          <li>Mathematically insecure</li>
+          <li>Can be broken with no knowledge of the key 100% of the time</li>
+          <li>Attacker needs 50,000 packets or so</li>
+        </ul>
+      </section>
+
+      <!-- Slide 34 WPA (Wi-Fi Protected Access)-->
+      <section>
+        <h2>WPA (Wi-Fi Protected Access)</h2>
+        <ul>
+          <li>Designed to run on hardware designed for WEP with only a software upgrade</li>
+          <li>Weakest form of WPA uses TKIP (Temporal Key Integrity Protocol) and RC4 encryption</li>
+          <li>Stronger form of WPA uses AES encryption</li>
+        </ul>
+      </section>
+
+      <!-- Slide 35 WPA-2 -->
+      <section>
+        <h2>WPA-2</h2>
+        <ul>
+          <li>Stronger cryptography than WEP or WPA</li>
+          <li>Uses CCMP mode of AES</li>
+        </ul>
+      </section>
+
+      <!-- Slide 36 Personal and Enterprise Modes-->
+      <section>
+        <h2>Personal and Enterprise Modes</h2>
+        <ul>
+          <li>Both WPA and WPA-2 have Personal and Enterprise modes</li>
+          <li>Personal
+            <ul>
+              <li>Pre-Shared Key (PSK) must be entered in each device</li>
+              <li>Key is the same for all users</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 37 Personal and Enterprise Modes-->
+      <section>
+        <h2>Personal and Enterprise Modes</h2>
+        <ul>
+          <li>Enterprise mode
+            <ul>
+              <li>Each user has individual credentials
+                <ul>
+                  <li>Username and passwords</li>
+                  <li>Extensible protocols like LEAP and PEAP which can use certificates</li>
+                </ul>
+              </li>
+              <li>Credentials stored on a RADIUS server</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 38 Attacking WPS (Wi-Fi Protected Setup)-->
+      <section>
+        <h2>Attacking WPS <br> (Wi-Fi Protected Setup)</h2>
+        <img src="../chapter 04/assets/images/Picture10.png" alt="Image of the terminal in Kali Linux with a WPS Wi-fi Protected Setup" style="width: 660px; height: auto;">
+        <br>
+        <ul>
+          <li>Link Ch 4g</li>
+        </ul>
+      </section>
+
+      <!-- Slide 39 EAP, PEAP, and LEAP-->
+      <section>
+        <h2>EAP, PEAP, and LEAP</h2>
+        <ul>
+          <li>EAP (Extensible Authentication Protocol)
+            <ul>
+              <li>A framework that provides general guidance for authentican</li>
+            </ul>
+          </li>
+          <li>PEAP (Protected EAP)
+            <ul>
+              <li>Encapsulate EAP conversation in a TLS tunnel</li>
+              <li>Requires a digital certifcate for the server, but not the clients</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 40 EAP-TTLS and EAP-TLS -->
+      <section>
+        <h2>EAP-TTLS and EAP-TLS</h2>
+        <ul>
+          <li>EAP-Tunneled TLS (EAP-TTLS)
+            <ul>
+              <li>An extension of PEAP</li>
+              <li>Allows some older authentication methods, such as PAP within a TLS tunnel</li>
+              <li>Requires a certificate on the 802.1x server but not on the clients</li>
+            </ul>
+          </li>
+          <li>EAP-TLS
+            <ul>
+              <li>Most secure, widely implemented</li>
+              <li>Requires a certificate on both the server and the clients (link Ch 4o)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 41 LEAP (Lightweight EAP)-->
+      <section>
+        <h2>LEAP (Lightweight EAP)</h2>
+        <ul>
+          <li>Cisco's attempt to improve WEP</li>
+          <li>Uses CHAP</li>
+          <li>Not secure, subject to offline dictionary attack</li>
+          <li>Cisco recommends using PEAP instead</li>
+        </ul>
+      </section>
+
+      <!-- Slide 42 ASLEAP-->
+      <section>
+        <h2>ASLEAP</h2>
+        <ul>
+          <li>Lightweight Extensible Authentication Protocol (LEAP)
+            <ul>
+              <li>A Cisco product</li>
+              <li>Vulnerable, but Cisco didn't care</li>
+              <li>Joshua Wright wrote the ASLEAP hacking tool to crack LEAP, and forced Cisco to develop a better protocol
+                <ul>
+                  <li>See link Ch 4f</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 43 Reaction to ASLEAP-->
+      <section>
+        <h2>Reaction to ASLEAP</h2>
+        <ul>
+          <li>"Within months, some "helpful" person invested their time into generating a cracker tool. Publicizing the threat was a service to everyone, but I leave it as an exercise for readers to determine what satisfaction is obtained by the authors of tools that turn threat into reality and lay waste to millions of dollars of investments."</li>
+          <li>--"Real 802.11 Security", William Arbaugh and Jon Edney, as quoted in link Ch 4f</li>
+        </ul>
+      </section>
+
+      <!-- Slide 44 WTLS and ECC-->
+      <section>
+        <h2>WTLS and ECC</h2>
+        <ul>
+          <li>WTLS (Wireless Transport Layer Security)
+            <ul>
+              <li>Used by many smaller wireless devices</li>
+            </ul>
+          </li>
+          <li>ECC (Elliptic Curve Cryptography)
+            <ul>
+              <li>A more efficient cryptography method than the RSA algorithm used on the Internet</li>
+              <li>Used on small wireless devices to save power</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 45 Free SSL for Everyone-->
+      <section>
+        <h2>Free SSL for Everyone</h2>
+        <ul>
+          <li>Cloudflare uses ECC</li>
+          <li>This made certificates so cheap, they offer it free to everyone</li>
+          <li>Link Ch 4p</li>
+        </ul>
+        <img src="../chapter 04/assets/images/Picture11.png" alt="Image of Universal SSL logo" style="width: 400px; height: auto;">
+      </section>
+
+      <!-- Slide 46 Captive Portal-->
+      <section>
+        <h2>Captive Portal</h2>
+        <ul>
+          <li>Users connect to wireless network, but then must login to a Web page to get to Internet</li>
+        </ul>
+        <img src="../chapter 04/assets/images/Picture12.png" alt="Images of CCSF Wireless access page">
+      </section>
+
+      <!-- Slide 47 Common Captive Portals-->
+      <section>
+        <h2>Common Captive Portals</h2>
+        <ul>
+          <li>Free internet access
+            <ul>
+              <li>Users agree to Terms of Service</li>
+            </ul>
+          </li>
+          <li>Paid Internet Access
+            <ul>
+              <li>Users must enter a credit card number or log in to a prepaid account</li>
+            </ul>
+          </li>
+          <li>Alternative to 802.1x
+            <ul>
+              <li>Require users to authentication</li>
+              <li>Can be simpler than configuring 802.1x</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 48 Hot Spots and Isolation Mode-->
+      <section>
+        <h2>Hot Spots and Isolation Mode</h2>
+        <ul>
+          <li>Each client is on a separate VLAN, in effect
+            <ul>
+              <li>Isolates clients better</li>
+              <li>Protects clients from each other</li>
+              <li>Done at Starbuck's</li>
+            </ul>
+          </li>
+          <li>Does not protect against
+            <ul>
+              <li>Evil twin</li>
+              <li>Sniffing unencrypted wireless traffic directly in Monitor mode</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 49 Other Security Concerns-->
+      <section>
+        <h2>Other Security Concerns</h2>
+        <ul>
+          <li>Change default administrator password</li>
+          <li>MAC filtering
+            <ul>
+              <li>Allows only approved MAC addresses to connect</li>
+              <li>Easily sniffed &#38; spoofed</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 50 CCSF Wardriving-->
+      <section>
+        <h2>CCSF Wardriving</h2>
+        <ul>
+          <li>Sat., April 25, 2015, 9 am, SCIE 200</li>
+        </ul>
+        <img src="../chapter 04/assets/images/Picture13.png" alt="Image of screencap of youtube video of 'Wardrive: Spring 2010'">
+      </section>
+
+      <!-- Slide 51 Wardriving Results-->
+      <section>
+        <h2>Wardriving Results</h2>
+        <img src="../chapter 04/assets/images/Picture14.png" alt="iamge screencap ">
+      </section>
+
+      <!-- Slide 52 WIGLE.NET-->
+      <section>
+        <h2>WIGLE.NET</h2>
+        <img src="../chapter 04/assets/images/Picture15.png" alt="image screencap of map result showing the location of Wigle.net">
+      </section>
+
+      <!-- Slide 53 Wardriving-->
+      <section>
+        <h2>Wardriving</h2>
+        <ul>
+          <li>Part of a wireless audit</li>
+          <li>Finds "Rogue" access points
+            <ul>
+              <li>Unauthorized routers added to network</li>
+            </ul>
+          </li>
+          <li>Finds "Evil Twins"
+            <ul>
+              <li>Access points spoofing the authorized ones to perform MITM attacks</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 54 Change Default SSID-->
+      <section>
+        <h2>Change Default SSID</h2>
+        <ul>
+          <li>Conceals the real model of your router</li>
+          <li>Makes attackers work harder</li>
+        </ul>
+      </section>
+
+      <!-- Slide 55 Disabling SSID (Service Set Identifiers) Broadcasts-->
+      <section>
+        <h2>Disabling SSID <br> (Service Set Identifiers) Broadcasts</h2>
+        <img src="../chapter 04/assets/images/Picture16.png" alt="screenshot of a Mac OS X Wifi SSID listing menu" style="width: 400px; height: auto;">
+        <ul>
+          <li>SSID is the name that identifies your network, such as "Linksys" or "CCSF Wifi"</li>
+          <li>Disabling it only stops sloppy attackers who use NetStumbler</li>
+          <li>SSID is in every packet sten anyway</li>
+        </ul>
+      </section>
+
+      <!-- Slide 56 Rogue Access Points-->
+      <section>
+        <h2>Rogue Access Points</h2>
+        <ul>
+          <li>Unauthorized devices attached to network</li>
+          <li>Can exfiltrate data to attacker</li>
+          <li>can allow attacker easier access to network</li>
+        </ul>
+      </section>
+
+      <!-- Slide 57 Evil Twins-->
+      <section>
+        <h2>Evil Twins</h2>
+        <ul>
+          <li>A rogue access point with the same SSIDas the real company WLAN
+            <ul>
+              <li>Such as "CCSF Wireless"</li>
+            </ul>
+          </li>
+          <li>Users will automatically connect to the evil twin if it has a stronger signal</li>
+        </ul>
+      </section>
+
+      <!-- Slide 58 WiFi Pineapple-->
+      <section>
+        <h2>WiFi Pineapple</h2>
+        <ul>
+          <li>Automates evil twin and other wireless attacks</li>
+          <li>Link Ch 4q</li>
+        </ul>
+        <img src="../chapter 04/assets/images/Picture17.png" alt="Image of the Pineapple router">
+      </section>
+
+      <!-- Slide 59 Cisco's Rogue Access Points Containment-->
+      <section>
+        <h2>Cisco's Rogue Access Points Containment</h2>
+        <ul>
+          <li>Sends disassociation frames to DoS rogues (link Ch 4r)</li>
+        </ul>
+        <img src="../chapter 04/assets/images/Picture18.png" alt="screenshots Cisco router">
+      </section>
+
+      <!-- Slide 60 Jamming and Interference-->
+      <section>
+        <h2>Jamming and Interference</h2>
+        <ul>
+          <li>Attackers can use radio transmissions to interfere with Wi-Fi</li>
+          <li>Changing channel or power levels may help to resist the attack</li>
+          <li>Disassociation Frames are the most effective DoS attack</li>
+        </ul>
+      </section>
+
+      <!-- Slide 61 Near Field Communications (NFC)-->
+      <section>
+        <h2>Near Field Communications (NFC)</h2>
+        <ul>
+          <li>NFC is used to exchange information over short distances</li>
+          <li>Smartphones use it to exchange information</li>
+          <li>Credit cards and Bart tickets contain NFC chips</li>
+          <li>Google Wallet</li>
+        </ul>
+        <img src="../chapter 04/assets/images/Picture19.png" alt="Image screenshot NFC credit card payment in Android" style="width: 240px; height: 345px;">
+      </section>
+
+      <!-- Slide 62 Bluetooth Wireless-->
+      <section>
+        <h2>Bluetooth Wireless</h2>
+        <ul>
+          <li>Short-range connections</li>
+          <li>In "Discovery Mode", a Bluetooth device broadcasts its MAC address, to allow "pairing"
+            <ul>
+              <li>PINs are often set to 0000</li>
+              <li>Turn off Discovery mode to prevent the attacks on the next slide</li>
+            </ul>
+          </li>
+        </ul>
+        <img src="../chapter 04/assets/images/Picture20.png" alt="Stock image of a man with a bluetooth earpiece unit" style="width: 280px; height: auto;">
+      </section>
+
+      <!-- Slide 63 Bluesnarfing and Bluejacking-->
+      <section>
+        <h2>Bluesnarfing and Bluejacking</h2>
+        <ul>
+          <li>Bluejacking
+            <ul>
+              <li>Unauthorized sending of text messages from a Bluetooth device</li>
+            </ul>
+          </li>
+          <li>Bluesnarfing
+            <ul>
+              <li>Access to or theft of data from a Bluetooth connection</li>
+            </ul>
+          </li>
+          <li>Bluebugging
+            <ul>
+              <li>Take over a mobile phone</li>
+              <li>Listen to calls, send messages, and more</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 64 Exploring Remote Access-->
+      <section>
+        <h2>Exploring Remote Access</h2>
+      </section>
+
+      <!-- Slide 65 Remote Access-->
+      <section>
+        <h2>Remote Access</h2>
+        <ul>
+          <li>Allows users who are travelling to connect to internal network services</li>
+          <li>Remote Access Service
+            <ul>
+              <li>Through dial-up or VPN (Virtual Private Network)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 66 Components-->
+      <section>
+        <h2>Components</h2>
+        <ul>
+          <li>Access Method
+            <ul>
+              <li>Dial-up or VPN</li>
+            </ul>
+          </li>
+          <li>Authentication
+            <ul>
+              <li>Require secure authentication because users may use insecure lines</li>
+            </ul>
+          </li>
+          <li>Access Control
+            <ul>
+              <li>User authorization</li>
+              <li>Client health</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 67 Telephony and Dial-Up RAS-->
+      <section>
+        <h2>Telephony and Dial-Up RAS</h2>
+        <ul>
+          <li>Client and sever need phone lines and modems</li>
+          <li>Requires POTS line (Plain Old Telephone Service)</li>
+          <li>Requires a long-distance phone call</li>
+          <li>Uses PPP (Point-to-Point Protocol)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 68 VPN-->
+      <section>
+        <h2>VPN</h2>
+        <ul>
+          <li>Uses the Internet</li>
+          <li>Faster and cheaper than Dial-up</li>
+          <li>Uses tunneling to move Lan packets over the Internet</li>
+        </ul>
+      </section>
+
+      <!-- Slide 69 VPN II image-->
+      <section>
+        <h2>VPN</h2>
+        <img src="../chapter 04/assets/images/Picture21.png" alt="Image of VPN diagram setup" style="width: 550px; height: auto;">
+      </section>
+
+      <!-- Slide 70 VPN Concentrator-->
+      <section>
+        <h2>VPN Concentrator</h2>
+        <ul>
+          <li>Used at large companies</li>
+          <li>Includes
+            <ul>
+              <li>Strong encryption and authentication</li>
+              <li>Handles many clients</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 71 Tunneling Protocols-->
+      <section>
+        <h2>Tunneling Protocols</h2>
+        <ul>
+          <li>IPSec (port UDP 500 for IKE)
+            <ul>
+              <li>Problems with NAT</li>
+            </ul>
+          </li>
+          <li>PPTP (port TCP 1723)
+            <ul>
+              <li>Old and vulnerable</li>
+            </ul>
+          </li>
+          <li>L2TP (port UDP 1701)
+            <ul>
+              <li>No encryption, often used with IPSec</li>
+            </ul>
+          </li>
+          <li>SSTP (port TCP 443)
+            <ul>
+              <li>Works through NAT</li>
+            </ul>
+          </li>
+          <li>For more details, see link Ch 4i</li>
+        </ul>
+      </section>
+
+      <!-- Slide 72 IPsec as a Tunneling Protocol-->
+      <section>
+        <h2>IPsec as a Tunneling Protocol</h2>
+        <ul>
+          <li>IPsec has two modes
+            <ul>
+              <li>Transport Mode
+                <ul>
+                  <li>Only the payload is encrypted</li>
+                </ul>
+              </li>
+              <li>Tunnel Mode
+                <ul>
+                  <li>The entire IP packet is encrypted</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Uses IKE over UDP port 500 to authenticate clients</li>
+          <li>Creates Security Associations (SAs) for the VPN</li>
+        </ul>
+      </section>
+
+      <!-- Slide 73 AH and ESP-->
+      <section>
+        <h2>AH and ESP</h2>
+        <ul>
+          <li>IPsec can use
+            <ul>
+              <li>AH (Authentication Header) alone
+                <ul>
+                  <li>for Authentication and Integrity</li>
+                  <li>no encryption</li>
+                  <li>Protocol 51</li>
+                </ul>
+              </li>
+            </ul>
+            <ul>
+              <li>or ESP (Encapsulating Security Payload)
+                <ul>
+                  <li>to encrypt the data</li>
+                  <li>providing Confidentiality, Integrity, and Authentication</li>
+                  <li>Protocol 50</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Link Ch 4j</li>
+        </ul>
+      </section>
+
+      <!-- Slide 74 L2TP and IPsec-->
+      <section>
+        <h2>L2TP and IPsec</h2>
+        <ul>
+          <li>L2TP creates a tunnel, but without encryption
+            <ul>
+              <li>No confidentiality</li>
+            </ul>
+          </li>
+          <li>L2TP/IPsec used together provide
+            <ul>
+              <li>Authentication
+                <ul>
+                  <li>from Authentication Header</li>
+                  <li>on Protocol 51</li>
+                </ul>
+              </li>
+              <li>Encryption
+                <ul>
+                  <li>from Encapsulating Security Payload (ESP)</li>
+                  <li>on Protocol 50</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 75 NAT and IPsec-->
+      <section>
+        <h2>NAT and IPsec</h2>
+        <ul>
+          <li>NAT changes the IP addresses of packets</li>
+          <li>IPsec detects this change as packet damage and discards it</li>
+          <li>To use IPsec through NAT, use
+            <ul>
+              <li>NAT-T (NAT Traversal) (link Ch 4k), or</li>
+              <li>Another tunneling protocol such as SSTP</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 76 TLS and SSL-->
+      <section>
+        <h2>TLS and SSL</h2>
+        <ul>
+          <li>Some tunneling protocls use TLS (Transport Layer Security) or SSL (Secure Socket Layer)</li>
+          <li>SSTP (Secure Socket Tunneling Protocol)
+            <ul>
+              <li>Uses SSL over port 443</li>
+            </ul>
+          </li>
+          <li>OpenVPN and OpenConnect
+            <ul>
+              <li>Open source VPN applications that use TLS</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 77 Site-to-Site VPNs -->
+      <section>
+        <h2>Site-to-Site VPNs</h2>
+        <ul>
+          <li>Easier for users; just appears as a normal network connection</li>
+        </ul>
+        <img src="../chapter 04/assets/images/Picture22.png" alt="Image showing Site-to-Site VPNs">
+      </section>
+
+      <!-- Slide 78 VPN Over Open Wireless-->
+      <section>
+        <h2>VPN Over Open Wireless</h2>
+        <ul>
+          <li>Public wireless hot spots often have little or no security</li>
+          <li>Using a VPN protects you by adding a layer of encryption</li>
+        </ul>
+      </section>
+
+      <!-- Slide 79 Free VPN-->
+      <section>
+        <h2>Free VPN</h2>
+        <ul>
+          <li>Link Ch 4s</li>
+        </ul>
+        <img src="../chapter 04/assets/images/Picture23.png" alt="Image of VPN service">
+      </section>
+
+      <!-- Slide 80 Network Access Control-->
+      <section>
+        <h2>Network Access Control</h2>
+        <ul>
+          <li>Checks health of clients before allowing it to connect to the company LAN
+            <ul>
+              <li>Up-to-date patches and antivirus, firewall on</li>
+              <li>Health agent runs on client</li>
+            </ul>
+          </li>
+          <li>Authentication
+            <ul>
+              <li>NAC can deny access if clients don't provide valid credentials</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 81 Network Access Control-->
+      <section>
+        <h2>Network Access Control</h2>
+        <img src="../chapter 04/assets/images/Picture24.png" alt="Image of Network Access Control diagram">
+      </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
