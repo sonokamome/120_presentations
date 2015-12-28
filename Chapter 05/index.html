@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Chapter 5 Presentation.</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Sam Bowne">
+    <meta name="transcriber" content="Sonokamome">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <!-- Slide 1 Introduction -->
+        <section>
+          <h2>Chapter 5</h2>
+          <h3>Securing Hosts and Data</h3>
+            <img src="../chapter 05/assets/images/Picture1.png" style="position: absolute; right: 610px;" alt="Security+ textbook by Darril Gibson">
+            <div style="position:absolute; left: 441px;">
+              <p>Comptia Security+:</p>
+              <p>Get Certified Get Ahead:</p>
+              <p> SY0-401 Study Guide</p>
+              <p>by Darril Gibson</p>
+            </div>
+        </section>
+
+      <!-- Slide 2 Implementing Host Security-->
+      <section>
+        <h2>Implementing Host Security</h2>
+      </section>
+
+      <!-- Slide 3 Hardening Systems-->
+      <section>
+        <h2>Hardening Systems</h2>
+        <ul>
+          <li>A <em>host</em> is any device with an IP address; such as servers, workstations, printers, etc.</li>
+          <li>Hardening is the practice of making the system more secure than a default installation
+            <ul>
+              <li>Disabling unnecessary services</li>
+              <li>Disabling unneeded applications</li>
+              <li>Protecting management interfaces and applications</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 4 Disabling Unnecessary Services-->
+      <section>
+        <h2>Disabling Unnecessary Services</h2>
+        <ul>
+          <li>Improves overall security posture
+            <ul>
+              <li>Less susceptible to attacks</li>
+            </ul>
+          </li>
+          <li>Reduces the attack surface
+            <ul>
+              <li>Prevents both known and 0 day attacks against the disabled services</li>
+            </ul>
+          </li>
+          <li>Reduces risks from open ports
+            <ul>
+              <li>Ports won't be open when scanned</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 5 Other Hardening Steps-->
+      <section>
+        <h2>Other Hardening Steps</h2>
+        <ul>
+          <li>Uninstall Unneeded Applications
+            <ul>
+              <li>For best protection</li>
+            </ul>
+          </li>
+          <li>Disable unnecessary accounts
+            <ul>
+              <li>Watch for default and backdoor accounts</li>
+            </ul>
+          </li>
+          <li>Protect management interfaces and applications
+            <ul>
+              <li>Change default passwords</li>
+              <li>Disallow administration from WAN, or limit it to specific source IP addresses</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 6 Using Baselines-->
+      <section>
+        <h2>Using Baselines</h2>
+        <ul>
+          <li>Security baseline</li>
+          <li>Configuration baseline</li>
+          <li>Host software baseline</li>
+          <li>Application configuration baseline</li>
+          <li>Performance baseline</li>
+        </ul>
+      </section>
+
+      <!-- Slide 7 Security Baseline-->
+      <section>
+        <h2>Security Baseline</h2>
+        <ul>
+          <li>Starting point for OS or application</li>
+          <li>Deployed by
+            <ul>
+              <li>Group policy
+                <ul>
+                  <li>Group Policy Objects (GPOs)</li>
+                  <li>On Windows domains</li>
+                </ul>
+              </li>
+              <li>Security templates</li>
+              <li>Imaging</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 8 Security Templates-->
+      <section>
+        <h2>Security Templates</h2>
+        <ul>
+          <li>Preconfigured settings for various common computer types
+            <ul>
+              <li>Domain Controller</li>
+              <li>Email server</li>
+              <li>Web server</li>
+              <li>etc.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 9 Security Templates-->
+      <section>
+        <h2>Security Templates</h2>
+        <img src="../chapter 05/assets/images/Picture1.jpg" alt="Image screenshot of the XML files">
+        <ul>
+          <li>Images from css-security.com</li>
+        </ul>
+      </section>
+
+      <!-- Slide 10 Security Templates-->
+      <section>
+        <h2>Security Templates</h2>
+        <ul>
+          <li>Security Templates contain
+            <ul>
+              <li>Account policies (like disabling Guest)</li>
+              <li>Password and lockout settings</li>
+              <li>Audit policies</li>
+              <li>User rights</li>
+              <li>System services</li>
+              <li>Software restrictions</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 11 Understanding Imaging-->
+      <section>
+        <h2>Understanding Imaging</h2>
+        <img src="../chapter 05/assets/images/Picture2.png" alt="Images of imaging network setup">
+      </section>
+
+      <!-- Slide 12 Capturing and Deploying Images-->
+      <section>
+        <h2>Capturing and Deploying Images</h2>
+        <ul>
+          <li>Prepare a reference computer with everything installed and configured properly</li>
+          <li>Capture an image of the reference computer</li>
+          <li>Deploy the image to many computers</li>
+        </ul>
+      </section>
+
+      <!-- Slide 13 Image Deployment Tools-->
+      <section>
+        <h2>Image Deployment Tools</h2>
+        <ul>
+          <li>Norton Ghost</li>
+          <li>Acronis TrueImage</li>
+          <li>Microsoft Windows Image Backup</li>
+          <li>Windows Automated Installation Kit</li>
+          <li>Windows Deployment Services</li>
+          <li>Many others</li>
+        </ul>
+      </section>
+
+      <!-- Slide 14 Imaging Benefits-->
+      <section>
+        <h2>Imaging Benefits</h2>
+        <ul>
+          <li>Secure starting point</li>
+          <li>
+            <ul>
+              <li>Maintenance is much simpler</li>
+              <li>Laptops are often sold with built-in images, to restore factory default settings</li>
+              <li>Reduces Total Cost of Ownership</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 15 Virtualization and Images-->
+      <section>
+        <h2>Virtualization and Images</h2>
+        <ul>
+          <li>Images can be deployed to virtual or physical computers</li>
+          <li>Physical machines can be converted to virtual machines, and vice versa</li>
+        </ul>
+      </section>
+
+      <!-- Slide 16 Configuration Baseline-->
+      <section>
+        <h2>Configuration Baseline</h2>
+        <ul>
+          <li>A record of all the settings on a system, including non-security settings and security settings
+            <ul>
+              <li>The security baseline contains only the security settings</li>
+            </ul>
+          </li>
+          <li>Every time a system is changed, the configuration baseline mus be updated
+            <ul>
+              <li>Change management</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 17 US Gov't Configuration Baseline (USGCB)-->
+      <section>
+        <h2>US Gov't Configuration Baseline (USGCB)</h2>
+        <ul>
+          <li>First: Standard Desktop Core Configuration (SDCC) in the Air Force</li>
+          <li>Then: Federal Desktop Core Configuration (FDCC)
+            <ul>
+              <li>Mandated by the Office of Management and Budget (OMB) for all federal agencies</li>
+            </ul>
+          </li>
+          <li>Current version is the USGCB, also mandated by the OMB</li>
+        </ul>
+      </section>
+
+      <!-- Slide 18 Image "Federal Agencies Fail IT Security Audits"-->
+      <section>
+        <img src="../chapter 05/assets/images/Picture3.png" alt="Image screencap of an article of U.S. federal agencies failing health IT security audits">
+        <ul>
+          <li>Link Ch 4b</li>
+        </ul>
+      </section>
+
+      <!-- Slide 19 Image security weaknesses 'pervade' EPA systems, audit finds-->
+      <section>
+        <img src="../chapter 05/assets/images/Picture4.png" alt="Image screenshot news EPA security weakness" style="width: 900px; height: auto;">
+        <ul>
+          <li>Link Ch 4c</li>
+        </ul>
+      </section>
+
+      <!-- Slide 20 Image of IT deployment in U.S. airport-->
+      <section>
+        <img src="../chapter 05/assets/images/Picture5.png" alt="Image of IT deployment in U.S. airport" style="width: 900px; height: auto;">
+        <ul>
+          <li>Link Ch 4d</li>
+        </ul>
+      </section>
+
+      <!-- Slide 21 Host Software Baseline-->
+      <section>
+        <h2>Host Software Baseline</h2>
+        <ul>
+          <li>Lists all software installed on a system</li>
+          <li>Lists all approved software</li>
+          <li>Also called <strong>Application baseline</strong></li>
+          <li>Can be compared with a scan that finds all installed software</li>
+          <li>Unauthorized software is not maintained and often vulnerable</li>
+        </ul>
+      </section>
+
+      <!-- Slide 22 Application Configuration Baselines-->
+      <section>
+        <h2>Application Configuration Baselines</h2>
+        <ul>
+          <li>Proper settings for applications</li>
+          <li>Makes it easier to audit servers to ensure compliance</li>
+        </ul>
+      </section>
+
+      <!-- Slide 23 Performance Baselines-->
+      <section>
+        <h2>Performance Baselines</h2>
+        <ul>
+          <li>Documents the overall performance of a system at a point in time</li>
+          <li>Useful for reference later when performance changes</li>
+        </ul>
+      </section>
+
+      <!-- Slide 24 Performance Monitor-->
+      <section>
+        <h2>Performance Monitor</h2>
+        <img src="../chapter 05/assets/images/Picture6.png" alt="Image of the Windows 'Performance Monitor' dialog">
+      </section>
+
+      <!-- Slide 25 Baseline Reporting-->
+      <section>
+        <h2>Baseline Reporting</h2>
+        <ul>
+          <li>The process of comparing systems to a baseline to identify discrepancies or anomalies</li>
+          <li>Can be used to identify abnormal activity</li>
+          <li>Similar to anomaly-based IDS baselines</li>
+        </ul>
+      </section>
+
+      <!-- Slide 26 Whitelisting v. Blacklisting Applications-->
+      <section>
+        <h2>Whitelisting v. Blacklisting Applications</h2>
+        <ul>
+          <li>Whitelist
+            <ul>
+              <li>A list of approved applications</li>
+            </ul>
+          </li>
+          <li>Blacklist
+            <ul>
+              <li>A list of applications to block</li>
+            </ul>
+          </li>
+          <li>Both can be implemented with Microsoft's Software Restriction Policies</li>
+          <li>Kaspersky maintains a whitelist database</li>
+        </ul>
+      </section>
+
+      <!-- Slide 27 Trusted OS (Operating System)-->
+      <section>
+        <h2>Trusted OS (Operating System)</h2>
+        <ul>
+          <li>Meets predetermined requirements, which emphasize authentication and authorization</li>
+          <li>Prevents modifications or movement of data by unauthorized entities</li>
+          <li>Common Criteria includes requirements for a Trusted OS
+            <ul>
+              <li>Intended for Gov't systems</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 28 Understanding Virtualization-->
+      <section>
+        <h2>Understanding Virtualization</h2>
+      </section>
+
+      <!-- Slide 29 Virtualization Terms-->
+      <section>
+        <h2>Virtualization Terms</h2>
+        <ul>
+          <li>Hypervisor
+            <ul>
+              <li>Software that creates, runs, and manages Virtual Machines (VMs)</li>
+            </ul>
+          </li>
+          <li>Host
+            <ul>
+              <li>The physical server on which the hypervisor runs</li>
+              <li>Typically requires multiple processors, lots of RAM, fast and abundant storage, and one or more fast network cards</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 30 Virtualization Terms II-->
+      <section>
+        <h2>Virtualization Terms II</h2>
+        <ul>
+          <li>Guest
+            <ul>
+              <li>A virtual machine running in a hypervisor</li>
+            </ul>
+          </li>
+          <li>Patch compatibility
+            <ul>
+              <li>VMs require patches, just like physical machines</li>
+            </ul>
+          </li>
+          <li>Host availability/elasticity
+            <ul>
+              <li>Elasticity is the ability to resize computing capacity based on the load</li>
+              <li>Meets demand and lowers cost</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 31 Snapshots-->
+      <section>
+        <h2>Snapshots</h2>
+        <ul>
+          <li>A copy of a VM at a moment in time</li>
+          <li>Useful as a backup</li>
+          <li>You can <strong>revert</strong> a VM back to the snapshot</li>
+          <li>Typically, administrators take a snapshot before any risky operation
+            <ul>
+              <li>Applying patches or updates</li>
+              <li>Installing new applications</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 32 Sandboxing and Security Control Testing-->
+      <section>
+        <h2>Sandboxing and Security Control Testing</h2>
+        <ul>
+          <li>VMs can run in an isolated environment called a <strong>sandbox</strong></li>
+          <li>Prevents the VM from interacting with other VMs, the host, or other devices on the network</li>
+          <li>Con test antivirus against malware in the sandbox, or test patches</li>
+        </ul>
+      </section>
+
+      <!-- Slide 33 VMs as Files-->
+      <section>
+        <h2>VMs as Files</h2>
+        <ul>
+          <li>A VM is just a set of files
+            <ul>
+              <li>VHD files: virtual hard disk</li>
+              <li>XMl files: configuration derails</li>
+              <li>AVHD files: Automatic VHDs &#x02014; hold difference between the current disk and a snapshot</li>
+              <li>VSV files: Saved state for VM that was not shutdown, like hibernation</li>
+              <li>BIN files: memory for VMs in a saved state</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 34 Virtual Networks-->
+      <section>
+        <h2>Virtual Networks</h2>
+        <ul>
+          <li>NAT mode: puts the VM behind a virtual router</li>
+          <li>Bridged: connects directly to host's NIC</li>
+          <li>Host-only: networks only with the host</li>
+          <li>Isolated: no network connection at all</li>
+        </ul>
+      </section>
+
+      <!-- Slide 35 Virtualization Technoligies-->
+      <section>
+        <h2>Virtualization Technoligies</h2>
+        <ul>
+          <li>VMware
+            <ul>
+              <li>VMware Workstation</li>
+              <li>VMware Player (free)</li>
+              <li>VMware Server (free)</li>
+              <li>VMware ESXi (Enterprise solution)</li>
+            </ul>
+          </li>
+          <li>Microsoft's Hyper-V
+            <ul>
+              <li>Also Virtual PC</li>
+            </ul>
+          </li>
+          <li>Sun's VirutalBox (free)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 36 Virtualization Risks-->
+      <section>
+        <h2>Virtualization Risks</h2>
+        <ul>
+          <li>VM Escape
+            <ul>
+              <li>An attack that starts in a VM and accesses the host system</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 37 Loss of Confidentiality-->
+      <section>
+        <h2>Loss of Confidentiality</h2>
+        <ul>
+          <li>Each VM may have confidential company data</li>
+          <li>So there area more copies of the data that could be lot or stolen</li>
+          <li>Encrypt VMs as well as physical machines</li>
+        </ul>
+      </section>
+
+      <!-- Slide 38 Implementing Patch Management-->
+      <section>
+        <h2>Implementing Patch Management</h2>
+      </section>
+
+      <!-- Slide 39 Importance of Updates-->
+      <section>
+        <h2>Importance of Updates</h2>
+        <ul>
+          <li>Every software product has bugs and vulnerabilities</li>
+          <li>Patches must be deployed promptly to reduce vulnerabilities</li>
+        </ul>
+      </section>
+
+      <!-- Slide 40 Deploying Patches-->
+      <section>
+        <h2>Deploying Patches</h2>
+        <ul>
+          <li>Automatic Updates on workstations
+            <ul>
+              <li>Appropriate for home or very small business networks</li>
+              <li>Not all machines will always be patched to the same level</li>
+            </ul>
+          </li>
+        </ul>
+        <img src="../chapter 05/assets/images/Picture7.png" alt="screenshot image ">
+      </section>
+
+      <!-- Slide 41 Deploying Patches-->
+      <section>
+        <h2>Deploying Patches</h2>
+        <ul>
+          <li>Patch management server
+            <ul>
+              <li>Company controls patch distribution</li>
+              <li>All machines are updated at once</li>
+              <li>Only apprrove dpatches are used (test them first)</li>
+            </ul>
+          </li>
+        </ul>
+        <img src="../chapter 05/assets/images/Picture8.png" alt="screenshot Windows Server Update Services prompt">
+      </section>
+
+      <!-- Slide 42 Deploying Patches-->
+      <section>
+        <h2>Deploying Patches</h2>
+        <ul>
+          <li>Some patches create problems</li>
+          <li>All patches must be tested before deployment onto a large company network</li>
+          <li>Test them in an environment that mirrors the production network</li>
+          <li>Regression testing
+            <ul>
+              <li>Administrators run a seres of knwon tests on a system</li>
+              <li>Compare results to tests run before patching</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 43 Scheduling Patches-->
+      <section>
+        <h2>Scheduling Patches</h2>
+        <ul>
+          <li>Patch Tuesdays
+            <ul>
+              <li>Microsoft issues patches on 2nd Tues of month</li>
+            </ul>
+          </li>
+          <li>Exploit Wednesday
+            <ul>
+              <li>Attackers reverse-engineer the patches and attack systems the next day</li>
+              <li>This is why Microsoft keeps vulnerabilities secret and doesn't patch theme till there are attacks in the wild</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 44 Mitigating Risk in Static Environments-->
+      <section>
+        <h2>Mitigating Risk in Static Environments</h2>
+        <ul>
+          <li>Some systems don't change much
+            <ul>
+              <li>Supervisory Control and Data Acquisition Systems (SCADA)</li>
+              <li>Embedded systems</li>
+              <li>Mobile systems (Android and iOS)</li>
+              <li>Mainframes</li>
+              <li>Game consoles</li>
+              <li>In-vehicles computing systems</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 45 Protecting Static Systems-->
+      <section>
+        <h2>Protecting Static Systems</h2>
+        <ul>
+          <li>Redundancy and diversity controls
+            <ul>
+              <li>Ensure that system continues to operate even when on components fails</li>
+            </ul>
+          </li>
+          <li>Network segmentation
+            <ul>
+              <li>Makes it harder for an attacker to find and attack the protected system</li>
+            </ul>
+          </li>
+          <li>Security layers
+            <ul>
+              <li>Firewall, NIPS, etc.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 46 Protecting Static Systems II-->
+      <section>
+        <h2>Protecting Static Systems</h2>
+        <ul>
+          <li>Application firewalls</li>
+          <li>Manual updates</li>
+          <li>Firmware version control</li>
+          <li>Wrappers
+            <ul>
+              <li>TCP Wrappers filter traffic, like a host-based firewall</li>
+              <li>Only allow connections from specified source IP addresses</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 47 Supervisory Control and Data Acquisition Systems (SCADA)-->
+      <section>
+        <h2>Supervisory Control and Data Acquisition Systems (SCADA)</h2>
+        <ul>
+          <li>Industrial controls systems</li>
+          <li>Such as power plants or water treatment facilities</li>
+          <li>Should be in isolated LANs, not connected to the Internet</li>
+        </ul>
+      </section>
+
+      <!-- Slide 48 Embedded Systems-->
+      <section>
+        <h2>Embedded Systems</h2>
+        <ul>
+          <li>Inside printers, smart TVs, HVAC</li>
+          <li>Point of Sale (PoS) systems</li>
+        </ul>
+      </section>
+
+      <!-- Slide 49 Image the evolution of the PoS RAM scraper family-->
+      <section>
+        <img src="../chapter 05/assets/images/Picture9.png" alt="image screenshot of a title of an article about data breaches">
+        <img src="../chapter 05/assets/images/Picture10.png" alt="image the evolution of the PoS RAM scraper family">
+        <ul>
+          <li>Link Ch 4t</li>
+        </ul>
+      </section>
+
+      <!-- Slide 50 Understanding Stuxnet-->
+      <section>
+        <h2>Understanding Stuxnet</h2>
+        <ul>
+          <li><strong>Infect</strong> Windows systems through infected USB drives</li>
+          <li><strong>Search</strong> through network to find target</li>
+          <li><strong>Update</strong> the worm if the target is found</li>
+          <li><strong>Compromise</strong> target</li>
+          <li><strong>Control</strong> target</li>
+          <li><strong>Deceive and destroy</strong> target systems</li>
+        </ul>
+      </section>
+
+      <!-- Slide 51 Securing Mobile Devices-->
+      <section>
+        <h2>Securing Mobile Devices</h2>
+      </section>
+
+      <!-- Slide 52 General Concepts-->
+      <section>
+        <h2>General Concepts</h2>
+        <ul>
+          <li>Encryption
+            <ul>
+              <li>Protects data if device is lost or stolen</li>
+            </ul>
+          </li>
+          <li>Authentication
+            <ul>
+              <li>Passcodes, sometimes 2FA</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 53 Device Security-->
+      <section>
+        <h2>Device Security</h2>
+        <ul>
+          <li>Loss or theft of a device
+            <ul>
+              <li>Global Positioning System (GPS)
+                <ul>
+                  <li>Locates lost device</li>
+                  <li>Find My iPhone and iCloud</li>
+                </ul>
+              </li>
+              <li>Remote lock</li>
+              <li>Remote erase</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 54 Device Security Concepts-->
+      <section>
+        <h2>Device Security Concepts</h2>
+        <ul>
+          <li>Removable storage
+            <ul>
+              <li>USB drives, etc. may introduce malware or cause data leakage</li>
+            </ul>
+          </li>
+          <li>Storage segmentation
+            <ul>
+              <li>Can force users to use external storage for all corporate data</li>
+            </ul>
+          </li>
+          <li>Screen locks and Lockout
+            <ul>
+              <li>Requires a password to use device</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 55 Device Security Concepts-->
+      <section>
+        <h2>Device Security Concepts</h2>
+        <ul>
+          <li>Remote wipe
+            <ul>
+              <li>Erases all data</li>
+            </ul>
+          </li>
+          <li>Disabling unused features</li>
+          <li>Asset tracking
+            <ul>
+              <li>Ensures that employyes who leave company return company devices</li>
+            </ul>
+          </li>
+          <li>Inventory control
+            <ul>
+              <li>RFID tags prevent or dtect theft of devices</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 56 BYOD Concerns-->
+      <section>
+        <h2>BYOD Concerns</h2>
+        <ul>
+          <li>BYOD (Bring Your Own Device)</li>
+          <li>Very popular with workers</li>
+          <li>Risky for company
+            <ul>
+              <li>Company data may be on infected systems</li>
+              <li>Unclear who owns the data on the tablet</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 57 BYOD Concerns II-->
+      <section>
+        <h2>BYOD Concerns</h2>
+        <ul>
+          <li>Acceptable use policy</li>
+          <li>Adherence to corporate policies</li>
+          <li>privacy</li>
+          <li>User acceptance</li>
+          <li>Data ownership</li>
+          <li>Support ownership</li>
+          <li>Architecture/infrastructure considerations</li>
+        </ul>
+      </section>
+
+      <!-- Slide 58 BYOD Concerns III-->
+      <section>
+        <h2>BYOD Concerns</h2>
+        <ul>
+          <li>Forensics
+            <ul>
+              <li>Does the company have permission to analyze the devices?</li>
+            </ul>
+          </li>
+          <li>Legal concerns
+            <ul>
+              <li>Rules must be clear</li>
+            </ul>
+          </li>
+          <li>On-boarding/off-boarding
+            <ul>
+              <li>Procedures to join and leave the network</li>
+            </ul>
+          </li>
+          <li>On-board camera/video
+            <ul>
+              <li>Employees may photograph confidential things</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 59 Mobile Device Management--> 
+      <section>
+        <h2>Mobile Device Management</h2>
+        <ul>
+          <li>Patch management</li>
+          <li>Antivirus management</li>
+          <li>Applications controls</li>
+        </ul>
+      </section>
+
+      <!-- Slide 60 App Security-->
+      <section>
+        <h2>App Security</h2>
+        <ul>
+          <li>Mobile devices store credentials, such as passwords
+            <ul>
+              <li>This can be blocked</li>
+            </ul>
+          </li>
+          <li>Geo-tagging
+            <ul>
+              <li>Labels photos and other items with GPS location</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 61 Iraq, 2007-->
+      <section>
+        <h2>Iraq, 2007</h2>
+        <img src="../chapter 05/assets/images/Picture11.png" alt="screenshot image of an article of terrorists using automatic Geotags to destroy AH-64s in Iraq" style="width: 580px; height: auto;">
+        <br>
+        <ul>
+          <li>Link Ch 4v</li>
+        </ul>
+      </section>
+
+      <!-- Slide 62 Protecting Data-->
+      <section>
+        <h2>Protecting Data</h2>
+      </section>
+
+      <!-- Slide 63 Protecting Data II-->
+      <section>
+        <h2>Protecting Data</h2>
+        <ul>
+          <li>Data loss can cause
+            <ul>
+              <li>Harms to customers</li>
+              <li>Reputation damage to company</li>
+              <li>Regulartory fines</li>
+              <li>Lawsuits</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 64 Data Categories-->
+      <section>
+        <h2>Data Categories</h2>
+        <ul>
+          <li>Data at rest
+            <ul>
+              <li>Stored on a hard disk, USb drive, mobile phone, external drive, backups</li>
+            </ul>
+          </li>
+          <li>Data in motion
+            <ul>
+              <li>Travelling over a network</li>
+              <li><strong>Data Loss Prevention (DLP)</strong> detects sensitive data travelling over a network</li>
+              <li>Encryption traffic: IPsec, SSH, SFTP, etc.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 65 Image of 2010 hacks of Google, Adobe, and other Silicon Valley organizations-->
+      <section>
+      <img src="../chapter 05/assets/images/Picture12.png" alt="screenshot of an article of the Google, Adobe , and other Silicon Valley organizations in 2010">
+      <ul>
+        <li>Link Ch 5f</li>
+      </ul>
+      </section>
+
+      <!-- Slide 66 Data Categories-->
+      <section>
+        <h2>Data Categories</h2>
+        <ul>
+          <li>Data in use
+            <ul>
+              <li>Data in RAM while in use on a workstation</li>
+              <li>Applications are responsible for protecting data in use</li>
+              <li>This is why whole-disk encryption is needed to protect data on laptops
+                <ul>
+                  <li>Temporary copies of the data are stored in the clear on the hard drive, even when the original data file is encrypted</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 67 Software-Based Encryption-->
+      <section>
+        <h2>Software-Based Encryption</h2>
+        <ul>
+          <li>NTFS permission don't protect data if the attacker can boot the system from a disk</li>
+          <li>File and folder-level encryption protect files at rest
+            <ul>
+              <li>But not in use</li>
+            </ul>
+          </li>
+          <li>Applications can encrypt data
+            <ul>
+              <li>Oracle can encrypt sensitive data fields in a database</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 68 Hardware-Based Encryption-->
+      <section>
+        <h2>Hardware-Based Encryption</h2>
+        <ul>
+          <li>Trusted Platform Module(TPM)
+            <ul>
+              <li>Cryptographic co-processor</li>
+              <li>Used with Microsoft's BitLocker whole-drive encryption</li>
+            </ul>
+          </li>
+          <li>Hardware Security Module (HSM)
+            <ul>
+              <li>Details below</li>
+            </ul>
+          </li>
+          <li>Much quicker to use</li>
+          <li>Slower to deploy</li>
+        </ul>
+      </section>
+
+      <!-- Slide 69 TPM-->
+      <section>
+        <h2>TPM</h2>
+        <ul>
+          <li>TPM is a hardware chip on the motherboard of a laptop</li>
+          <li>Includes an unique RSA asymmetric-encryption key</li>
+          <li>Can generate and store other keys</li>
+          <li>Provides full-disk encryption</li>
+          <li>Used by BitLocker in Windows 7</li>
+        </ul>
+      </section>
+
+      <!-- Slide 70 HSM-->
+      <section>
+        <h2>HSM</h2>
+        <ul>
+          <li>A security device you can add to a system</li>
+          <li>Manages, generates, and securely stores cryptographic keys</li>
+          <li>Can be connected to a network, expansion card, or computer port</li>
+          <li>External device, as opposed to TPM</li>
+        </ul>
+      </section>
+
+      <!-- Slide 71 Usages of HSMs-->
+      <section>
+        <h2>Usages of HSMs</h2>
+        <ul>
+          <li>High-speed SSL sessions
+            <ul>
+              <li>E-commerce sites use SSL accelerators with HSMs</li>
+            </ul>
+          </li>
+          <li>Mission-criticcal systems
+            <ul>
+              <li>High-speeds services high availability clusters</li>
+            </ul>
+          </li>
+          <li>Certificate Authorities (CAs)
+            <ul>
+              <li>HSMs used to create, store, and manage the Public Key Infrastructure (PKI)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 72 Data Leakage-->
+      <section>
+        <h2>Data Leakage</h2>
+        <ul>
+          <li>Data Loss Prevention
+            <ul>
+              <li>Inspects network data</li>
+              <li>Looks for unathorized data transmissions</li>
+              <li>Usually network-based</li>
+              <li>Scanes text of emails and content of attached</li>
+              <li>Looks for sensitive data, as defined by an administrator
+                <ul>
+                  <li>Such as SSNs, by format ###-##-####</li>
+                  <li>Data classification: Sensitive or Secret</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 73 Portable Storage Devices-->
+      <section>
+        <h2>Portable Storage Devices</h2>
+        <ul>
+          <li>USB hard drives and flash drives</li>
+          <li>Very risky: employees can lose the device with company data on it</li>
+          <li>Encryption is the best defense</li>
+          <li>TrueCrypt is the free solution</li>
+          <li>Microsoft's BitLocker To Go is another solution</li>
+        </ul>
+      </section>
+
+      <!-- Slide 74 Portable Storage Devices-->
+      <section>
+        <h2>Portable Storage Devices</h2>
+        <ul>
+          <li>Storage Area Network (SAN)
+            <ul>
+              <li>A network of devices storing files</li>
+              <li>May include disk, SSD, optical media, tapes</li>
+              <li>High-speed data transfers within SAN</li>
+              <li>network via Fibre Channel, iSCSI, or FCoE (Fiber Channel over Ethernet)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 75 Big Data-->
+      <section>
+        <h2>Big Data</h2>
+        <ul>
+          <li>Data sets so large that traditional tools cannot handle them
+            <ul>
+              <li>Amazon databases can be 20 TB</li>
+            </ul>
+          </li>
+          <li>Data mining
+            <ul>
+              <li>Searching through big databases to find useful information</li>
+            </ul>
+          </li>
+          <li>Protections
+            <ul>
+              <li>Access controls</li>
+              <li>Encryptions</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 76 Understanding Cloud Computing-->
+      <section>
+        <h2>Understanding Cloud Computing</h2>
+      </section>
+
+      <!-- Slide 77 Cloud Computing-->
+      <section>
+        <h2>Cloud Computing</h2>
+        <ul>
+          <li>Accessing computers elsewhere, usually over the Internet</li>
+          <li>Example: Gmail</li>
+          <li>Three specific services:
+            <ul>
+              <li>SaaS (Software as a Service)</li>
+              <li>IaaS (Infrastructure as a Service)
+                <ul>
+                  <li>Also known as Hardware as a Service</li>
+                </ul>
+              </li>
+              <li>PaaS (Platform as a Service)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 78 Software as a Service-->
+      <section>
+        <h2>Software as a Service</h2>
+        <ul>
+          <li>Gmail
+            <ul>
+              <li>Customer can use any computer, OS, Browser</li>
+              <li>Service provides all the software required</li>
+            </ul>
+          </li>
+          <li>Google Docs
+            <ul>
+              <li>No need to have Microsoft Office yourself</li>
+            </ul>
+          </li>
+          <li>Security concern: data is now stored in the cloud</li>
+        </ul>
+      </section>
+
+      <!-- Slide 79 Infrastructure as a Service-->
+      <section>
+        <h2>Infrastructure as a Service</h2>
+        <ul>
+          <li>Outsource equipment requirements</li>
+          <li>Servers, routers, switches</li>
+          <li>I use a RapidXen virtual server</li>
+        </ul>
+      </section>
+
+      <!-- Slide 80 Platform as a Service-->
+      <section>
+        <h2>Platform as a Service</h2>
+        <ul>
+          <li>Provides a computing platofrm with an easy-to-configure operating system</li>
+          <li>Amazon E2C</li>
+          <li>Customers rent virtual machines and configure them as needed</li>
+        </ul>
+      </section>
+
+      <!-- Slide 81 Image Amazon cloud computer service options-->
+      <section>
+        <img src="../chapter 05/assets/images/Picture13.png" alt="Image Amazon cloud computer service options">
+      </section>
+
+      <!-- Slide 82 Public v. Private Cloud-->
+      <section>
+        <h2>Public v. Private Cloud</h2>
+        <ul>
+          <li>Public cloud
+            <ul>
+              <li>You don't own the servers</li>
+              <li>Ex: Amazon</li>
+              <li>You can't control the backups, data location, etc.</li>
+            </ul>
+          </li>
+          <li>Private cloud
+            <ul>
+              <li>on your owns servers, in your own data center</li>
+              <li>More control, but more responsibility</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 83 Cloud Computing Risks-->
+      <section>
+        <h2>Cloud Computing Risks</h2>
+        <ul>
+          <li>Lose physical control of your data</li>
+          <li>Cloud service cloud steal or lose your data</li>
+          <li>Example: Dropbox failed to enforce passwords briefly in June 2011</li>
+        </ul>
+      </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
