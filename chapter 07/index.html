@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Chapter 7 Presentation.</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Sam Bowne">
+    <meta name="transcriber" content="Sonokamome">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <!-- Slide 1 Introduction -->
+        <section>
+          <h2>Chapter 7</h2>
+          <h3>Identifying Advanced Attacks</h3>
+            <img src="../chapter 07/assets/images/Picture1.png" style="position: absolute; right: 610px;" alt="Security+ textbook by Darril Gibson">
+            <div style="position:absolute; left: 441px;">
+              <p>Comptia Security+:</p>
+              <p>Get Certified Get Ahead:</p>
+              <p> SY0-401 Study Guide</p>
+              <p>by Darril Gibson</p>
+            </div>
+        </section>
+
+        <!-- Slide 2 Comparing Common Attacks-->
+        <section>
+          <h2>Comparing Common Attacks</h2>
+        </section>
+
+        <!-- Slide 3 Spoofing-->
+        <section>
+          <h2>Spoofing</h2>
+          <ul>
+            <li>Pretending to be someone else</li>
+            <li>MAC address spoofing to get onto wireless networks</li>
+            <li>Smurf attack spoofs source IP</li>
+            <li>Email sent with spoofed "From" address</li>
+          </ul>
+        </section>
+
+        <!-- Slide 4 Denial of Service (DoS)-->
+        <section>
+          <h2>Denial of Service (DoS</h2>
+          <ul>
+            <li>Makes systems unavailable to users</li>
+            <li>DoS is from a single source</li>
+            <li>DDoS is from many sources</li>
+          </ul>
+        </section>
+
+        <!-- Slide 5 Distribute Denial of Service (DDoS)-->
+        <section>
+          <h2>Distribute Denial of Service (DDoS)</h2>
+          <ul>
+            <li>Many computers attack a target simultaneously</li>
+            <li>Botnets with thousands of zombies are commoon</li>
+            <li>Can be very difficulties to stop</li>
+            <li>"Slashdot effect" can resemble a DDoS, if thousands of real customers visit your page simultaneously</li>
+          </ul>
+        </section>
+
+        <!-- Slide 6 Smurf Attack-->
+        <section>
+          <h2>Smurf Attack</h2>
+          <ul>
+            <li>Send an PING to a boardcast address, with target's IP in the source field</li>
+            <li>Target gets many replies for every ping sent</li>
+            <li><strong>Packet Amplification</strong></li>
+          </ul>
+          <img src="../chapter 07/assets/images/Picture2.png" alt="screeenshot of a diagram showing how smurf attacks work">
+        </section>
+
+        <!-- Slide 7 SYN Flood-->
+        <section>
+          <h2>SYN Flood</h2>
+          <ul>
+            <li>TCP handshake: SYN, SYN/ACK, ACK</li>
+            <li>Each SYN sent burdens the server because it has to calculate the SYN/ACK and remember to wait for the ACK</li>
+            <li>SYN floods are more effective than other packets, such as pings, at DoS</li>
+          </ul>
+        </section>
+
+        <!-- Slide 8 TCP Handshake and SYN Flood-->
+        <section>
+          <h2>TCP Handshake and SYN Flood</h2>
+          <img src="../chapter 07/assets/images/Picture3.png" alt="screenshot of dialgram demonstrating how a SYN Flood works">
+        </section>
+
+        <!-- Slide 9 Flood Guard Techniques-->
+        <section>
+          <h2>Flood Guard Techniques</h2>
+          <ul>
+            <li>Defend against SYN floods</li>
+            <li>Block source IP addresses that send too many SYNs
+              <ul>
+                <li>But attacker can randomize the source IP</li>
+              </ul>
+            </li>
+            <li>Shorten timeout for half-open connection
+              <ul>
+                <li>But  you may lose some real users</li>
+              </ul>
+            </li>
+            <li>SYN Cookies
+              <ul>
+                <li>A way to more efficiently process half-open connections</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 10 Botnet-->
+        <section>
+          <h2>Botnet</h2>
+          <ul>
+            <li>Zombie computers are infected with malware</li>
+            <li>Under control of a <strong>bot herder</strong></li>
+            <li><strong>Command and Control (C &#x00026; C)</strong> server</li>
+            <li>C &#x00026; C traffic can be detected in firewall logs</li>
+            <li>Connections can eb seen on a zombie with <strong>netstat</strong></li>
+          </ul>
+        </section>
+
+        <!-- Slide 11 IRC (Internet Relay Chat)-->
+        <section>
+          <h2>IRC (Internet Relay Chat)</h2>
+          <ul>
+            <li>An early chat service</li>
+            <li>Used to control many odler botnets</li>
+            <li>Blocked at many companies now</li>
+          </ul>
+        </section>
+
+        <!-- Slide 12 Botnet Attacks-->
+        <section>
+          <h2>Botnet Attacks</h2>
+          <ul>
+            <li>Download additional malware, such as keyloggers</li>
+            <li>Launch DDoS attacks</li>
+            <li>Send spam email</li>
+          </ul>
+        </section>
+
+        <!-- Slide 13 XMAS Scan-->
+        <section>
+          <h2>XMAS Scan</h2>
+          <ul>
+            <li>Sends TCP packets with many flags set</li>
+            <li>Used to identify the server's OS, not to bring it down</li>
+          </ul>
+        </section>
+
+        <!-- Slide 14 Man in the Middle (MITM)-->
+        <section>
+          <h2>Man in the Middle (MITM)</h2>
+          <ul>
+            <li>Intercept traffic</li>
+            <li>"Active eavesdropping"</li>
+            <li>Can insert malicious code into traffic stream</li>
+            <li>ARP Poisoning redirects traffic to put the attacker in the middle</li>
+            <li>Kerberos prevents MITM attacks with mutual authentication and a trsuted authentication server (link Ch 7a)</li>
+          </ul>
+        </section>
+
+        <!-- Slide 15 sslstrip Proxy Changes HTTPS to HTTP-->
+        <section>
+          <h2>sslstrip Proxy Changes HTTPS to </h2>
+          <img src="../chapter 07/assets/images/Picture4.png" alt="screenshot on how sslstrip attack works" style="width: 660px; height: auto;">
+        </section>
+
+        <!-- Slide 16 Replay-->
+        <section>
+          <h2>Replay</h2>
+          <ul>
+            <li>Attacker captures network packets and replays them to impersonate a client</li>
+            <li>Countermeasures
+              <ul>
+                <li>Kerberos</li>
+                <li>HTTPS</li>
+                <li>Secure cookies</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 17 Cookie Cadger-->
+        <section>
+          <h2>Cookie Cadger</h2>
+          <ul>
+            <li>Replays cookies to hijack sessions</li>
+          </ul>
+          <img src="../chapter 07/assets/images/Picture5.png" alt="screenshot of Cookie Cadger program prompt" style="width: 700px; height: auto;">
+        </section>
+
+        <!-- Slide 18 Password Attacks-->
+        <section>
+          <h2>Password Attacks</h2>
+          <ul>
+            <li>Online attack
+              <ul>
+                <li>Try to guess password in a live online system</li>
+                <li>Best defense: account lockout policy</li>
+              </ul>
+            </li>
+            <li>Offline attack
+              <ul>
+                <li>Capture a database or packets</li>
+                <li>Guess passwords to match the data</li>
+                <li>used for WPA cracking</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 19 Brute Force Attack-->
+        <section>
+          <h2>Brute Force Attack</h2>
+          <ul>
+            <li>Uses every combination of characters</li>
+            <li>Very slow for longer passwords
+              <ul>
+                <li>Typically 80x slower for each added character</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 20 Dictionary Attack-->
+        <section>
+          <h2>Dictionary Attack</h2>
+          <ul>
+            <li>Use a list of common passwords</li>
+            <li>Very effective because so many real password lists have been published</li>
+          </ul>
+        </section>
+
+        <!-- Slide 21 Password Hashes-->
+        <section>
+          <h2>Password Hashes</h2>
+          <ul>
+            <li>Many systems no longer store plaintext password</li>
+            <li>Hash value is stored instead
+              <ul>
+                <li>Windows uses MD4, others use MD5 or SHA-1 or SHA-2</li>
+              </ul>
+            </li>
+            <li>Hashes can be cracked with dictionary or brute-force attacks</li>
+          </ul>
+        </section>
+
+        <!-- Slide 22 Hash Collisions-->
+        <section>
+          <h2>Hash Collisions</h2>
+          <ul>
+            <li>If two different passwords create the same hash, that is called a <strong>collision</strong></li>
+            <li>A strong hash function should have no known collisions
+              <ul>
+                <li>Collisions always exist, but they should be so rare that they can never be found</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 23 Birthday Attack-->
+        <section>
+          <h2>Birthday Attack</h2>
+          <ul>
+            <li>If 23 people compare their birthdays, month an day
+              <ul>
+                <li>Most likely, two birthdays are the same</li>
+                <li>Because there are 23*22/2 pairs of people</li>
+              </ul>
+            </li>
+            <li>Hash collisions follow the same logic</li>
+            <li>A 128-bit hash will have a collision after 2<sup><small>64</small></sup> guesses</li>
+            <li>a 160-bit hash will have a collision after 2<sup><small>80</small></sup> guesses</li>
+          </ul>
+        </section>
+
+        <!-- Slide 24 Rainbow Table Attack-->
+        <section>
+          <h2>Rainbow Table Attack</h2>
+          <ul>
+            <li>Also called time-memory tradeoff</li>
+            <li>A large table of precomputed hash values is stored in RAM</li>
+            <li>Brute-force attack is afster becuase it looks up hashes intead of calculating them</li>
+          </ul>
+        </section>
+
+        <!-- Slide 25 Salting a Password-->
+        <section>
+          <h2>Salting a Password</h2>
+          <ul>
+            <li>Add random chracters to password before salting</li>
+            <li>Prevents rainbow table attacks</li>
+          </ul>
+          <br><br>
+          <table>
+            <thead>
+              <tr>
+                <td>Name</td>
+                <td>Passowrd</td>
+                <td>Salt</td>
+                <td>Salt$Hash</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bill</td>
+                <td>appl2</td>
+                <td>AE</td>
+                <td>AE$e386bdb6fa35bdbc54eb6aaaa29bfc10</td>
+              </tr>
+              <tr>
+                <td>Sally</td>
+                <td>password</td>
+                <td>1Q</td>
+                <td>1Q$18de700734eab36b3a6e0ad05bbdb79a</td>
+              </tr>
+              <tr>
+                <td>Sue</td>
+                <td>password</td>
+                <td>W3</td>
+                <td>W3$40803b7c28f559f03883dea9c90211e8</td>
+              </tr>
+            </tbody>
+          </table>
+          <br><br>
+          <img src="../chapter 07/assets/images/Picture6.png" alt="screenshot of a *nix terminal with MD5 hashing" style="width: 530px; height: auto;">
+        </section>
+
+        <!-- Slide 26 Windows Password hashes-->
+        <section>
+          <h2>Windows Password hashes</h2>
+          <img src="../chapter 07/assets/images/Picture7.png" alt="Screenshot of the CAIN program">
+        </section>
+
+        <!-- Slide 27 Linux Password Hashes-->
+        <section>
+          <h2>Linux Password Hashes</h2>
+          <img src="../chapter 07/assets/images/Picture8.png" alt="screenshot of a terminal showing password hashes" style="width: 910px; height: auto;">
+        </section>
+
+        <!-- Slide 28 Mac OS X Password Hash-->
+        <section>
+          <h2>Mac OS X Password </h2>
+          <img src="../chapter 07/assets/images/Picture9.png" alt="screenshot of the termainl of Mac OS X password hash">
+          <ul>
+            <li>Link Ch 8c</li>
+          </ul>
+        </section>
+
+        <!-- Slide 29 Hybrid Attacks-->
+        <section>
+          <h2>Hybrid Attacks</h2>
+          <ul>
+            <li>Combine dictionary and brute force attacks</li>
+            <li>Modify dictionary words
+              <ul>
+                <li>Dictionary has "apple"</li>
+                <li>So try "Apple", "APPLE", "4pp13", "apple1", etc.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 30 DNS server-->
+        <section>
+          <h2>DNS server</h2>
+          <ul>
+            <li>Resolve domain names like www.ccsf.edu to IP addresses like 147.144.1.212
+              <ul>
+                <li>Results are held in a cache for a few minutes on each client</li>
+              </ul>
+            </li>
+            <li>Reverse DNS finds domain names from IP addresses
+              <ul>
+                <li>Sometimes used to block spam, making sure the IP address matches the "From" email address</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 31 DNS Attacks-->
+        <section>
+          <h2>DNS Attacks</h2>
+          <ul>
+            <li>DNS Cache Poisoning
+              <ul>
+                <li>Like ARP poisonin, tricks the target machine into resolving domain names to incorrect IP addresses</li>
+              </ul>
+            </li>
+            <li>Pharming
+              <ul>
+                <li>Changing the hosts file to redirect traffic to a spoofed website</li>
+              </ul>
+            </li>
+            <li>DNS Cache Snooping
+              <ul>
+                <li>Can find out what sites people have been visiting</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 32 ARP Request and Reply-->
+        <section>
+          <h2>ARP Request and Reply</h2>
+          <ul>
+            <li>Client wants to find Gateway</li>
+            <li>ARP Request: who has 192.168.2.1</li>
+            <li>ARP Reply:
+              <ul>
+                <li>MAC: 00-30-bd-02-ed-7b has 192.168.2.1</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../chapter 07/assets/images/Picture10.png" alt="screenshot diagram of how ARP Request and Reply works">
+        </section>
+
+        <!-- Slide 33 ARP Poisoning-->
+        <section>
+          <h2>ARP Poisoning</h2>
+          <img src="../chapter 07/assets/images/Picture11.png" alt="Screenshot of a diagram showing how ARP poisoning works" style="width: 750px; height: auto;">
+        </section>
+
+        <!-- Slide 34 ARP Poisoning II-->
+        <section>
+          <h2>ARP Poisoning</h2>
+          <ul>
+            <li>Redirects Traffic at Layer 2</li>
+            <li>Sends a lot of false ARP packets on the LAN</li>
+            <li>Can be easily detected</li>
+            <li>DeCaffinatedID by IronGeek
+              <ul>
+                <li>http://k78.sl.pt</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../chapter 07/assets/images/Picture12.png" alt="screenshot of a prompt by ARP Watcher">
+          <img src="../chapter 07/assets/images/Picture13.png" alt="screenshot of a taskbar prompt by ARP Watcher">
+        </section>
+
+        <!-- Slide 35 ARP Poisoning DoS-->
+        <section>
+          <h2>ARP Poisoning DoS</h2>
+          <ul>
+            <li>Attacker can change MAC address of the gateway to a bogus value</li>
+            <li>This renders the internet unavailable</li>
+          </ul>
+        </section>
+
+        <!-- Slide 36 Typosquatting/URL Hijacking-->
+        <section>
+          <h2>Typosquatting/URL Hijacking</h2>
+          <ul>
+            <li>Purchasing a domain close to a real one
+              <ul>
+                <li>Like yachooo.com or hushmali.com</li>
+              </ul>
+            </li>
+            <li>At the domain, put
+              <ul>
+                <li>Site containing ads or malware</li>
+                <li>Phishing site that looks liek the real page</li>
+                <li>insulting or offensive page to moativate the real site to buy the domain</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 37 Watering Hole Attacks-->
+        <section>
+          <h2>Watering Hole Attacks</h2>
+          <ul>
+            <li>Put up or find a page of interest to the targets</li>
+            <li>Put drive-by download malware on that page</li>
+            <li>Visitors get infected with RAT (Remote Access Trojan)</li>
+          </ul>
+        </section>
+
+        <!-- Slide 38 Zero Day Attacks-->
+        <section>
+          <h2>Zero Day Attacks</h2>
+          <ul>
+            <li>Exploit an undocumented vulnerability</li>
+            <li>No vendor patch available</li>
+            <li>Attackers can get in easily until the 0-day id detected and patched</li>
+            <li>0-days sell for high prices at exploit brokers</li>
+          </ul>
+        </section>
+
+        <!-- Slide 39 image screenshot of "Mitnick's Absolute zero-day exploit exchange"-->
+        <section>
+        <img src="../chapter 07/assets/images/Picture14.png" alt="image screenshot of 'Mitnick's Absolute zero-day exploit exchange'">
+        </section>
+
+        <!-- Slide 40 Web Browser Concerns-->
+        <section>
+          <h2>Web Browser Concerns</h2>
+          <ul>
+            <li>Malicious add-ons</li>
+            <li>Cookies
+              <ul>
+                <li>May contain private data</li>
+                <li>May be used in replay attacks</li>
+              </ul>
+            </li>
+            <li>Session Hijacking
+              <ul>
+                <li>Old version: Inject packets into a TCP session</li>
+                <li>New version: Replay authentication cookies</li>
+                <li>Technical name: Cross-Site Request Forgery (CSRF or XSRF)</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 41 Flash Cookies and LSOs-->
+        <section>
+          <h2>Flash Cookies and LSOs</h2>
+          <ul>
+            <li>Flash cookies are created by Adobe Flash Player
+              <ul>
+                <li>Also called Local Shared Objects</li>
+              </ul>
+            </li>
+            <li>Stored in multiple locations</li>
+            <li>Difficult to delete</li>
+          </ul>
+        </section>
+
+        <!-- Slide 42 G-Zapper-->
+        <section>
+          <img src="../chapter 07/assets/images/Picture15.png" alt="G-Zapper logo" style="width: 700px; height: auto;">
+          <br>
+          <ul>
+            <li>Deletes Google cookies</li>
+            <li>Link Ch 7c</li>
+          </ul>
+        </section>
+
+        <!-- Slide 43 Securing Applications-->
+        <section>
+          <h2>Securing Applications</h2>
+        </section>
+
+        <!-- Slide 44 Basic Application hardening Steps-->
+        <section>
+          <h2>Basic Application hardening Steps</h2>
+          <ul>
+            <li>harden the server itself
+              <ul>
+                <li>Disable unnecessary services</li>
+                <li>Disable default accounts</li>
+                <li>Change passwords</li>
+              </ul>
+            </li>
+            <li>Follow vendor guidelines for application</li>
+            <li>Change default passwords</li>
+            <li>Disable unnecessary accounts</li>
+            <li>Eliminate backdoors</li>
+          </ul>
+        </section>
+
+        <!-- Slide 45 Software Development Life Cycle-->
+        <section>
+          <h2>Software Development Life Cycle</h2>
+          <ul>
+            <li>SDLC models
+              <ul>
+                <li>Waterfall</li>
+                <li>Spiral</li>
+                <li>V-Shaped</li>
+                <li>Rapid Application Model</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 46 Software Development Life Cycle Goals-->
+        <section>
+          <h2>Software Development Life Cycle Goals</h2>
+          <ul>
+            <li>Requirements and design identification</li>
+            <li>Secure code review
+              <ul>
+                <li>at many stages of development</li>
+              </ul>
+            </li>
+            <li>Testing
+              <ul>
+                <li>best techniques is black-box testing by external experts</li>
+                <li>"Black box" means they don't know any internal details of the application</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 47 Performing Input Validation-->
+        <section>
+          <h2>Performing Input Validation</h2>
+          <ul>
+            <li>Checking data for validity before using it</li>
+            <li>Never trust anything that came from the user!</li>
+            <li>Error-handling routines should be friendly and helpful but not disclose too much information</li>
+          </ul>
+        </section>
+
+        <!-- Slide 48 Input Attacks-->
+        <section>
+          <h2>Input Attacks</h2>
+          <ul>
+            <li>All these attacks can be prevented with input validation
+              <ul>
+                <li>Buffer overflow
+                  <ul>
+                    <li>Input too long</li>
+                  </ul>
+                </li>
+                <li>SQL injection
+                  <ul>
+                    <li>Input misinterpreted as code and executed</li>
+                  </ul>
+                </li>
+                <li>Cross-site scripting
+                  <ul>
+                    <li>Input misinterpreted as code and executed</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 49 Understanding Secure Coding Concepts-->
+        <section>
+          <h2>Understanding Secure Coding Concepts</h2>
+        </section>
+
+        <!-- Slide 50 Input Validation-->
+        <section>
+          <h2>Input Validation</h2>
+          <ul>
+            <li>Don't use data that came from external sources, such as the user, without cleaning it first</li>
+            <li>Only allow proer characters, such as digits in a Zip code</li>
+            <li>Range checking: only accept values in allowed range (such as 9-digit SSNs)</li>
+            <li>Limit length</li>
+            <li>Remove special characters like &#x0003C; &#x00022;
+ &#x00025;</li>
+          </ul>
+        </section>
+
+        <!-- Slide 51 Client-side and Server-side Validation-->
+        <section>
+          <h2>Client-side and Server-side Validation</h2>
+          <ul>
+            <li>Using Javascrip tot validate input on the client-side is common but inadequate</li>
+            <li>Server-side validation must also be performed
+              <ul>
+                <li>Becuase client can bypass client-side validation by using a proxy or disabling scripting</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 52 Avoid Race Conditions-->
+        <section>
+          <h2>Avoid Race Conditions</h2>
+          <ul>
+            <li>Two programs may use the same resource at the same time
+              <ul>
+                <li>Such as a file in the /tmp folder</li>
+              </ul>
+            </li>
+            <li>There is a <strong>race</strong> to see which program gets it first</li>
+            <li>Exploits work by "winning the race"</li>
+          </ul>
+        </section>
+
+        <!-- Slide 53 Error and Exception Handling-->
+        <section>
+          <h2>Error and Exception Handling</h2>
+          <ul>
+            <li>If an application doesn't capture an error properly</li>
+            <li>Error messages fail to system defaults</li>
+            <li>These frequently give out too much information to an attacker</li>
+            <li>Details should be logged, but hot shown to the user</li>
+          </ul>
+        </section>
+
+        <!-- Slide 54 Identifying Application Attacks-->
+        <section>
+          <h2>Identifying Application Attacks</h2>
+        </section>
+
+        <!-- Slide 55 Web Servers-->
+        <section>
+          <h2>Web Servers</h2>
+          <ul>
+            <li>Apache
+              <ul>
+                <li>Most popular Web server</li>
+                <li>Free, can run on UNIX, Linux, or Windows</li>
+              </ul>
+            </li>
+            <li>IIS (Internet Information Systems)
+              <ul>
+                <li>Microsoft's Web server</li>
+                <li>Used by large companies on Windows Servers</li>
+              </ul>
+            </li>
+            <li>Nginx
+              <ul>
+                <li>More efficient than Apache, growing in popularity</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 56 Buffer Overflows-->
+        <section>
+          <h2>Buffer Overflows</h2>
+          <ul>
+            <li>Application reserves some space for a variable, such as a username of 30 characters</li>
+            <li>Attacker puts in a longer name, such as 1,000 characters</li>
+            <li>Overwrites memory locations with injected code</li>
+            <li>Can cause DoS or Remote Execution</li>
+          </ul>
+        </section>
+
+        <!-- Slide 57 NOP Sled-->
+        <section>
+          <h2>NOP Sled</h2>
+          <ul>
+            <li>Attacker puts a string of No Operation (NOP) commands before the "egg"</li>
+            <li>Egg is code that connects back to the attacker for remote control</li>
+            <li>This makes attacks more likely to succeed, because it's easier to predict where the injected code is</li>
+          </ul>
+        </section>
+
+        <!-- Slide 58 Image demonstrating how a buffer overflow in memory-->
+        <section>
+        <img src="../chapter 07/assets/images/Picture16.png" alt="Image demonstrating how a buffer overflow in memory" style="width:550px; height: auto;">
+        </section>
+
+        <!-- Slide 59 Buffer Overflow Defenses-->
+        <section>
+          <h2>Buffer Overflow Defenses</h2>
+        </section>
+
+        <!-- Slide 60 Image of "No ASLR" and "With ASLR"-->
+        <section>
+          <img src="../chapter 07/assets/images/Picture17.png" alt="Image of 'No ASLR' and 'With ASLR'">
+        </section>
+
+        <!-- Slide 61 Image of 'Data Execution prevention'-->
+        <section>
+          <img src="../chapter 07/assets/images/Picture18.png" alt="'Data Execution prevention'" style="width: 630px; height: auto;">
+        </section>
+
+        <!-- Slide 62 Image 'Detecting stack smashing with a canary value'-->
+        <section>
+          <img src="../chapter 07/assets/images/Picture19.png" alt="'Detecting stack smashing with a canary value'" style="width: 480px; height: auto;">
+        </section>
+
+        <!-- Slide 63 Integer Overflow-->
+        <section>
+          <h2>Integer Overflow</h2>
+          <ul>
+            <li>Larger number can be misinterpreted by computers as negative numbers</li>
+            <li>This can long strings to bypass filters</li>
+            <li>Results similar to buffer overflow</li>
+          </ul>
+        </section>
+
+        <!-- Slide 64 SQL Queries-->
+        <section>
+          <h2>SQL Queries</h2>
+          <img src="../chapter 07/assets/images/Picture20.png" alt="SQL Queries">
+        </section>
+
+        <!-- Slide 65 SQL Code-->
+        <section>
+          <h2>SQL Code</h2>
+          <code>SELECT <span style="color:#FF7C00;">*</span> FROM <span style="color:#0DE776;">Books</span> where <span style="color:#4D74E9;">Author</span> = <span style="color:#D4E57F;">'Darril Gibson'</span></code>
+          <ul>
+            <li><em><span style="color:#FF7C00;">*</span></em> is a wildcard that returns every column in a table</li>
+            <li><em><span style="color:#0DE776;">Books</span></em> is a Table Name</li>
+            <li><em><span style="color:#4D74E9;">Author</span></em> is a column name</li>
+            <li><em><span style="color:#D4E57F;">'Darril Gibson'</span></em> contains inptu from the user</li>
+          </ul>
+        </section>
+
+        <!-- Slide 66 SQL Injection-->
+        <section>
+          <h2>SQL Injection</h2>
+          <img src="../chapter 07/assets/images/Picture21.png" alt="screenshot of Amazon.com being SQL injected with a SQL command on the search query text field on to be submitted for query">
+          <br>
+          <code style="font-size: xx-large;">SELECT * From Books where Author = 'darril gibson' OR 'a' = 'a'</code>
+          <ul>
+            <li>Condition is always true</li>
+            <li>This would dump all the data in the books table</li>
+          </ul>
+        </section>
+
+        <!-- Slide 67 image screenshot of article 'Barclays: 97 percent of data breaches still due to SQL injection'-->
+        <section>
+        <img src="../chapter 07/assets/images/Picture22.png" alt="screenshot of article 'Barclays: 97 percent of data breaches still due to SQL injection'">
+        <ul>
+          <li>Link Ch 7b</li>
+        </ul>
+        </section>
+
+        <!-- Slide 68 SQL Injection Effects-->
+        <section>
+          <h2>SQL Injection Effects</h2>
+          <ul>
+            <li>Expose data</li>
+            <li>Add or alter data</li>
+            <li>Delete data</li>
+            <li>Run shell commands</li>
+            <li>Gain control of the server</li>
+            <li>Plant malware on Websites</li>
+          </ul>
+        </section>
+
+        <!-- Slide 69 Be Careful-->
+        <section>
+          <h2>Be Careful</h2>
+          <ul>
+            <li>Don't try SQL injection on real websites</li>
+            <li>Use safe training tools like WebGoat and SQLol</li>
+          </ul>
+          <img src="../chapter 07/assets/images/Picture23.png" alt="stock image of a crook in stripe prison unform looking from behind bars sad.">
+          <ul>
+            <li><small>Image from http://opinitimoreg.blogspot.com/2012/08/civil-society-does-not-agree-that-ex.html</small></li>
+          </ul>
+        </section>
+
+        <!-- Slide 70 Protecting Against SQL Injection Attacks-->
+        <section>
+          <h2>Protecting Against SQL Injection Attacks</h2>
+          <ul>
+            <li>Input Validation
+              <ul>
+                <li>Blacklisting: remove character like ' and"
+                  <ul>
+                    <li>Not very effective</li>
+                  </ul>
+                </li>
+                <li>Whitelisting: allow only "safe" characters
+                  <ul>
+                    <li>Better but still not the best defense</li>
+                  </ul>
+                </li>
+                <li>Parameterized Queries (also called "Stored Procedures")
+                  <ul>
+                    <li>Data is treated sepeartely from code</li>
+                    <li>No data can be executed</li>
+                    <li>This is the safest technique</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 71 XML Injection-->
+        <section>
+          <h2>XML Injection</h2>
+          <ul>
+            <li>Many databses use XMl (eXtensible Markup Language) to inptu or export data</li>
+            <li>XML is plaintext, with data tags like HTML - &#x0003C;name&#x0003E; Joe Green &#x0003C;name&#x0003E;</li>
+            <li>XPath is a query language for XML</li>
+            <li>XMl Injection is similar to SQL injection</li>
+          </ul>
+        </section>
+
+        <!-- Slide 72 NoSQL v. SQL Databases-->
+        <section>
+          <h2>NoSQL v. SQL Databases</h2>
+          <ul>
+            <li>NoSQL databases are more flexible than SQL databses</li>
+            <li>Can store documents, key-value pairs, or graphs</li>
+            <li>NoSQL databasees are also subject to command-injection attacks</li>
+          </ul>
+        </section>
+
+        <!-- Slide 73 Cross-Site Scripting (XSS)-->
+        <section>
+          <h2>Cross-Site Scripting (XSS)</h2>
+          <img src="../chapter 07/assets/images/Picture24.png" alt="screenshot of a cross-ste scripting injection excercise">
+        </section>
+
+        <!-- Slide 74 Cross-Site Scripting (XSS) II-->
+        <section>
+          <h2>Cross-Site Scripting (XSS)</h2>
+          <ul>
+            <li>Code from one site runs on another site</li>
+            <li>Possible Effects
+              <ul>
+                <li>Read cookies from other browser tabs</li>
+                <li>Take action on other tabs, like making purchases or Facebook posts</li>
+                <li>Add malware to page</li>
+                <li>Redirect page</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 75 XSS Countermeasures-->
+        <section>
+          <h2>XSS Countermeasures</h2>
+          <ul>
+            <li>One common type of XSS embeds the attack in a link and emails it ot victims</li>
+            <li>Not clicking on the suspicious links can prevent the attack</li>
+            <li>Best solution is for the website designer to validate input
+              <ul>
+                <li>Repalce &#x0003C;with &#x00026;lt&#x0003B;, and so on for other symbols</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 76 Cross-Site Request Forgery (XSRF)-->
+        <section>
+          <h2>Cross-Site Request Forgery (XSRF)</h2>
+          <ul>
+            <li>Attack tricks user into performing a action on a website, when they click a URL like this
+              <ul>
+                <li>http://facebook.com?add_friend=hacker</li>
+              </ul>
+            </li>
+            <li>Can take an action on any site where the user is already logged in</li>
+            <li>Gmail, Facebook, Twitter, Amazon, etc</li>
+          </ul>
+        </section>
+
+        <!-- Slide 77 XSRF Countermeasures-->
+        <section>
+          <h2>XSRF Countermeasures</h2>
+          <ul>
+            <li>users can avoid clicking on phishy links</li>
+            <li>Developers can help by making users authenticate before risky actions, or by making sessions expire quickly</li>
+          </ul>
+        </section>
+
+        <!-- Slide 78 Directory Traversal-->
+        <section>
+          <h2>Directory Traversal</h2>
+          <ul>
+            <li><code>http://samclass.info/125/proj11/../../</code></li>
+            <li>Is the same as http://samclass.info/</li>
+            <li>Because ../ goes <srtrong><em>UP</em></srtrong> a directory</li>
+            <li>At vulnerable sites, you can exit the Web page directory and reveal the file system</li>
+            <li><code>http://samclass.info/../../../etc/paswd<</code>/li>
+            <li>Would reveal user names</li>
+          </ul>
+        </section>
+
+        <!-- Slide 79 Command Injection-->
+        <section>
+          <h2>Command Injection</h2>
+          <ul>
+            <li>If an attacker can traverse to executable files, they can be executed from the browser's URL bar</li>
+            <li><code>http://samclass.info/../../../windows/system32/cmd.exe?c+dir+c:\</code>
+              <ul>
+                <li>Displays a directory in the browser</li>
+              </ul>
+            </li>
+            <li>Countermeasure: input validation, use of directory permissions</li>
+          </ul>
+        </section>
+
+        <!-- Slide 80 LDAP Injection-->
+        <section>
+          <h2>LDAP Injection</h2>
+          <ul>
+            <li>Lightweight Directory Access Protocol is used in Windows domains</li>
+            <li>LDAP injection allows an attacker to query and modify information in Active Directory</li>
+          </ul>
+        </section>
+
+        <!-- Slide 81 Transitive Access and Client-Side Attacks-->
+        <section>
+          <h2>Transitive Access and Client-Side Attacks</h2>
+          <ul>
+            <li>Databse server trusts th Web server and answers its queries</li>
+            <li>Attacker needs to use the Web server to attack the database server </li>
+            <li>This is called <strong>transitive access</strong></li>
+            <li>Penetration testers call it <strong>pivoting</strong></li>
+          </ul>
+        </section>
+
+        <!-- Slide 82 Fuzzing-->
+        <section>
+          <h2>Fuzzing</h2>
+          <ul>
+            <li>Sending random data to a program</li>
+            <li>If it crashes, that indicates as DoS vulnerability</li>
+            <li>Analyzing the crash may result in a remote code execution vulnerability as well</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
