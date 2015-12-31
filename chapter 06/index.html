@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Chapter 6 Presentation.</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Sam Bowne">
+    <meta name="transcriber" content="Sonokamome">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <!-- Slide 1 Introduction -->
+        <section>
+          <h2>Chapter 6</h2>
+          <h3>Understanding Malware and Social Engineering</h3>
+            <img src="../chapter 05/assets/images/Picture1.png" style="position: absolute; right: 610px;" alt="Security+ textbook by Darril Gibson">
+            <div style="position:absolute; left: 441px;">
+              <p>Comptia Security+:</p>
+              <p>Get Certified Get Ahead:</p>
+              <p> SY0-401 Study Guide</p>
+              <p>by Darril Gibson</p>
+            </div>
+        </section>
+
+      <!-- Slide 2 Understanding Malware Types-->
+      <section>
+        <h2>Understanding Malware Types</h2>
+      </section>
+
+      <!-- Slide 3 Malicious Software (Malware)-->
+      <section>
+        <h2>Malicious Software (Malware)</h2>
+        <ul>
+          <li>Installed through deviious means</li>
+          <li>Symptoms:
+            <ul>
+              <li>System runs slower</li>
+              <li>Unknown processes start</li>
+              <li>Sends out email by itself</li>
+              <li>Random reboots</li>
+              <li>more...</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 4 Viruses-->
+      <section>
+        <h2>Viruses</h2>
+        <ul>
+          <li>Code attaches to a host application</li>
+          <li>Virus acts and spreads when the host application is run</li>
+          <li><strong>Payload</strong>
+            <ul>
+              <li>Causes damage or delivers a message</li>
+              <li>May join computer to a botnet</li>
+              <li>Often delayed, so virus can spread</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 5 Buckshot Yankee-->
+      <section>
+        <h2>Buckshot Yankee</h2>
+        <ul>
+          <li>US Military compromized by USB-borne virus</li>
+          <li>Led to a ban on USB sticks for a while
+            <ul>
+              <li>Link Ch 6b</li>
+            </ul>
+          </li>
+        </ul>
+        <img src="../chapter 06/assets/images/Picture2.png" alt="screenshot of a cyber-attack story by Ellen Nakashima">
+      </section>
+
+      <!-- Slide 6 Armored Virus-->
+      <section>
+        <h2>Armored Virus</h2>
+        <ul>
+          <li>Ways to prevent reverse engineering
+            <ul>
+              <li>Complex code</li>
+              <li>Encryption</li>
+              <li>Hiding files</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 7 Polymorphic Malware-->
+      <section>
+        <h2>Polymorphic Malware</h2>
+        <ul>
+          <li>Mutates when it replicates</li>
+          <li>May also encrypt itself</li>
+          <li>Evades antivirus software</li>
+        </ul>
+      </section>
+
+      <!-- Slide 8 Worms-->
+      <section>
+        <h2>Worms</h2>
+        <ul>
+          <li>Self-replicating malware</li>
+          <li>Does not need a host application or user interaction</li>
+          <li>Consumes network bandwidth</li>
+          <li>Unlike viruses, worms don't need to be replicated</li>
+        </ul>
+      </section>
+
+      <!-- Slide 9 LoveBug Worm-->
+      <section>
+        <h2>LoveBug Worm</h2>
+        <img src="../chapter 06/assets/images/Picture3.png" alt="screenshot of article about the LoveBug email spamware">
+        <br>
+        <ul>
+          <li>Link Ch 6c</li>
+        </ul>
+      </section>
+
+      <!-- Slide 10 Logic Bombs-->
+      <section>
+        <h2>Logic Bombs</h2>
+        <ul>
+          <li>Code that waits for some event, like a certain date</li>
+          <li>Planted by malicious insiders</li>
+          <li>Then executes payload
+            <ul>
+              <li>May destroy data, etc.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 11 Image screenshot of the article Fannie Mae Logic Bomb-->
+      <section>
+      <img src="../chapter 06/assets/images/Picture4.png" alt="Image screenshot of the article Fannie Mae Logic Bomb">
+      <ul>
+        <li>Link Ch 6f</li>
+      </ul>
+      </section>
+
+      <!-- Slide 12 Backdoors-->
+      <section>
+        <h2>Backdoors</h2>
+        <ul>
+          <li>Allow an attacker to access system covertly</li>
+          <li>Sometimes manufacturers include secret backdoors in devices
+            <ul>
+              <li>Poor security practice</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 13 Trojans-->
+      <section>
+        <h2>Trojans</h2>
+        <ul>
+          <li>Appears to be a good program, but does something nasty instead</li>
+          <li>Very common in warez (pirated games &#x02014; apps)</li>
+          <li>Rogue antivirus "scareware"</li>
+        </ul>
+      </section>
+
+      <!-- Slide 14 Fake Antivirus-->
+      <section>
+        <h2>Fake Antivirus</h2>
+        <img src="../chapter 06/assets/images/Picture1.jpg" alt="Screenshot of Windows Internet Security 2012">
+        <br>
+        <ul>
+          <li>Link Ch 6d</li>
+        </ul>
+      </section>
+
+      <!-- Slide 15 Mac Flashback Trojan-->
+      <section>
+        <h2>Mac Flashback Trojan</h2>
+        <img src="../chapter 06/assets/images/Picture5.png" alt="Screenshot of images an article about Apple computers being malware targets">
+        <br>
+        <ul>
+          <li>Link Ch 6e</li>
+        </ul>
+      </section>
+
+      <!-- Slide 16 Botnets-->
+      <section>
+        <h2>Botnets</h2>
+        <ul>
+          <li>Infected computers ("bots" or "zombies") under control fo a Bot herder</li>
+          <li>Bots phone home to Command-and-Control (C &#x00026; C) servers</li>
+          <li>Bots are used to
+            <ul>
+              <li>Send spam</li>
+              <li>Launch DDoS attacks</li>
+              <li>Install keyloggers or other additional malware</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 17 Ransomeware -->
+      <section>
+        <h2>Ransomeware</h2>
+        <ul>
+          <li>CryptolockerEncrypts your files</li>
+          <li>Demands a ransom to get them back</li>
+          <li>Back up your stuff!</li>
+        </ul>
+        <img src="../chapter 06/assets/images/Picture6.png" alt="screenshot of the CryptoLocker prompt" style="width: 540px; height: auto;">
+      </section>
+
+      <!-- Slide 18 Police Virus-->
+      <section>
+        <h2>Police Virus</h2>
+        <img src="../chapter 06/assets/images/Picture2.jpg" alt="screenshot Police Central e-crime Unit in the UK">
+      </section>
+
+      <!-- Slide 19 Virus Coaxes Man to Turn Himself in For Child Pornography-->
+      <section>
+        <h2>Virus Coaxes Man to Turn Himself in For Child Pornography</h2>
+        <img src="../chapter 06/assets/images/Picture7.png" alt="screenshot of the guy that turns himself in to Virginian police because he thought the police had a warrant of his child pronography use" style="width: 580px; height: auto;">
+        <br>
+        <img src="../chapter 06/assets/images/Picture3.jpg" alt="Mug of the guy that fell for the virus" style="width: 344px; height: auto;">
+        <br>
+        <ul>
+          <li>Link Ch 6o</li>
+        </ul>
+      </section>
+
+      <!-- Slide 20 Rootkits-->
+      <section>
+        <h2>Rootkits</h2>
+        <ul>
+          <li>Malware that alters system files</li>
+          <li>Hides from the user and antivirus</li>
+          <li>Conceals files, running processes, and network connections</li>
+          <li>Very difficult to detect and remove
+            <ul>
+              <li>Sometimes <em>hooks</em> used to intercept systems-level function calls can be detected by antivirus software</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 21 Image screenshot of article of Sony's rootkited CDs-->
+      <section>
+        <img src="../chapter 06/assets/images/Picture8.png" alt="screenshot of article of Sony's rootkited CDs">
+        <br>
+        <ul>
+          <li>Link Ch 6g</li>
+        </ul>
+      </section>
+
+      <!-- Slide 22 Spyware-->
+      <section>
+        <h2>Spyware</h2>
+        <ul>
+          <li>Reports on user's activity to a remote server</li>
+          <li>Actions:
+            <ul>
+              <li>Changing a browser home page</li>
+              <li>Redirecting browser</li>
+              <li>Installing browser toolbars</li>
+              <li>Keylogger to steal passwords</li>
+              <li>Often included with a Trojan</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 23 Adware-->
+      <section>
+        <h2>Adware</h2>
+        <ul>
+          <li>Pop-up ads</li>
+          <li>Annoying, but not malicious</li>
+          <li>Pop-up blockers in browsers are common
+            <ul>
+              <li>Not illegal</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 24 Recognizing Common Attacks-->
+      <section>
+        <h2>Recognizing Common Attacks</h2>
+      </section>
+
+      <!-- Slide 25 Social Engineering Methods-->
+      <section>
+        <h2>Social Engineering Methods</h2>
+        <ul>
+          <li>Flattery and conning</li>
+          <li>Assuming a position of authority</li>
+          <li>Encouraging someone to perform a risky action</li>
+          <li>Encouraging someone to reveal sensitive information</li>
+          <li>Impersonating someone authorizes</li>
+          <li>Tailgating—following others into a secure area</li>
+        </ul>
+      </section>
+
+      <!-- Slide 26 Education and Awareness Training-->
+      <section>
+        <h2>Education and Awareness Training</h2>
+        <ul>
+          <li>The single best protection against social engineering</li>
+        </ul>
+      </section>
+
+      <!-- Slide 27 Impersonation-->
+      <section>
+        <h2>Impersonation</h2>
+        <ul>
+          <li>Wear a uniform
+            <ul>
+              <li>Phone repair technician</li>
+              <li>Janitor</li>
+              <li>Etc.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 28 Shoulder Surfing-->
+      <section>
+        <h2>Shoulder Surfing</h2>
+        <ul>
+          <li>Looking over a person's shoulder</li>
+          <li>See passwords typed in</li>
+          <li>Countermeasure
+            <ul>
+              <li>Privacy screens
+                <ul>
+                  <li>Link Ch 6m</li>
+                </ul>
+              </li>
+              <li>Password masking
+                <ul>
+                  <li>Passwords appear as dots</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 29 Virus Hoaxes-->
+      <section>
+        <h2>Virus Hoaxes</h2>
+        <ul>
+          <li>Scary email message</li>
+          <li>Recommending some unwise action, such as deleting system files</li>
+          <li>To detect hoaxes:
+            <ul>
+              <li>Antivirus vendor sites</li>
+              <li>Urban legend sites like snopes.com</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 30 Tailgating and Mantraps-->
+      <section>
+        <h2>Tailgating and Mantraps</h2>
+        <ul>
+          <li>Following a person through a secure door</li>
+          <li>Also called piggybacking</li>
+          <li>To prevent this, use mantraps, turnstiles, or security guards</li>
+        </ul>
+      </section>
+
+      <!-- Slide 31 Dumpster Diving-->
+      <section>
+        <h2>Dumpster Diving</h2>
+        <ul>
+          <li>Searching through trash to find useful documents
+            <ul>
+              <li>Company directories</li>
+              <li>Preapproved credit card applications</li>
+              <li>Any Personally Identifiable Information (PII)</li>
+            </ul>
+          </li>
+          <li>Countermeasures
+            <ul>
+              <li>Shredding documents</li>
+              <li>Burning documents</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 32 Recognizing Other Attacks-->
+      <section>
+        <h2>Recognizing Other Attacks</h2>
+      </section>
+
+      <!-- Slide 33 Spam and Spam Filters-->
+      <section>
+        <h2>Spam and Spam Filters</h2>
+        <ul>
+          <li>Much spam is malicious</li>
+          <li>Malicious attachment and links</li>
+          <li>Spam filters are useful
+            <ul>
+              <li>Network-based spam filters
+                <ul>
+                  <li>Link Ch 6h</li>
+                </ul>
+              </li>
+              <li>Spam filters on end-user machines</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 34 Phishing-->
+      <section>
+        <h2>Phishing</h2>
+        <ul>
+          <li>Email looks like real mail from Paypal, mostly</li>
+          <li>Tricks user into logging in to a fake site</li>
+          <li>May link to malware, be used to validate email addresses, or ask for money</li>
+        </ul>
+        <img src="../chapter 06/assets/images/Picture9.png" alt="Image screenshot of the Barracuda spam and virus firewall">
+      </section>
+
+      <!-- Slide 35 Phishing too Get Money-->
+      <section>
+        <h2>Phishing too Get Money</h2>
+        <ul>
+          <li>Nigerian "419" scam
+            <ul>
+              <li>Someone has millions oof dollars in Nigeria</li>
+              <li>Wants to use your bank account to smuggle it to the USA</li>
+            </ul>
+          </li>
+          <li>Lottery scams</li>
+          <li>"Money Mules"
+            <ul>
+              <li>People who repackage stoolen goods and sends them to criminals</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 36 Images screenshot of store article-->
+      <section>
+      <img src="../chapter 06/assets/images/Picture10.png" alt="Images screenshot of store article">
+      <br>
+      <ul>
+        <li>Link Ch 6i</li>
+      </ul>
+      </section>
+
+      <!-- Slide 37 Spear Phishinng-->
+      <section>
+        <h2>Spear Phishinng</h2>
+        <ul>
+          <li>Spear phishing
+            <ul>
+              <li>Target a specific set oof suers with a customized message</li>
+              <li>One risk caused by database breaches that revesal email addresses</li>
+              <li>Ex: Email CCSF employees about about accreditation and layoffs</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 38 Whaling-->
+      <section>
+        <h2>Whaling</h2>
+        <ul>
+          <li>Targetting high-level executives with phishing attacks</li>
+        </ul>
+      </section>
+
+      <!-- Slide 39 Spim-->
+      <section>
+        <h2>Spim</h2>
+        <ul>
+          <li>Spam over instant Messaging</li>
+          <li>Can be reduced by whitelisting in the IM client
+          <ul>
+            <li>Image froom wsj.com</li>
+          </ul>
+          </li>
+        </ul>
+        <img src="../chapter 06/assets/images/Picture11.png" alt="screenshot of AOL instant messaing">
+      </section>
+
+      <!-- Slide 40 Vishing-->
+      <section>
+        <h2>Vishing</h2>
+        <ul>
+          <li>Free, untraceable VoIP (Voice over IP)</li>
+          <li>Spoof Caller ID</li>
+          <li>Try to trick target into revealing credit card number, SSN, birhtday, etc.</li>
+        </ul>
+      </section>
+
+      <!-- Slide 41 Privilege Escalation-->
+      <section>
+        <h2>Privilege Escalation</h2>
+        <ul>
+          <li>Moving from "User" to Administror"</li>
+          <li>Not necessary if user logs in as "Administrator" in Windows XP or earlier versions</li>
+        </ul>
+      </section>
+
+      <!-- Slide 42 Blocking Malware and Other Attacks-->
+      <section>
+        <h2>Blocking Malware and Other Attacks</h2>
+      </section>
+
+      <!-- Slide 43 Protection against Malware-->
+      <section>
+        <h2>Protection against Malware</h2>
+        <ul>
+          <li>Mail servers
+            <ul>
+              <li>Scan email for malicious attachments</li>
+            </ul>
+          </li>
+          <li>All systems
+            <ul>
+              <li>Put antivirus on all workstations and servers</li>
+            </ul>
+          </li>
+          <li>Boundaries or firewalls
+            <ul>
+              <li>Web security gateways block malicious files and sites</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 44 Antivirus Software-->
+      <section>
+        <h2>Antivirus Software</h2>
+        <ul>
+          <li>Detects viruses, Trojans, worms, spyware, rootkits, and adware
+            <ul>
+              <li>But some malware gets past it, especially rootkits</li>
+            </ul>
+          </li>
+          <li>Real-time protection
+            <ul>
+              <li>Checks every file and device accessed</li>
+            </ul>
+          </li>
+          <li>Scheduled and manual scans
+            <ul>
+              <li>Scan the file system</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 45 Signature-based Detection-->
+      <section>
+        <h2>Signature-based Detection</h2>
+        <ul>
+          <li>Signatures files
+            <ul>
+              <li>Also called data definition files</li>
+              <li>contain patterns that match known viruses</li>
+              <li>Must be updated frequently</li>
+            </ul>
+          </li>
+          <li>When a matching file is detected
+            <ul>
+              <li>It is deleted, or quarantines</li>
+              <li>Quarantined files can be inspected, but won't do any harm</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 46 Heuristic-based Detection-->
+      <section>
+        <h2>Heuristic-based Detection</h2>
+        <ul>
+          <li>Detects suspicious behavior</li>
+          <li>Similar to anomaly-based detection in IDS</li>
+          <li>Runs questionable code in a virtualized environment</li>
+          <li>Detects "viral activities"</li>
+          <li>Prone to false positives</li>
+        </ul>
+      </section>
+
+      <!-- Slide 47 Checking File Integrity-->
+      <section>
+        <h2>Checking File Integrity</h2>
+        <ul>
+          <li>Can detect system file alterations</li>
+          <li>Records hash values of system files, and detects changes</li>
+          <li>Included in shome HIDS and antivirus</li>
+        </ul>
+      </section>
+
+      <!-- Slide 48 Screenshot screenshot of Tripwire website-->
+      <section>
+        <h2>Screenshot screenshot of Tripwire</h2>
+        <img src="../chapter 06/assets/images/Picture12.png" alt="Screenshot screenshot of Tripwire website">
+        <br>
+        <ul>
+          <li>Link Ch 6g</li>
+        </ul>
+      </section>
+
+      <!-- Slide 49 Pop-Up Blockers-->
+      <section>
+        <h2>Pop-Up Blockers</h2>
+        <ul>
+          <li>included in Web browsers</li>
+          <li>Often use whitelisting
+            <ul>
+              <li>Only allow pop-ups from trusted domains, such as ccsf.edu</li>
+            </ul>
+          </li>
+          <li>Effective against adware</li>
+        </ul>
+      </section>
+
+      <!-- Slide 50 Anti-spyware Software-->
+      <section>
+        <h2>Anti-spyware Software</h2>
+        <ul>
+          <li>Some overlap with antivirus software</li>
+          <li>Examples
+            <ul>
+              <li>Ad-Aware</li>
+              <li>Windows Defender</li>
+              <li>Spybot &#x02014; Search and Destroy</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 51 Educating Users-->
+      <section>
+        <h2>Educating Users</h2>
+      </section>
+
+      <!-- Slide 52 Security Awareness-->
+      <section>
+        <h2>Security Awareness</h2>
+        <ul>
+          <li>New viruses</li>
+          <li>Phishing attacks</li>
+          <li>Zero-day exploits</li>
+        </ul>
+      </section>
+
+      <!-- Slide 53 Safe Computing Habits-->
+      <section>
+        <h2>Safe Computing Habits</h2>
+        <ul>
+          <li>Don't click in emails from unknown sources</li>
+          <li>Don't open attachments in emails from unknown sources</li>
+          <li>Be wary of free downloads</li>
+          <li>Limit the information you post on social media</li>
+          <li>Back up your data regularly</li>
+          <li>Install updates and patches</li>
+          <li>Keep antivirus software up-to-date</li>
+        </ul>
+      </section>
+
+      <!-- Slide 54 Why Social Engineering Works-->
+      <section>
+        <h2>Why social Engineering Works</h2>
+        <ul>
+          <li>Authority has a large effect on people
+            <ul>
+              <li>Milgram experiment showed that peole can easily be persuaded to commit murder</li>
+            </ul>
+          </li>
+          <li>Intimidation
+            <ul>
+              <li>Bullying, threatening punishment</li>
+            </ul>
+          </li>
+          <li>Consensus/Social Proof
+            <ul>
+              <li>Fake testimonials to convince target product is good</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 55 Why is Social Engineering Works II-->
+      <section>
+        <h2>Why is Social Engineering Works</h2>
+        <ul>
+          <li>Scarcity
+            <ul>
+              <li>Convince target that this is their last chance to get something good, like an iPhone</li>
+            </ul>
+          </li>
+          <li>Urgency
+            <ul>
+              <li>Cryptolocker counts down your 72 hours to pay</li>
+            </ul>
+          </li>
+          <li>Familiarity/Liking
+            <ul>
+              <li>Social engineering builds rapport with target first, before asking for a favor</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 56 Why Social Engineering Works III-->
+      <section>
+        <h2>Why Social Engineering Works</h2>
+        <ul>
+          <li>Trust
+            <ul>
+              <li>Social engineering builds a trusting relationship with the target</li>
+              <li>Finds "viruses" on your computera and offers to fix them</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
