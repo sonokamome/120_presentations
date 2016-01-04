@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Chapter 9 Presentation.</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Sam Bowne">
+    <meta name="transcriber" content="Sonokamome">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <!-- Slide 1 Introduction -->
+        <section>
+          <h2>Chapter 9</h2>
+          <h3>preparing for Business Continuity</h3>
+            <img src="../chapter 09/assets/images/Picture1.png" style="position: absolute; right: 610px;" alt="Security+ textbook by Darril Gibson">
+            <div style="position:absolute; left: 441px;">
+              <p>Comptia Security+:</p>
+              <p>Get Certified Get Ahead:</p>
+              <p> SY0-401 Study Guide</p>
+              <p>by Darril Gibson</p>
+            </div>
+        </section>
+
+        <!-- Slide 2 Designing Redundancy-->
+        <section>
+          <h2>Designing Redundancy</h2>
+        </section>
+
+        <!-- Slide 3 Redundancy-->
+        <section>
+          <h2>Redundancy</h2>
+          <ul>
+            <li>Duplication of systems to provide availability</li>
+            <li>Fault Tolerant
+              <ul>
+                <li>Prevents a <em>fault</em> from leading to a <em>failure</em></li>
+              </ul>
+            </li>
+            <li>Fault
+              <ul>
+                <li>A device stops working</li>
+              </ul>
+            </li>
+            <li>Failure
+              <ul>
+                <li>Users stop receiving service</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 4 Examples of Redundant  Systems-->
+        <section>
+          <h2>Examples of Redundant  Systems</h2>
+          <ul>
+            <li>Disk redundancy: RAID (Redundant Array of Independent Disks)</li>
+            <li>Server redundancy: failover cluster</li>
+            <li>Power redundanc: Add generator or UPS</li>
+            <li>Site redundancy: Add hot, cold, or warm sites</li>
+          </ul>
+        </section>
+
+        <!-- Slide 5 Single Point of Failure-->
+        <section>
+          <h2>Single Point of Failure</h2>
+          <ul>
+            <li>A Single component which can cause failure</li>
+            <li>Examples
+              <ul>
+                <li>Disk: a server with a ssingle disk drive instead of a RAID</li>
+                <li>Server: a standalone server instead of a cluster</li>
+                <li>Power: Relying only on the power grid without UPS or generator</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 6 RAID Types-->
+        <section>
+          <h2>RAID Types</h2>
+          <ul>
+            <li>RAID-0 (Striping)
+              <ul>
+                <li>Increases speed, but provides no fault tolerance</li>
+              </ul>
+            </li>
+            <li>RAID-1 (Mirroring)
+              <ul>
+                <li>Two disks with identical data</li>
+                <li>Fault tolerant, but disk controller use a single point of failure</li>
+                <li>RAID-1 with two disk controller is called <em>disk duplexing</em></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 7 RAID Types II-->
+        <section>
+          <h2>RAID Types</h2>
+          <ul>
+            <li>RAID-5
+              <ul>
+                <li>Three or more disks</li>
+                <li>"Parity" data stored on some of the stripes</li>
+                <li>If one drives fails, the "Parity" data can be used to recover the data</li>
+                <li>If two ore more dirves fail, data is lost</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 8 RAID Types III-->
+        <section>
+          <h2>RAID Types</h2>
+          <ul>
+            <li>RAID-6
+              <ul>
+                <li>Like RAID0-5, but adds a second parity block</li>
+                <li>Continues to operate even if two drives fail</li>
+                <li></li>
+              </ul>
+            </li>
+            <li>RAID-10
+              <ul>
+                <li>Combines Mirroring (RAID-1) and Striping (RAID-0)</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 9 Software v.s hardware RAID-->
+        <section>
+          <h2>Software v.s hardware RAID</h2>
+          <ul>
+            <li>Hardware RAID
+              <ul>
+                <li>Better performance</li>
+                <li>Removes load from the operating system</li>
+                <li>Often "hot swapable" - replace a disk with zero downtime</li>
+              </ul>
+            </li>
+            <li>Software RAID
+              <ul>
+                <li>Implemented in software by the operating system</li>
+                <li>Rarely used</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 10 Server Redundancy-->
+        <section>
+          <h2>Server Redundancy</h2>
+          <ul>
+            <li>99.999&#x00025; uptime (five times) means 5 minutes/year downtime</li>
+            <li>Failover clusters
+              <ul>
+                <li>Two ore more servers</li>
+                <li>One or more are active</li>
+                <li>One or more are inactive</li>
+                <li>When active node fails, inactive ndoes take over</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 11 Failover Cluster-->
+        <section>
+          <h2>Failover Cluster</h2>
+          <img src="../chapter 09/assets/images/Picture2.png" alt="image of diagram demonstrating a failover cluster setup">
+          <ul>
+            <li>Two networks</li>
+            <li>hearbeat goes through internal network</li>
+          </ul>
+        </section>
+
+        <!-- Slide 12 Load Balancers-->
+        <section>
+          <h2>Load Balancers</h2>
+          <ul>
+            <li>Distributes traffic to a cluster of servers</li>
+            <li>Scalability and high availability</li>
+          </ul>
+          <img src="../chapter 09/assets/images/Picture3.png" alt="image of diagram of a load balancer network setup">
+        </section>
+
+        <!-- Slide 13 Power Redundancies-->
+        <section>
+          <h2>Power Redundancies</h2>
+          <ul>
+            <li>UPS (Uninterruptible Power Supply)
+              <ul>
+                <li>Contains batteries</li>
+                <li>Provides power for a specified duration if main power fails, often 10-15 min.</li>
+                <li>Can also protect devices from power surges and spikes</li>
+              </ul>
+            </li>
+            <li>Generators
+              <ul>
+                <li>Provide longer-term during extended power outages</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 14 UPS Purpose-->
+        <section>
+          <h2>UPS Purpose</h2>
+          <ul>
+            <li>UPS provides a few minutes of power, so the server can:
+              <ul>
+                <li>Shut down cleanly</li>
+                <li>Wait while generators are started</li>
+                <li>Wait for commercial power to turn</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 15 Generators-->
+        <section>
+          <h2>Generators</h2>
+          <ul>
+            <li>Diesel generators are common</li>
+            <li>Takes some time to start up</li>
+            <li>Power takes some time to stabilize</li>
+          </ul>
+        </section>
+
+        <!-- Slide 16 Protecting Data wtih Backups-->
+        <section>
+          <h2>Protecting Data wtih Backups</h2>
+        </section>
+
+        <!-- Slide 17 Backups-->
+        <section>
+          <h2>Backups</h2>
+          <ul>
+            <li>Extra copies of data
+              <ul>
+                <li>Off-site storage</li>
+              </ul>
+            </li>
+            <li>Allow recovery after a data loss
+              <ul>
+                <li>Usually due to a human error</li>
+              </ul>
+            </li>
+            <li>Fault tolerance is NOT the same as backup
+              <ul>
+                <li>Only availability</li>
+              </ul>
+            </li>
+            <li>If you accidentally delete a file, a RAID doesn't save you</li>
+          </ul>
+        </section>
+
+        <!-- Slide 18 Backup Types-->
+        <section>
+          <h2>Backup Types</h2>
+          <ul>
+            <li>Usually on tape or removable hard disks</li>
+            <li>Full backup
+              <ul>
+                <li>Complete copy of all the data</li>
+              </ul>
+            </li>
+            <li>Differential backup
+              <ul>
+                <li>Backs up data tha has changed since the last full backup</li>
+              </ul>
+            </li>
+            <li>Incremental backup
+              <ul>
+                <li>Backs up data that has changed since the last full or incremental backup</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 19 Backup Comparison-->
+        <section>
+          <h2>Backup Comparison</h2>
+          <ul>
+            <li>Full backup
+              <ul>
+                <li>Most expensive: uses the most time and tape</li>
+                <li>Easiest to restore data</li>
+              </ul>
+            </li>
+            <li>Differential backup
+              <ul>
+                <li>Cheaper and faster</li>
+                <li>Requries two tapes to restore data</li>
+              </ul>
+            </li>
+            <li>Incremental Backup
+              <ul>
+                <li>Cheapest and fastest</li>
+                <li>May require several tapes to restore data</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 20 Testing Backups-->
+        <section>
+          <h2>Testing Backups</h2>
+          <ul>
+            <li>Restore some data</li>
+            <li>Regular tests are essential</li>
+            <li>Otherwise backup procedures can fail and remian unnoticed for a long time</li>
+          </ul>
+        </section>
+
+        <!-- Slide 21 Symform-->
+        <section>
+        <img src="../chapter 09/assets/images/Picture4.png" alt="symform logo on company website">
+        <ul>
+          <li>Symform
+            <ul>
+              <li>Donate space on your servers to the system</li>
+              <li>Store your data on other members' servers</li>
+              <li>It's like a RAID with 96 disks; 32 of them are parity</li>
+              <li>BUT: I suspect they have a single point of failure at AWS</li>
+            </ul>
+          </li>
+        </ul>
+        </section>
+
+        <!-- Slide 22 Protecting Backups-->
+        <section>
+          <h2>Protecting Backups</h2>
+          <ul>
+            <li>Protect backups at the same level as original data</li>
+            <li>Storage
+              <ul>
+                <li>Clear labeling</li>
+                <li>Physical security</li>
+              </ul>
+            </li>
+            <li>Transfer
+              <ul>
+                <li>Protected from physical theft or loss</li>
+              </ul>
+            </li>
+            <li>Destruction
+              <ul>
+                <li>Wipe or physically destroy media</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 23 Iron Mountain Truck-->
+        <section>
+          <h2>Iron Mountain Truck</h2>
+          <img src="../chapter 09/assets/images/Picture1.jpg" alt="promotional image for Iron Mountain Truck" style="width: 600px; height: auto;">
+          <br>
+          <ul>
+            <li>Image from timesfreepress.com</li>
+          </ul>
+        </section>
+
+        <!-- Slide 24 Backup Policies-->
+        <section>
+          <h2>Backup Policies</h2>
+          <ul>
+            <li>Which data to backup</li>
+            <li>Off-site storage of backups
+              <ul>
+                <li>In case of fire or flood</li>
+              </ul>
+            </li>
+            <li>Label media</li>
+            <li>Testing</li>
+            <li>Retention requirements</li>
+            <li>Exectuion and frequency of backups</li>
+            <li>Protection of backups</li>
+            <li>Disposing of media</li>
+          </ul>
+        </section>
+
+        <!-- Slide 25 Comparing Business Continuity Elements-->
+        <section>
+          <h2>Comparing Business Continuity Elements</h2>
+        </section>
+
+        <!-- Slide 26 Business Continuity Plan-->
+        <section>
+          <h2>Business Continuity Plan</h2>
+          <ul>
+            <li>Ensures that critical business functions will continue even after a disaster
+              <ul>
+                <li>May include temporary measures, like alternate locations</li>
+              </ul>
+            </li>
+            <li>Includes Disaster Recovery Plan
+              <ul>
+                <li>Complete restoration of original location to service</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 27 Disasters-->
+        <section>
+          <h2>Disasters</h2>
+          <ul>
+            <li>Fire</li>
+            <li>Flood</li>
+            <li>Power outage</li>
+            <li>Data loss</li>
+            <li>Hardware and software failures</li>
+            <li>War or terorist attack</li>
+          </ul>
+        </section>
+
+        <!-- Slide 28 Image of Aaron Barr, formerly of HBGary-->
+        <section>
+          <img src="../chapter 09/assets/images/Picture5.png" alt="Image of Aaron Barr, formerly of HBGary">
+        </section>
+
+        <!-- Slide 29 Image of signage about Anonymous by HBGary-->
+        <section>
+          <img src="../chapter 09/assets/images/Picture3.jpg" alt="Image of signage about Anonymous by HBGary">
+        </section>
+
+        <!-- Slide 30 Business Continuity Planning Steps-->
+        <section>
+          <h2>Business Continuity Planning Steps</h2>
+          <ol>
+            <li>Complete Business Impact Analysis (BIA)</li>
+            <li>Develop recovery strategies</li>
+            <li>Develop recovery plans</li>
+            <li>Test recovery plans</li>
+            <li>Update plans</li>
+          </ol>
+        </section>
+
+        <!-- Slide 31 Business Impact Analysis-->
+        <section>
+          <h2>Business Impact Analysis</h2>
+          <ul>
+            <li>Identify critical functions and services</li>
+            <li>Recovery Time Objectives
+              <ul>
+                <li>How long till systems are recovered</li>
+              </ul>
+            </li>
+            <li>Reovery Point Objective
+              <ul>
+                <li>How much recent work will need to be repeated</li>
+              </ul>
+            </li>
+            <li>BIA doesn't specify solutions</li>
+          </ul>
+        </section>
+
+        <!-- Slide 32 Issues Addressed by BIA-->
+        <section>
+          <h2>Issues Addressed by BIA</h2>
+          <ul>
+            <li>What assets are included in recovery plans?</li>
+            <li>What business functions must continue to operate?</li>
+            <li>Are alternate sites required?</li>
+            <li>What data should be backed up?</li>
+            <li>Are backup utilities needed (water, gas, etc.)?</li>
+          </ul>
+        </section>
+
+        <!-- Slide 33 Continuity of Operations Plan (COOP)-->
+        <section>
+          <h2>Continuity of Operations Plan (COOP)</h2>
+          <ul>
+            <li>Part of BCP (Business Continuity Plan)</li>
+            <li>Focuses on restoring cirtical business fucntions at an alternate site
+              <ul>
+                <li>Hot site</li>
+                <li>Cold Site</li>
+                <li>Warm site</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 34 Video: AT&T's Disaster Recovery Team-->
+        <section>
+          <h2>Video: AT&#x00026;T's Disaster Recovery Team</h2>
+          <img src="../chapter 09/assets/images/Picture6.png" alt="Video: AT&T's Disaster Recovery Team" style="width:520px; height: auto;">
+          <br>
+          <ul>
+            <li>Link Ch 9c</li>
+          </ul>
+        </section>
+
+        <!-- Slide 35 Hot Site-->
+        <section>
+          <h2>Hot Site</h2>
+          <ul>
+            <li>Equipment installed and running already</li>
+            <li>Copies of backup tapes already there or nearby</li>
+            <li>Often another ompany location</li>
+            <li>Fastest recovery time - typically one hour</li>
+            <li>Most expensive</li>
+          </ul>
+        </section>
+
+        <!-- Slide 36 Cold Site-->
+        <section>
+          <h2>Cold Site</h2>
+          <ul>
+            <li>Location with power and connectivity</li>
+            <li>When it is used, company must bring in equipment, software, and data</li>
+            <li>Cheapest to maintain</li>
+            <li>Most difficult to test</li>
+            <li>Slow - takes days to setup</li>
+          </ul>
+        </section>
+
+        <!-- Slide 37 Warm Site-->
+        <section>
+          <h2>Warm Site</h2>
+          <ul>
+            <li>Compromise between hot site and colde site</li>
+            <li>Example: equipment installed but data is out of date</li>
+          </ul>
+        </section>
+
+        <!-- Slide 38 Mobile and Mirrored Sites-->
+        <section>
+          <h2>Mobile and Mirrored Sites</h2>
+          <ul>
+            <li>Mobile site
+              <ul>
+                <li>Silfe-contained transportable site</li>
+                <li>In a truck or other vehicle</li>
+              </ul>
+            </li>
+            <li>Mirrored site
+              <ul>
+                <li>Identitical to primary location</li>
+                <li>Gets immediate copy of all data</li>
+                <li>Always up and opeational</li>
+                <li>Provides uninterrupted services in case of failure at primary location</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 39 After the Disaster-->
+        <section>
+          <h2>After the Disaster</h2>
+          <ul>
+            <li>Return all business functions to the primary site</li>
+            <li>Move least critical functions first</li>
+          </ul>
+        </section>
+
+        <!-- Slide 40 Disaster Recovery Plan (DRP)-->
+        <section>
+          <h2>Disaster Recovery Plan (DRP)</h2>
+          <ul>
+            <li>BCP may include several DRPs
+              <ul>
+                <li>Speicfy plans to recover servers</li>
+                <li>Recovery steps for different types of disasters, such as hurrcanes or tornadoes</li>
+              </ul>
+            </li>
+            <li>Hierarchical list of critical systems</li>
+            <li>Prioritize systems to restore after an outage</li>
+          </ul>
+        </section>
+
+        <!-- Slide 41 Disaster Recovery Phases-->
+        <section>
+          <h2>Disaster Recovery Phases</h2>
+          <ul>
+            <li>Activation</li>
+            <li>Implement contingencies</li>
+            <li>Reocvery</li>
+            <li>Testing recovered systems</li>
+            <li>Documentation and review</li>
+          </ul>
+        </section>
+
+        <!-- Slide 42 Planning for Communications-->
+        <section>
+          <h2>Planning for Communications</h2>
+          <ul>
+            <li>Normal methods like email and phones may be down</li>
+            <li>you may need to have a <strong>war room</strong> people go to for information</li>
+          </ul>
+        </section>
+
+        <!-- Slide 43 Communicate to:-->
+        <section>
+          <h2>Communicate to:</h2>
+          <ul>
+            <li>Disaster response team members</li>
+            <li>Employees</li>
+            <li>Customers</li>
+            <li>Suppliers</li>
+            <li>Media</li>
+            <li>Regulatory agencies</li>
+          </ul>
+        </section>
+
+        <!-- Slide 44 IT Contingency Planning-->
+        <section>
+          <h2>IT Contingency Planning</h2>
+          <ul>
+            <li>Focused on recovery for IT (Information Technology) systems only</li>
+            <li>BCP looks at entire organization</li>
+          </ul>
+        </section>
+
+        <!-- Slide 45 Succession Planning-->
+        <section>
+          <h2>Succession Planning</h2>
+          <ul>
+            <li>Non-disaster sense: Identifying peopple who can fill key leadership positions</li>
+            <li>Business continuity and disaster preparedness
+              <ul>
+                <li>Defines hierarchical chain of command</li>
+                <li>Who can make decisions if some personnel, such as the CEO, are unavailable</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 46 BCP and DRP Testing-->
+        <section>
+          <h2>BCP and DRP Testing</h2>
+          <ul>
+            <li><strong>Desktop or tabletop excercise</strong>
+              <ul>
+                <li>Participants talk through a scenario</li>
+              </ul>
+            </li>
+            <li><strong>Simulation</strong>
+              <ul>
+                <li>Participants go through recovery steps</li>
+                <li>Does not affect actual systems</li>
+              </ul>
+            </li>
+            <li><strong>Full-blown test</strong>
+              <ul>
+                <li>Goes through all the steps</li>
+                <li>Determines the amount of time required</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 47 Elements of Testing-->
+        <section>
+          <h2>Elements of Testing</h2>
+          <ul>
+            <li>Backups</li>
+            <li>Server</li>
+            <li>Server redundancy</li>
+            <li>Alternate sites</li>
+          </ul>
+        </section>
+
+        <!-- Slide 48 Testing Controls-->
+        <section>
+          <h2>Testing Controls</h2>
+          <ul>
+            <li>Cutover test
+              <ul>
+                <li>Turn off real equipment during a business day to make sure the bacup takes over</li>
+                <li>Remove part of the company, such as the HR server</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 49 Escape Plans, Escape Routes, and Drills-->
+        <section>
+          <h2>Escape Plans, Escape Routes, and Drills</h2>
+          <ul>
+            <li>Safety of personnel</li>
+            <li>Fire drills</li>
+          </ul>
+        </section>
+
+        <!-- Slide 50 Environmental Controls-->
+        <section>
+          <h2>Environmental Controls</h2>
+        </section>
+
+        <!-- Slide 51 Heating, Ventilation, and Air Conditioning (HVAC)-->
+        <section>
+          <h2>Heating, Ventilation, and Air Conditioning (HVAC)</h2>
+          <ul>
+            <li>Cooling computers makes them more available</li>
+            <li>It is traditional to chill server rooms with powerful air conditioner
+              <ul>
+                <li>Employees need to wear sweaters</li>
+              </ul>
+            </li>
+            <li>Google saves power by running servers much hotter
+              <ul>
+                <li>Link Ch 9d</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 52 Image of screenshot of HVAC-->
+        <section>
+        <img src="../chapter 09/assets/images/Picture4.jpg" alt="Image of screenshot of HVAC">
+        <ul>
+          <li>Image from umich.edu</li>
+        </ul>
+        </section>
+
+        <!-- Slide 53 Image of network HVAC cooling system-->
+        <section>
+        <img src="../chapter 09/assets/images/Picture5.jpg" alt="Image of network HVAC cooling system">
+        <br>
+        <ul>
+          <li>Image from nih.gov</li>
+        </ul>
+        </section>
+
+        <!-- Slide 54 Tonnage-->
+        <section>
+          <h2>Tonnage</h2>
+          <ul>
+            <li>Cooling cpacity is reated in strong{tonnage}</li>
+            <li>One ton is 12,000 British Thermal Units per hour
+              <ul>
+                <li>Enough energy to melt 1 ton of ice</li>
+              </ul>
+            </li>
+            <li>Typical home air conditioner is 3 tons</li>
+          </ul>
+        </section>
+
+        <!-- Slide 55 Humidity-->
+        <section>
+          <h2>Humidity</h2>
+          <ul>
+            <li>High humidity
+              <ul>
+                <li>Condensation on equipment</li>
+                <li>Water damage to computers</li>
+              </ul>
+            </li>
+            <li>Low humidity
+              <ul>
+                <li>Higher incidence of electrostatic discharge</li>
+              </ul>
+            </li>
+            <li>Recommended humidity: 45% - 55%
+              <ul>
+                <li>Link Ch 9e</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 56 HVAC And Fire-->
+        <section>
+          <h2>HVAC And Fire</h2>
+          <ul>
+            <li>HVAC systems often integrated with fire alarms</li>
+            <li>Controls airflow to help prevent rapid sread of a fire</li>
+            <li>May turn off HVAC when a fire is detected</li>
+          </ul>
+        </section>
+
+        <!-- Slide 57 Failsafe/secure vs. Failopen-->
+        <section>
+          <h2>Failsafe/secure vs. Failopen</h2>
+          <ul>
+            <li>Failsafe, Fail secure, Fail closed
+              <ul>
+                <li>All mean the same thing</li>
+                <li>System becomes unvailable when it fails</li>
+              </ul>
+            </li>
+            <li>Failopen
+              <ul>
+                <li>System becomes available when it fails</li>
+              </ul>
+            </li>
+            <li>Example: card reader locks on doors often faisl open when power fails
+              <ul>
+                <li>So employees aren't trapped inside</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 58 Availability and Failopen-->
+        <section>
+          <h2>Availability and Failopen</h2>
+          <ul>
+            <li>Failopen
+              <ul>
+                <li>If availability is more important than preventing unauthorized use</li>
+              </ul>
+            </li>
+            <li>Failed closed
+              <ul>
+                <li>If loss of availability is acceptable to prevent unauthorized use</li>
+                <li>Example: a firewall on a system with sensitive data</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 59 Fire Suppression-->
+        <section>
+          <h2>Fire Suppression</h2>
+          <ul>
+            <li>A fire requires four components
+              <ul>
+                <li>heat</li>
+                <li>Oxygen</li>
+                <li>Fuel</li>
+                <li>Chain reaction creating the fire</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 60 Fire Supression Methods-->
+        <section>
+          <h2>Fire Supression Methods</h2>
+          <ul>
+            <li>Remove the heat
+              <ul>
+                <li>With water or chemical agents</li>
+              </ul>
+            </li>
+            <li>Remove the oxygen
+              <ul>
+                <li>Displaceing it with CO2 or another gas</li>
+                <li>Common for electrical fires, especially server rooms</li>
+              </ul>
+            </li>
+            <li>Remove the fuel (not an option, usually)</li>
+            <li>Disrupt the chain <reaction>
+              <ul>
+                <li>Some chemicals work this way</li>
+              </ul>
+            </reaction></li>
+          </ul>
+        </section>
+
+        <!-- Slide 61 Classes of Fires and Fire Extinguishers-->
+        <section>
+          <h2>Classes of Fires and Fire Extinguishers</h2>
+          <ul>
+            <li>Class A
+              <ul>
+                <li>Ordinary combustibles</li>
+                <li>Wood, paper, cloth, trash, rubber, plastics</li>
+              </ul>
+            </li>
+            <li>Class B
+              <ul>
+                <li>Flammable liquids</li>
+                <li>Gasoline, propane, solvents, paint,...</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 62 Classes of Fires and Fire Extinguishers-->
+        <section>
+          <h2>Classes of Fires and Fire Extinguishers</h2>
+          <ul>
+            <li>Class C
+              <ul>
+                <li>Electrical equipment</li>
+                <li>Computers, wiring, motors, etc.</li>
+                <li>Don't use water on a class C fire because it conducts electricity and may shock personnel</li>
+              </ul>
+            </li>
+            <li>Class D
+              <ul>
+                <li>Combustible metals like magnesium and sodium</li>
+                <li>Much more difficult to extinguish</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 63 Environmental Monitoring-->
+        <section>
+          <h2>Environmental Monitoring</h2>
+          <ul>
+            <li>HVAC attempts to keep temperature and humidity constant</li>
+            <li>Logs record the actual temperature and humidity during the day</li>
+          </ul>
+        </section>
+
+        <!-- Slide 64 Shielding-->
+        <section>
+          <h2>Shielding</h2>
+          <ul>
+            <li>To prevent EMI(Elecotromagnetic Interference) and RFI (Radio Frequency Interference)</li>
+            <li>Also prevents unwated emissions which can leak data</li>
+            <li>Shielded cables reduce this problem</li>
+            <li>Fiber-optic cables are immune</li>
+          </ul>
+        </section>
+
+        <!-- Slide 65 Faraday Cage screenshot of Vimeo video demonstrating Electromagnetic Emanations of Keyboards Experiment-->
+        <section>
+          <img src="../chapter 09/assets/images/Picture7.png" alt="screenshot of Vimeo video demonstrating Electromagnetic Emanations of Keyboards Experiment">
+          <br>
+          <ul>
+            <li>Link Ch 9f</li>
+          </ul>
+        </section>
+
+        <!-- Slide 66 Faraday Cage image-->
+        <section>
+        <img src="../chapter 09/assets/images/Picture6.jpg" alt="image of a large Faraday Cage shielding a person in side it from electromagnetic discharge">
+        <br>
+        <ul>
+          <li>Image from digitaltrends.com</li>
+        </ul>
+        </section>
+
+        <!-- Slide 67 RF Shield-->
+        <section>
+          <h2>RF Shield</h2>
+          <img src="../chapter 09/assets/images/Picture7.jpg" alt="screenshot of a RF shield">
+          <br>
+          <ul>
+            <li>From sleepingelephant.com</li>
+          </ul>
+        </section>
+
+        <!-- Slide 68 Tinfoil Hat contest at HOPE-->
+        <section>
+          <h2>Tinfoil Hat contest at HOPE</h2>
+          <img src="../chapter 09/assets/images/Picture8.jpg" alt="Tinfoil contest display table at HOPE">
+        </section>
+
+        <!-- Slide 69 Tin Foil Hat contest at HOPE II-->
+        <section>
+          <h2>Hat contest at HOPE</h2>
+          <img src="../chapter 09/assets/images/Picture9.jpg" alt="Tin Foil Hat contest at HOPE II">
+        </section>
+
+        <!-- Slide 70 Tempest-->
+        <section>
+          <h2>Tempest</h2>
+          <ul>
+            <li>US Gov't program</li>
+            <li>Measures emanations from devices</li>
+            <li>A serious security threat</li>
+          </ul>
+        </section>
+
+
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
