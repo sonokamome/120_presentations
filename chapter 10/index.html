@@ -1,0 +1,1579 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Chapter 10 Presentation.</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Sam Bowne">
+    <meta name="transcriber" content="Sonokamome">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <!-- Slide 1 Introduction -->
+        <section>
+          <h2>Chapter 10</h2>
+          <h3>Understanding Cryptography</h3>
+            <img src="../chapter 10/assets/images/Picture1.png" style="position: absolute; right: 610px;" alt="Security+ textbook by Darril Gibson">
+            <div style="position:absolute; left: 441px;">
+              <p>Comptia Security+:</p>
+              <p>Get Certified Get Ahead:</p>
+              <p> SY0-401 Study Guide</p>
+              <p>by Darril Gibson</p>
+            </div>
+        </section>
+
+      <!-- Slide 2 Introducing Cryptography Concepts-->
+      <section>
+        <h2>Introducing Cryptography Concepts</h2>
+      </section>
+
+      <!-- Slide 3 Integrity-->
+      <section>
+        <h2>Integrity</h2>
+        <ul>
+          <li>Assures that adat has not been modified</li>
+          <li><strong>Hash</strong> is a number calculated from data
+            <ul>
+              <li>I f the data is changed, the hash is unchanged</li>
+            </ul>
+          </li>
+          <li>Common hash algorithms
+            <ul>
+              <li>MD5, SHA, HMAC</li>
+              <li>MD5 is 128 bits</li>
+              <li>SHA-1 is 256 bits</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 4 Concepts-->
+      <section>
+        <h2>Concepts</h2>
+        <ul>
+          <li>Confidentiality
+            <ul>
+              <li>Ensures that only authorized users can view data</li>
+            </ul>
+          </li>
+          <li>Encryption
+            <ul>
+              <li>Ciphers data to make it unreadable if intercepted</li>
+              <li>
+                Includes <strong>algorithm</strong> and <strong>key</strong>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 5 Symmetric and Asymmetric Encryption-->
+      <section>
+        <h2>Symmetric and Asymmetric Encryption</h2>
+        <ul>
+          <li>Symmetric encryption
+            <ul>
+              <li>Uses same key to encrypt and decrypt data</li>
+            </ul>
+          </li>
+          <li>Asymmetric encryption
+            <ul>
+              <li>Uses two keys: public and private</li>
+              <li>Data encrypted with the public key can only be decrypted with the private key</li>
+              <li>Data encrypted with the private key can only be decrypted with the public key</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 6 Concepts-->
+      <section>
+        <h2>Concepts</h2>
+        <ul>
+          <li>Authentication
+            <ul>
+              <li>Validates an identity</li>
+            </ul>
+          </li>
+          <li>Non-repudiation
+            <ul>
+              <li>Prevents a party from denying an action</li>
+            </ul>
+          </li>
+          <li>Digital signature
+            <ul>
+              <li>Provides authentication, non-repudiation, and integrity</li>
+              <li>Hash of a message, encrypted with sender's private key</li>
+              <li>Anyone can verify it with the senders's public key</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 7 Providing Integrity with Hashing-->
+      <section>
+        <h2>Providing Integrity with Hashing</h2>
+      </section>
+
+      <!-- Slide 8 MD5-->
+      <section>
+        <h2>MD5</h2>
+        <ul>
+          <li>Message Digest 5
+            <ul>
+              <li>128 bits</li>
+              <li>Commonly used to verify disk files, downloads, etc.</li>
+              <li>Not very secure &#x02013; hash <em>collisions</em> can be found fairly easily</li>
+              <li>
+                <strong>Collisions</strong>
+                <ul>
+                  <li>Two different files with the same hash</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 9 SHA-->
+      <section>
+        <h2>SHA</h2>
+        <ul>
+          <li>Secure Hash Algorithm (SHA)</li>
+          <li>SHA-0 (not used)</li>
+          <li>SHA-1
+            <ul>
+              <li>160 bits long, very common</li>
+              <li>No collisions found yet, but theya re now withi nreach of well-funded attackers</li>
+              <li>
+                Should require 2<sup>80</sup> calculations to find a collision, but an attack has been found that requires only 2<sup>52</sup>
+                <ul>
+                  <li>Link ch 10b, 10c</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 10 SHA-2 and SHA-3-->
+      <section>
+        <h2>SHA-2 and SHA-3</h2>
+        <ul>
+          <li>SHA-2
+            <ul>
+              <li>Stronger than SHA-1</li>
+              <li>Four versions; SHA-224, SHA-256, SHA-384 and SHA-512</li>
+            </ul>
+          </li>
+          <li>SHA-3
+            <ul>
+              <li>Approved in Oct. 2012</li>
+              <li>Even stronger</li>
+              <li>Link ch 10d</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 11 HMAC-->
+      <section>
+        <h2>HMAC</h2>
+        <ul>
+          <li>Hash-based Message Authentication Code
+            <ul>
+              <li>hash the message</li>
+              <li>Then encrypt the hash with a shared secret key</li>
+            </ul>
+          </li>
+          <li>Provides integrity and authenticity</li>
+          <li>Example: HMAC-MD5</li>
+        </ul>
+      </section>
+
+      <!-- Slide 12 Hashing Files-->
+      <section>
+        <h2>Hashing Files</h2>
+        <ul>
+          <li>md5sum</li>
+          <li>Hashcalc</li>
+          <li>FileAlyzer</li>
+        </ul>
+      </section>
+
+      <!-- Slide 13 Image of FileAlyzer and Hashcalc desktop applications-->
+      <section>
+      <img src="../chapter 10/assets/images/Picture2.png" alt="Image of FileAlyzer and Hashcalc desktop applications">
+      </section>
+
+      <!-- Slide 14 Image of Hashclac and terminal md5sum applications-->
+      <section>
+      <img src="../chapter 10/assets/images/Picture4.png" alt="Image of Hashclac and terminal md5sum applications" style="width: 910px; height: 290px;">
+      <img src="../chapter 10/assets/images/Picture3.png" alt="Image of Hashclac and terminal md5sum applications">
+      </section>
+
+      <!-- Slide 15 Image screenshot of Sha3 application in termainl in Linux-->
+      <section>
+      <img src="../chapter 10/assets/images/Picture5.png" alt="screenshot of Sha3 application in termainl in Linux" style="width: 880px; height: auto:">
+      <br>
+      <ul>
+        <li>Project 12x</li>
+      </ul>
+      </section>
+
+      <!-- Slide 16 Hashing Passwords-->
+      <section>
+        <h2>Hashing Passwords</h2>
+        <ul>
+          <li>Safer than storing passwords in plaintext</li>
+          <li>Passowrd hashes are harder to crack if they are
+            <ul>
+              <li>Salted
+                <ul>
+                  <li>Random characters added to password</li>
+                </ul>
+              </li>
+              <li>Stretched
+                <ul>
+                  <li>Manyu rounds of hashing, not just one</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 17 Hashing Messages-->
+      <section>
+        <h2>Hashing Messages</h2>
+        <img src="../chapter 10/assets/images/Picture6.png" alt="screenshot of how message hashing works between two clients over a network" style="width: 700px; height: auto;">
+      </section>
+
+      <!-- Slide 18 Using HMAC-->
+      <section>
+        <h2>Using HMAC</h2>
+        <ul>
+          <li>A MITM attacker could change the "correct" hash value to fool the recipent</li>
+          <li>The general solutions for such MITM attacks are
+            <ul>
+              <li>A trusted third party</li>
+              <li>A shared secret</li>
+            </ul>
+          </li>
+          <li>HMAC uses a hsared secret key for this reason</li>
+        </ul>
+      </section>
+
+      <!-- Slide 19 Hashing Methods on Security+ Exam-->
+      <section>
+      <h2>Hashing Methods on Seucrity+ Exam</h2>
+        <img src="../chapter 10/assets/images/Picture7.png" alt="Hashing Methods on Security+ Exam" style="width: 790px; height: auto;">
+      </section>
+
+      <!-- Slide 20 Other Hash Algorithms-->
+      <section>
+        <h2>Other Hash Algorithms</h2>
+      </section>
+
+      <!-- Slide 21 RIPEMD Hash Algorithm-->
+      <section>
+        <h2>RIPEMD Hash Algorithm</h2>
+        <ul>
+          <li>RACE Integrity Primitives Evaluation Message Digest</li>
+          <li>Patent-free, came from open academic community
+            <ul>
+              <li>NSA designed SHA -1 and SHA-2</li>
+            </ul>
+          </li>
+          <li>Original RIPEMD was based on MD4 and has known collisions</li>
+          <li>RIPEMD-160, 256, and 320 are improved versions</li>
+          <li>Considering similar to SHA-1 in security, but less used
+            <ul>
+              <li>Link Ch 10g</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 22 LANMAN Password Hashes-->
+      <section>
+        <h2>LANMAN Password Hashes</h2>
+        <ul>
+          <li>Used in Microsoft Windows through Windows XP to hash passwords</li>
+          <li>Very old and weak, easily cracked with rainbow tables</li>
+          <li>Too insecure to be trusted</li>
+          <li>Should be disabled in Local Security Policy in Windows XP or earlier systems</li>
+        </ul>
+      </section>
+
+      <!-- Slide 23 Disabling LANMAN Hashes-->
+      <section>
+        <h2>Disabling LANMAN Hashes</h2>
+        <img src="../chapter 10/assets/images/Picture8.png" alt="screenshot of Local Security Policy on Windows XP showing in disalbing LANMAN Hashes">
+        <br>
+        <ul>
+          <li>Link Ch 10h</li>
+        </ul>
+      </section>
+
+      <!-- Slide 24 LANMAN Algorithm-->
+      <section>
+        <h2>LANMAN Algorithm</h2>
+        <ol>
+          <li>Passowrd: Xydke23498Qq</li>
+          <li>Break into 7-character fileds</li>
+          <li>Change letters to UPPERCASE - XYDKE23 498QQ</li>
+          <li>Hash each field sepeartely, using DES
+            <ul>
+              <li>Link Ch 10i</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Slide 25 NTLM Password Hashes-->
+      <section>
+        <h2>NTLM Password Hashes</h2>
+        <ul>
+          <li>Microsofts's replacement LANMAN</li>
+          <li>NTLMv1 uses MD4
+            <ul>
+              <li>considered compromised</li>
+              <li>Still used for logon passwords
+                <ul>
+                  <li>See project 5x in CNIT 124</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>NTLMv2 uses MD5
+            <ul>
+              <li>More secure, used for network authentication</li>
+              <li>Links Ch 10j, 10k, 10l</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 26 NTLMv2 in Windows XP-->
+      <section>
+        <h2>NTLMv2 in Windows XP</h2>
+        <img src="../chapter 10/assets/images/Picture9.png" alt="Image of NTLMv2 in Windows XP">
+      </section>
+
+      <!-- Slide 27 NTLM 2 Authentication-->
+      <section>
+        <h2>NTLM 2 Authentication <br> <small>(slide from link Ch 10m)</small></h2>
+        <img src="../chapter 10/assets/images/Picture10.png" alt="diagram of NTLM 2 Authentication">
+      </section>
+
+      <!-- Slide 28 NTLMv2 in Windows Versions-->
+      <section>
+        <h2>NTLMv2 in Windows Versions</h2>
+        <ul>
+          <li>From the Windows 7 Local Security Policy setting's "Explain" tab</li>
+        </ul>
+        <br>
+        <img src="../chapter 10/assets/images/Picture11.png" alt="NTLMv2 in Windows Versions" style="width: 820px; height: auto;">
+      </section>
+
+      <!-- Slide 29 Providing Confidentiality with Encryption-->
+      <section>
+        <h2>Providing Confidentiality with Encryption</h2>
+      </section>
+
+      <!-- Slide 30 Symmetric and Asymmetric Encryption-->
+      <section>
+        <h2>Symmetric and Asymmetric Encryption</h2>
+        <ul>
+          <li>Encryption turn plaintext into unreadable ciphertext</li>
+          <li>Symmetric encryption uses the same key for encryption and decryption</li>
+          <li>Asymmetric encryption uses tow keys
+            <ul>
+              <li>A public key and a private key</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 31 Symmetric Cryptography-->
+      <section>
+        <h2>Symmetric Cryptography</h2>
+        <img src="../chapter 10/assets/images/Picture12.png" alt="Symmetric Cryptography">
+      </section>
+
+      <!-- Slide 32 Asymmetric Cryptography Algorithms-->
+      <section>
+        <h2>Asymmetric Cryptography Algorithms</h2>
+        <ul>
+          <li>Use two keys that are mathematically related
+            <ul>
+              <li>Data encrypted with one key can be decrypted only with the other key</li>
+            </ul>
+          </li>
+          <li>Another name for asymmetric key cryptography is public key cryptography
+            <ul>
+              <li><span style="color: #4CFF00; font-weight: 600;"><em>Public</em></span> key: known by the <span style="color: #4CFF00; font-weight: 600;"><em>public</em></span></li>
+              <li><span style="color: #FF0000; font-weight: 600;"><em>Private</em></span> key: known only by <span style="color: #FF0000; font-weight: 600;"><em>owner</em></span></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 33 Asymmetric Cryptography-->
+      <section>
+        <h2>Asymmetric Cryptography</h2>
+        <img src="../chapter 10/assets/images/Picture13.png" alt="Diagram of Asymmetric cryptography">
+      </section>
+
+      <!-- Slide 34 Algorithm And Key-->
+      <section>
+        <h2>Algorithm And Key</h2>
+        <ul>
+          <li>Algorithm
+            <ul>
+              <li>The Mathematical steps used for encryption and decryption</li>
+            </ul>
+          </li>
+          <li>Key
+            <ul>
+              <li>A number used to perform encryption and decryption, usually a long random number</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 35 Symmetric is Faster-->
+      <section>
+        <h2>Symmetric is Faster</h2>
+        <ul>
+          <li>Symmetric encryption is much faster to perform than asymmetric encryption</li>
+          <li>Symmetric encryption keys are much shorter
+            <ul>
+              <li>128 or 256 bits is enough for excellent security</li>
+            </ul>
+          </li>
+          <li>Asymmetric encryption key length
+            <ul>
+              <li>1024-bit keys are no longer recommended</li>
+              <li>2048-bit is the minimum acceptable key length</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 36 Symmetric Encryption-->
+      <section>
+        <h2>Symmetric Encryption</h2>
+      </section>
+
+      <!-- Slide 37 Block v. Stream Cipher (both symmetric)-->
+      <section>
+        <h2>Block v. Stream Cipher <br> <small>(both symmetric)</small></h2>
+        <ul>
+          <li>Block cipher
+            <ul>
+              <li>Encrypts groups of bits to bits together</li>
+              <li>Typically blocks of 64 or 128 bits</li>
+              <li>AES uses 128-bit blocks, which is safer
+                <ul>
+                  <li>Link Ch 10o</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Stream cipher
+            <ul>
+              <li>Encrypts each bit individually</li>
+              <li>WEP uses RC4 stream cipher</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 38 Symmetric Encryption is Like a Door Key-->
+      <section>
+        <h2>Symmetric Encryption is Like a Door Key</h2>
+        <ul>
+          <li>Every person who needs a key gets an identical copy</li>
+          <li>Same key used to lock the door and open it</li>
+        </ul>
+      </section>
+
+      <!-- Slide 39 AES-->
+      <section>
+        <h2>AES</h2>
+        <ul>
+          <li>Strong symmetric block cipher</li>
+          <li>NIST recommends it</li>
+          <li>Different key sizes
+            <ul>
+              <li>AES-128</li>
+              <li>AES-196</li>
+              <li>AES-256</li>
+            </ul>
+          </li>
+          <li>All are apparently unbreakable at present</li>
+        </ul>
+      </section>
+
+      <!-- Slide 40 AES Advantages-->
+      <section>
+        <h2>AES Advantages</h2>
+        <ul>
+          <li>Fast to compute</li>
+          <li>Efficient, even on small devices</li>
+          <li>Strong</li>
+        </ul>
+      </section>
+
+      <!-- Slide 41 Image of AES Encryption process-->
+      <section>
+      <img src="../chapter 10/assets/images/Picture14.png" alt="Image of AES Encryption process">
+      <br>
+      <ul>
+        <li>Pretty animation at Link Ch 10p</li>
+      </ul>
+      </section>
+
+      <!-- Slide 42 DES (Data Encryption Standard)-->
+      <section>
+        <h2>DES (Data Encryption Standard)</h2>
+        <ul>
+          <li>Recommended by NIST even though it was not secure</li>
+          <li>56-bit key length</li>
+          <li>
+            Subject to <strong>brute force attack</strong>
+            <ul>
+              <li>Try all 2<sup>56</sup> keys</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 43 Data Encryption Standard (DES) (continued)-->
+      <section>
+        <h2>Data Encryption Standard <br><small>(DES) (continued)</small></h2>
+        <ul>
+          <li>In 1988, NSA thought the standard was at risk tobe broken</li>
+          <li>In 1997, a DES key was broken in 3 months</li>
+          <li>In 1998, the EFF built a computer system taht cracked a DES key in 3 days
+            <ul>
+              <li>Link Ch 10q</li>
+            </ul>
+          </li>
+        </ul>
+        <img src="../chapter 10/assets/images/Picture15.png" alt="Image of AWT-4500 Deep Crack Orbit 61335A 9816 T03093.1A" style="width: 310px; height: auto;">
+      </section>
+
+      <!-- Slide 44 3DES-->
+      <section>
+        <h2>3DES</h2>
+        <ul>
+          <li>Performing DES three times makes it stronger
+            <ul>
+              <li>Uinsg 2 or 3 56-bit keys</li>
+            </ul>
+          </li>
+          <li>Less efficient than AES</li>
+          <li>Secure enough to use - effective key strength of 112 bits</li>
+        </ul>
+      </section>
+
+      <!-- Slide 45 RC4-->
+      <section>
+        <h2>RC4</h2>
+        <ul>
+          <li>Strong symmetric stream cipher</li>
+          <li>Used in WEP
+            <ul>
+              <li>But it was not a weak point that broke WEP</li>
+            </ul>
+          </li>
+          <li>SSL uses RC4
+            <ul>
+              <li>Therefore, so does HTTPS</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 46 RC4 Reaching End-of-Life -->
+      <section>
+        <h2>RC4 Reaching End-of-Life</h2>
+        <img src="../chapter 10/assets/images/Picture16.png" alt="Screenshot of article reading 'IETF takes rifle off wall, grabs RC4 cipher's collar, goes behind shed'">
+        <br>
+        <ul>
+          <li>RC4 is considered risky</li>
+          <li>Microsoft and Cisco have advised customers to avoid</li>
+          <li>IETF is expected to deprecate it soon
+            <ul>
+              <li>See link Ch 10z1 (Dec. 1, 2014)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 47 Blowfish and Twofish-->
+      <section>
+        <h2>Blowfish &#x00026; Twofish</h2>
+        <ul>
+          <li>Strong symmetric block ciphers</li>
+          <li>Designed by Bruce Schneier</li>
+        </ul>
+        <br>
+        <img src="../chapter 10/assets/images/Picture17.png" alt="picture of Bruce Schneier">
+      </section>
+
+      <!-- Slide 48 One-Time Pad-->
+      <section>
+        <h2>One-Time Pad</h2>
+        <ul>
+          <li>A rinted list of random numbers</li>
+          <li>Effectively a very long shared-secret key</li>
+          <li>Each part of the key is used only once</li>
+          <li>Considered ubreakable
+            <ul>
+              <li>Key msut be random</li>
+              <li>Key must be as long as the message</li>
+              <li>Key is never re-used</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 49 RSA Tokens-->
+      <section>
+        <h2>RSA Tokens</h2>
+        <ul>
+          <li>These things <strong>SHOULD</strong> be one-time pads</li>
+          <li>They aren't - RSA held some sort of master key and got hacked in 2011, compromising their security
+            <ul>
+              <li>Link Ch 10r</li>
+            </ul>
+          </li>
+        </ul>
+        <br>
+        <img src="../chapter 10/assets/images/Picture1.jpg" alt="Image of a RSA SecureID&#x000AE; OTP key" style="width: 450px; height: auto;">
+      </section>
+
+      <!-- Slide 50 Symmetric Protocols in Security_Exam-->
+      <section>
+        <h2>Symmetric Protocols in Security_Exam</h2>
+        <img src="../chapter 10/assets/images/Picture18.png" alt="Symmetric Protocols in Security_Exam" style="width: 790px; height: auto;">
+      </section>
+
+      <!-- Slide 51 Asymmetric Encryption-->
+      <section>
+        <h2>Asymmetric Encryption</h2>
+      </section>
+
+      <!-- Slide 52 Key Pairs-->
+      <section>
+        <h2>Key Pairs</h2>
+        <ul>
+          <li>Every user of asymmetric encryption must generate a key pair</li>
+          <li>
+            <strong style="color: #4CFF00; font-weight: 600;">Public key</strong>
+            <ul>
+              <li><span style="color: #4CFF00; font-weight: 600;">Shared</span> with the world</li>
+            </ul>
+          </li>
+          <li>
+            <strong style="color: #FF0000; font-weight: 600;">Private key</strong>
+            <ul>
+              <li><span style="color: #FF0000; font-weight: 600;">Kept</span> secret</li>
+            </ul>
+          </li>
+          <li>The two keys are methematically related</li>
+          <li>There is no practical way to find the private key from the public key</li>
+        </ul>
+      </section>
+
+      <!-- Slide 53 Key Use-->
+      <section>
+        <h2>Key Use</h2>
+        <ul>
+          <li>
+            Data encrypted with the <em><span style="color: #4CFF00; font-weight: 600;">public key</span></em> must be decrypted with the <em><span style="color: #FF0000; font-weight: 600;">private key</span></em>
+          </li>
+          <li>
+            Data encrypted with the <em><span style="color: #FF0000; font-weight: 600;">private key</span></em> must and be decrypted with the <em><span style="color: #4CFF00; font-weight: 600;">public key</span></em>
+          </li>
+          <li><span style="color: #FF0000; font-weight: 600;">Private keys</span> are kept secrete and never shared</li>
+          <li><span style="color: #4CFF00; font-weight: 600;">Public keys</span> are distributed widely, in certificates or key servers</li>
+        </ul>
+      </section>
+
+      <!-- Slide 54 Symmetric Keys-->
+      <section>
+        <h2>Symmetric Keys</h2>
+        <ul>
+          <li>Asymmetric encryption is strong, but resource intensive</li>
+          <li>It's too slow to encrypt all traffic</li>
+          <li>Instead, it's used to share a <em>symmetric key</em> which is then used to encrypt data</li>
+        </ul>
+      </section>
+
+      <!-- Slide 55 Certificates-->
+      <section>
+        <h2>Certificates</h2>
+        <ul>
+          <li>Certificates is like a digital ID card</li>
+          <li>It has the name of the onwer and a public key</li>
+          <li>Issued by Certificate Authorities (CAs)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 56 Certificate Uses-->
+      <section>
+        <h2>Certificate Uses</h2>
+        <ul>
+          <li>Encryption</li>
+          <li>Authentication</li>
+          <li>Digital signatures</li>
+        </ul>
+      </section>
+
+      <!-- Slide 57 Images demonstrating Certificate issuers and content-->
+      <section>
+        <img src="../chapter 10/assets/images/Picture19.png" alt="demonstrating Certificate issuers and content" style="width:580px; height:auto;">
+        <img src="../chapter 10/assets/images/Picture20.png" alt="Images demonstrating Certificate issuers and content" style="width: 450px; height: auto;">
+      </section>
+
+      <!-- Slide 58 NIST Recommended Key Sizes-->
+      <section>
+        <h2>NIST Recommended Key Sizes</h2>
+        <img src="../chapter 10/assets/images/Picture21.png" alt="NIST Recommended Key Sizes">
+        <br>
+        <ul>
+          <li>From Dec. 2009 (Link Ch 10s)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 59 RSA-->
+      <section>
+        <h2>RSA</h2>
+        <ul>
+          <li>A cryptography system invented by Rivest, Shamir, and Adelman</li>
+          <li>The standard used on the Internet for HTTPS</li>
+          <li>Uses prime numbers
+            <ul>
+              <li>Private key is a long prime number</li>
+              <li>Public key is the product of two long prime numbers</li>
+            </ul>
+          </li>
+          <li>Considered very secure</li>
+        </ul>
+      </section>
+
+      <!-- Slide 60 Static v. Ephemeral Keys-->
+      <section>
+        <h2>Static v. Ephemeral Keys</h2>
+        <ul>
+          <li>Static Key
+            <ul>
+              <li>Stays the same for a long time</li>
+              <li>RSA keys are static for hte lifetime of a certificate</li>
+            </ul>
+          </li>
+          <li>Ephemeral key
+            <ul>
+              <li>Used for one session, then discarded</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 61 Perfect Forward Secrecy-->
+      <section>
+        <h2>Perfect Forward Secrecy</h2>
+        <ul>
+          <li>Uses a different key for each session</li>
+          <li>Prevents an NSA-style attack
+            <ul>
+              <li>Store all the traffic to an encrypted site</li>
+              <li>Get the key later with a court order, or a bribe, or by hacking in</li>
+              <li>Decrypt all the stored traffic</li>
+            </ul>
+          </li>
+          <li>Available in TLS but no always implemented</li>
+        </ul>
+      </section>
+
+      <!-- Slide 62 Perfect Forward Secrecy on web sites-->
+      <section>
+        <h2>Perfect Forward Secrecy on Web Sites</h2>
+        <ul>
+          <li>20% of websites have it as of 12-23-14</li>
+          <li>Link Ch 10z2</li>
+        </ul>
+        <br>
+        <img src="../chapter 10/assets/images/Picture22.png" alt="Perfect Forward Secrecy on web sites">
+      </section>
+
+      <!-- Slide 63 Elliptic Curve Cryptography (ECC)-->
+      <section>
+        <h2>Elliptic Curve Cryptography (ECC)</h2>
+        <ul>
+          <li>Uses elliptic curves intead of prime numbers to calculate keys</li>
+          <li>Faster and more efficient than RSA</li>
+          <li>Used on small wireless devices</li>
+          <li>Approved by NIST in 2005</li>
+        </ul>
+      </section>
+
+      <!-- Slide 64 Diffie-Hellman-->
+      <section>
+        <h2>Diffie-Hellman</h2>
+        <ul>
+          <li>Not an encryption system</li>
+          <li>A key exchange algorithm to share a private key between two parties</li>
+          <li>Had been a military secret, but it was independently re-invented by civilian mathematicians</li>
+          <li>The basis for public-key cryptography</li>
+        </ul>
+      </section>
+
+      <!-- Slide 65 Diffie-Hellman Key Exchange Methods-->
+      <section>
+        <h2>Diffie-Hellman Key Exchange Methods</h2>
+        <ul>
+          <li>RSA uses Diffie-Hellman with static keys</li>
+          <li>DHE(Diffie Hellman Ephemeral)
+            <ul>
+              <li>Uses ephemeral keys</li>
+              <li>Sometimes called EDH</li>
+            </ul>
+          </li>
+          <li>ECDHE (Elliptic Curve Diffie-Hellman Ephemeral)
+            <ul>
+              <li>Ephemeral keys generated by ECC</li>
+              <li>ECDH uses static keys</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 66 Moxie Marlinspike and Whitefiled Diffie at Defcon 19-->
+      <section>
+        <h2>Moxie Marlinspike and Whitefiled Diffie at Defcon 19</h2>
+        <img src="../chapter 10/assets/images/Picture2.jpg" alt="Moxie Marlinspike and Whitefiled Diffie at Defcon 19">
+      </section>
+
+      <!-- Slide 67 Steganography-->
+      <section>
+        <h2>Steganography</h2>
+        <ul>
+          <li>The process of hiding data in plain view in prictures, graphics, or text
+            <ul>
+              <li>Example: changing colors slightly to encode individual bits in an image</li>
+            </ul>
+          </li>
+          <li>The image on the left contains the image on the right hidden in it (link ch 10t)</li>
+        </ul>
+        <br>
+        <img src="../chapter 10/assets/images/Picture23.png" alt="Image of clocks going into Earth but with a hidden image embedded">
+        <img src="../chapter 10/assets/images/Picture24.png" alt="Image of a few diamond shapes that show a pattern of airplanes as carvings">
+      </section>
+
+      <!-- Slide 68 Image of Spam Mimic-->
+      <section>
+        <h2>Spam Mimic</h2>
+        <ul>
+          <li>Link Ch 10u</li>
+        </ul>
+        <br>
+        <img src="../chapter 10/assets/images/Picture25.png" alt="Image of spam Mimic web application">
+      </section>
+
+      <!-- Slide 69 Steganography-->
+      <section>
+        <h2>Steganography</h2>
+        <ul>
+          <li>Steganography hides the existence of a message</li>
+          <li>No one even knows you sent a message at all</li>
+          <li>
+            This is one type of <em>covert channel</em>
+            <ul>
+              <li>A way to send message without overs even knowing you sent anything</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 70 Quantum Cryptography-->
+      <section>
+        <h2>Quantum Cryptography</h2>
+        <ul>
+          <li>Send a secret key on photon at a time</li>
+          <li>A photon can only be measured once
+            <ul>
+              <li>Because measuring it destroys it</li>
+            </ul>
+          </li>
+          <li>So if the key gets to the recipient undamaged, that proves no one else snooped on it</li>
+        </ul>
+      </section>
+
+      <!-- Slide 71 Commercial Quantum Cryptography Devices-->
+      <section>
+        <h2>Commercial Quantum Cryptography Devices</h2>
+        <img src="../chapter 10/assets/images/Picture26.png" alt="Image of a Cerberis commericla Quantum Cryptography Devices">
+        <ul>
+          <li>$82,000 for a pair of devices
+            <ul>
+              <li>Links Ch 10v, Ch 10w</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 72 Using Cryptographic Protocols-->
+      <section>
+        <h2>Using Cryptographic Protocols</h2>
+      </section>
+
+      <!-- Slide 73 Sending Email (Alice is sending mail to Bob)-->
+      <section>
+        <h2>Sending Email <br> <small>(Alice is sending mail to Bob)</small></h2>
+        <img src="../chapter 10/assets/images/Picture27.png" alt="image diagram of how Alice would send email to Bob with Async encryption (Public-Private Key usage)">
+      </section>
+
+      <!-- Slide 74 Digital Signature (Alice is signing a loan)-->
+      <section>
+        <h2>Digital Signature <br> <small>(Alice is signing a loan)</small></h2>
+      <ul>
+        <li>Alice calculates the hash of the loan agreement</li>
+        <li>
+          Alice encrypts the hash with <span style="color:#FF0000; font-weight: 600; text-decoration: underline">Alice's private key</span></span>
+        </li>
+      </ul>
+      <br>
+      <img src="../chapter 10/assets/images/Picture28.png" alt="Alice uses private key to encrypt data to send to the bank" style="width: 520px; height: auto;">
+      <br>
+      <ul>
+        <li>Signed loan agreement is sent to the bank</li>
+        <li>
+          The bank can decrypt the hash with <span style="text-decoration: underline; font-style: italic; color:#00FF00; font-weight: 600;">Alice's Public Key</span>
+        </li>
+        <li>The bank calcualtes the hash of the agreement</li>
+        <li>The hash matches the decrypted value</li>
+      </ul>
+      <br>
+      <img src="../chapter 10/assets/images/Picture29.png" alt="The bank uses Alice's public key to decrypt message from Alice" style="width:520px; height:auto;">
+      </section>
+
+      <!-- Slide 75 Signing Email with Digital Signatures-->
+      <section>
+        <h2>Signing Email with Digital Signatures</h2>
+        <ul>
+          <li>Digital signatures provide
+            <ul>
+              <li>Authentication
+                <ul>
+                  <li>only holder of the private key could create the signature</li>
+                </ul>
+              </li>
+              <li>Non-repudation
+                <ul>
+                  <li>The sender cannot later deny sending the message</li>
+                </ul>
+              </li>
+              <li>Integrity
+                <ul>
+                  <li>The hash value ensures that the message has not been altered</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 76 Digital Signature-->
+      <section>
+        <h2>Digital Signature</h2>
+        <img src="../chapter 10/assets/images/Picture30.png" alt="diagram of how Digital Signature works">
+      </section>
+
+      <!-- Slide 77 Key Concepts-->
+      <section>
+        <h2>Key Concepts</h2>
+        <ul>
+          <li>Hashing
+            <ul>
+              <li>A number created by running an algorithm on the message</li>
+            </ul>
+          </li>
+          <li>Certificate
+            <ul>
+              <li>Identifies user, contains public key</li>
+            </ul>
+          </li>
+          <li>Public and Private keys
+            <ul>
+              <li>Private key used to sign a message by encrypting a hash value</li>
+              <li>Publick key used to decrypt the hash value and verify the signature</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 78 Process at Email Sender-->
+      <section>
+        <h2>Process at Email Sender</h2>
+        <ul>
+          <li>Sender's email application:
+            <ul>
+              <li>Hashes the message</li>
+              <li>Uses sender's private key to encrypt the hash</li>
+              <li>Sends these items to the recipient
+                <ul>
+                  <li>Unencrypted message</li>
+                  <li>Encrypted hash</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 79 Process at Email Receiver-->
+      <section>
+        <h2>Process at Email Receiver</h2>
+        <ul>
+          <li>Receiver's email application
+            <ul>
+              <li>Retrieves the sender's public key, from a certificate or keyserver</li>
+              <li>Decrypts the encrypted hash with the sender's public key</li>
+              <li>Hashes the message</li>
+              <li>Compares the decrypted hash to the calcualted hash</li>
+              <li>
+                If they match, the message has <strong>authentication</strong>, <strong>non-repudiation</strong>, and <strong>integrity</strong>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 80 Encrypted Email-->
+      <section>
+        <h2>Encrypted Email</h2>
+        <ul>
+          <li>You can also encrypted the body of the message</li>
+          <li>
+            if you need <strong>confidentiality</strong>
+          </li>
+          <li>This can be done with asymmetric or symmetric encryption, or both</li>
+        </ul>
+      </section>
+
+      <!-- Slide 81 S/MIME-->
+      <section>
+        <h2>S/MIME</h2>
+        <ul>
+          <li>Secure/Multipurpose Internet Mail Extensions (S/MIME)</li>
+          <li>A popular standard used to sign and encrypt email</li>
+          <li>Uses RSA for asymmetric encryption</li>
+          <li>And AES for symmetric encryption</li>
+          <li>Requires CAs and a PKI (Public Key Infrastructure) to distribute and manage certificates</li>
+        </ul>
+      </section>
+
+      <!-- Slide 82 PGP/GPG-->
+      <section>
+        <h2>PGP/GPG</h2>
+        <ul>
+          <li>Pretty Good Privacy (PGP)
+            <ul>
+              <li>A commercial encryption system developed by Phil Zimmerman</li>
+            </ul>
+          </li>
+          <li>GNU Privacy Guard (GPG)
+            <ul>
+              <li>Free open-source replacement for PGP</li>
+            </ul>
+          </li>
+          <li>uses RSA asymmetric encryption and symmetric encryption</li>
+          <li>Usually with CAs</li>
+        </ul>
+        <br>
+        <p>Phil Zimmerman Designed PGP</p>
+        <img src="../chapter 10/assets/images/Picture3.jpg" alt="Image of Phi Zimmerman" style="width: 180px;">
+      </section>
+
+      <!-- Slide 83 Transport Encryption-->
+      <section>
+        <h2>Transport Encryption</h2>
+      </section>
+
+      <!-- Slide 84 Transport Encryption Protocols-->
+      <section>
+        <h2>Transport Encryption Protocols</h2>
+        <ul>
+          <li>IPsec</li>
+          <li>SSH
+            <ul>
+              <li>Including SFTP and SCP</li>
+            </ul>
+          </li>
+          <li>HTTPS
+            <ul>
+              <li>Using SSL or TLS</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 85 IPsec-->
+      <section>
+        <h2>IPsec</h2>
+        <ul>
+          <li>Can be used for point-to-point VPNs</li>
+          <li>L2TP/IPsec is used for one-to-many VPNs</li>
+          <li>AH (Authentication Header) provides authentication and integrity
+            <ul>
+              <li>Uses HMAC</li>
+              <li>Uses protocol ID 51</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 86 IPsec II-->
+      <section>
+        <h2>IPsec <br> <small>(continued)</small></h2>
+        <ul>
+          <li>ESP (Encapsulating Security Payload) provides confidentiality, integrity, and authentication
+            <ul>
+              <li>Uses AES or 3DES</li>
+              <li>Encapsulating entire packet and adds an additional IP header</li>
+              <li>uses protocol ID 50</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 87 SSL (Secure Sockets Layer)-->
+      <section>
+        <h2>SSL (Secure Sockets Layer)</h2>
+        <ul>
+          <li>Created by Netscape</li>
+          <li>used to secure several higher-level protocols
+            <ul>
+              <li>HTTPS</li>
+              <li>FTPS</li>
+            </ul>
+          </li>
+          <li>SSL uses certificates for authentication, asymmetric cryptography, and symmetric cryptography</li>
+        </ul>
+      </section>
+
+      <!-- Slide 88 SSL is Nearing End-of-Life -->
+      <section>
+        <h2>SSL is Nearing End-of-Life</h2>
+        <ul>
+          <li>New security flaw discovered in 2014</li>
+          <li>Link Ch 10z3</li>
+        </ul>
+        <br>
+        <img src="../chapter 10/assets/images/Picture31.png" alt="Image screenshot of article about Apple dropping SSl 3.0 for TLS encryption">
+      </section>
+
+      <!-- Slide 89 TLS (Transport Lyaer Security)-->
+      <section>
+        <h2>TLS (Transport Lyaer Security)</h2>
+        <ul>
+          <li>Created by the IETF to standardize improvements in SSL</li>
+          <li>Replaces SSL</li>
+          <li>Protected EAP (PEAP) uses TLS (PEAP-TLS) to encrypt authentication</li>
+          <li>TLS requires certificates and CAs</li>
+        </ul>
+      </section>
+
+      <!-- Slide 90 Cipher Suites-->
+      <section>
+        <h2>Cipher Suites</h2>
+        <ul>
+          <li>A set of algorithms that provide three functions for TLS and SSL
+            <ul>
+              <li>Encryption</li>
+              <li>Authentication</li>
+              <li>Integrity</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 91 Cipher Suites in Client Hello Packet-->
+      <section>
+        <h2>Cipher Suites in Client Hello Packet</h2>
+        <img src="../chapter 10/assets/images/Picture32.png" alt="screenshot of wireshark packet breakdown for TLS encrypted packet">
+      </section>
+
+      <!-- Slide 92 HTTPS-->
+      <section>
+        <h2>HTTPS</h2>
+        <ul>
+          <li>Send HTTP traffic over SSL to TLS</li>
+          <li>Uses port 443</li>
+        </ul>
+      </section>
+
+      <!-- Slide 93 HTTPS Websites-->
+      <section>
+        <h2>HTTPS Websites</h2>
+        <ul>
+          <li>When you connect, the server sends your browser a certifcate containing its public key</li>
+          <li>your browser creates a public-private key pair, and sends the public key to the server</li>
+          <li>Asymetric encryption is used to transmit a <em>session key</em> which is used for symmetri encryption of the session</li>
+        </ul>
+      </section>
+
+      <!-- Slide 94 Image diagram demontrating simplified handshake process used with HTTPS-->
+      <section>
+        <img src="../chapter 10/assets/images/Picture33.png" alt="Image diagram demontrating simplified handshake process used with HTTPS">
+      </section>
+
+      <!-- Slide 95 Capturing SSL Handshake with Wireshark-->
+      <section>
+        <h2>Capturing SSL Handshake with Wireshark</h2>
+        <img src="../chapter 10/assets/images/Picture34.png" alt="Capturing SSL Handshake with Wireshark">
+      </section>
+
+      <!-- Slide 96 How to Recognize Secure Sites-->
+      <section>
+        <h2>How to Recognize Secure Sites</h2>
+        <img src="../chapter 10/assets/images/Picture35.png" alt="How to Recognize Secure Sites">
+        <br>
+        <ul>
+          <li>Padlock icon (not always present)</li>
+          <li>https:// at start of url (ntoe always visible)</li>
+        </ul>
+      </section>
+
+      <!-- Slide 97 Key Stretching-->
+      <section>
+        <h2>Key Stretching</h2>
+      <ul>
+        <li>Changes a password which may be short and easily guessed into a longer random-seeming password hash</li>
+        <li>Add a salt and use many rounds of hashing</li>
+        <li>
+          Used by <strong>bcrypt</strong>, <strong>PBKDF2</strong>, and <strong>scrypt</strong>
+        </li>
+      </ul>
+      </section>
+
+      <!-- Slide 98 In-Band v. Out-of-Band Key Exchange-->
+      <section>
+        <h2>In-Band v. Out-of-Band Key Exchange</h2>
+        <ul>
+          <li>In-Band
+            <ul>
+              <li>Key is sent through the same channel as the encrypted data</li>
+              <li>All data subject to interception</li>
+            </ul>
+          </li>
+          <li>Out-of-Band
+            <ul>
+              <li>Send symmetric key through different channel</li>
+              <li>Shoudl be a more secure channel</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 99 Exploring PKI Components-->
+      <section>
+        <h2>Exploring PKI Components</h2>
+      </section>
+
+      <!-- Slide 100 Public Key Infrastructure (PKI)-->
+      <section>
+        <h2>Public Key Infrastructure (PKI)</h2>
+        <ul>
+          <li>Technologies for digital certificates
+            <ul>
+              <li>Create</li>
+              <li>Manage</li>
+              <li>Store</li>
+              <li>Distribute</li>
+              <li>Revoke</li>
+            </ul>
+          </li>
+          <li>With PKI, two people or entities can communicate securely without knowing one another previously</li>
+        </ul>
+      </section>
+
+      <!-- Slide 101 Certificate Authrotiy (CA)-->
+      <section>
+        <h2>Certificate Authrotiy (CA)</h2>
+        <ul>
+          <li>Public CAs are trusted by browsers</li>
+          <li>They issue digital certificates, which act as online ID cards</li>
+          <li>CAs must be trusted, or the system will fail</li>
+        </ul>
+      </section>
+
+      <!-- Slide 102 Trusted Root Certification Authroties-->
+      <section>
+        <h2>Trusted Root Certification Authroties</h2>
+        <img src="../chapter 10/assets/images/Picture36.png" alt="screenshot of certificate authority 'China Internet Network Information Center EV Certificates Root'">
+      </section>
+
+      <!-- Slide 103 Image screenshot of article of closure of DigiNotar due to hackers that stole certificates it held-->
+      <section>
+        <img src="../chapter 10/assets/images/Picture37.png" alt="screenshot of article of closure of DigiNotar due to hackers that stole certificates it held">
+        <br>
+        <ul>
+          <li>Link Ch 10x</li>
+        </ul>
+      </section>
+
+      <!-- Slide 104 Image screenshot image of ComodoHacker's pastbin posts-->
+      <section>
+        <img src="../chapter 10/assets/images/Picture38.png" alt="screenshot image of ComodoHacker's pastbin posts">
+        <ul>
+          <li>Link Ch 10x1</li>
+        </ul>
+      </section>
+
+      <!-- Slide 105 Trust Models-->
+      <section>
+        <h2>Trust Models</h2>
+        <ul>
+          <li>Hierarchical
+            <ul>
+              <li>Most common trust model</li>
+              <li>Public CA creates the root CA</li>
+              <li>Large CAs also create Child CAs</li>
+            </ul>
+          </li>
+          <li>Trust chain
+            <ul>
+              <li>Root CA issues certificates to Intermediate CAs</li>
+              <li>intermediate CAs issue certificates to Child CAs</li>
+              <li>Child CAs issue certificates to end users</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 106 Chain of Trust-->
+      <section>
+        <h2>Chain of Trust</h2>
+        <ul>
+          <li>PGP and GPG can use a "Chain of Trust"</li>
+          <li>You sign public keys of your friends</li>
+          <li>This avoids the cost of Certificate Authorities (CAs)</li>
+          <li>An old traditional system</li>
+          <li>Not used for e-commerce</li>
+        </ul>
+      </section>
+
+      <!-- Slide 107 Chain of Trust Problem-->
+      <section>
+        <h2>Chain of Trust Problem</h2>
+        <ul>
+          <li>Do you really trust a friend of a friend?</li>
+          <li>How about a friend of a friend of a friend?
+            <ul>
+              <li>http://xkcd.com/364</li>
+            </ul>
+          </li>
+        </ul>
+        <br>
+        <img src="../chapter 10/assets/images/Picture39.png" alt="XKCD.com comic #364">
+      </section>
+
+      <!-- Slide 108 Self-signed Certificates-->
+      <section>
+        <h2>Self-signed Certificates</h2>
+        <ul>
+          <li>you can create a CA and use self-signed certificates</li>
+          <li>It saves money , but no on will trust your CA
+            <ul>
+              <li>Except your own employees, with your CA added to the "Trusted Root CA" list</li>
+              <li>Unacceptable for e-commerce</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 109 Wildcard Certificates-->
+      <section>
+        <h2>Wildcard Certificates</h2>
+        <ul>
+          <li>*.domain.com</li>
+          <li>Can sign any server in teh domain.com domain</li>
+          <li>I use one</li>
+        </ul>
+        <br>
+        <img src="../chapter 10/assets/images/Picture40.png" alt="screenshot of Wildcard Certificates" style="width:670px; height: auto;">
+      </section>
+
+      <!-- Slide 110 Registration-->
+      <section>
+        <h2>Registration</h2>
+        <ul>
+          <li>To purchase a certificate from a CA
+            <ul>
+              <li>First make a public-private key pair</li>
+              <li>Make a Certificate Signing Request (CSR) for your domain</li>
+              <li>Send it to the CA</li>
+            </ul>
+          </li>
+          <li>In large organizations, these tasks are seperated
+            <ul>
+              <li>Registration Authority (RA)</li>
+              <li>Certificate Authority (CA)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 111 Revoking Certificates-->
+      <section>
+        <h2>Revoking Certificates</h2>
+        <ul>
+          <li>Reasons
+            <ul>
+              <li>Key compromise</li>
+              <li>CA conpromise</li>
+              <li>Change of affiliation</li>
+              <li>Superseded</li>
+              <li>Cease of operation</li>
+              <li>Certification hold</li>
+            </ul>
+          </li>
+          <li>Certificate Revocation List
+            <ul>
+              <li>Published by each CA</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 112 Validating Certificates-->
+      <section>
+        <h2>Validating Certificates</h2>
+        <ul>
+          <li>Clients check with CA each time they get a certificate</li>
+          <li>The CA is the Trusted Third Party</li>
+          <li>Check to see that certificate is not revoked</li>
+          <li>Two ways
+            <ul>
+              <li>CRL</li>
+              <li>OSCP (Online Certificate Status Protocol)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 113 Google's New System-->
+      <section>
+        <h2>Google's New System</h2>
+        <img src="../chapter 10/assets/images/Picture41.png" alt="screenshot of isc.sans.edu/diary.html?storyid=12556">
+        <ul>
+          <li>Link ch 10y</li>
+        </ul>
+      </section>
+
+      <!-- Slide 114 Outdated Certificates-->
+      <section>
+        <h2>Outdated Certificates</h2>
+        <ul>
+          <li>When a user is issued a new smart card
+            <ul>
+              <li>It replaces their old certificate</li>
+            </ul>
+          </li>
+          <li>The new certificate must be promptly published in the organization's CA
+            <ul>
+              <li>Otherwise the user won't be able to read or sign encrypted email</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Slide 115 Key Escrow-->
+      <section>
+        <h2>Key Escrow</h2>
+        <ul>
+          <li>Placing a copy of a private key in a safe environment</li>
+          <li>Prevents data loss from a lost private key</li>
+        </ul>
+      </section>
+
+      <!-- Slide 116 Recovery Agent-->
+      <section>
+        <h2>Recovery Agent</h2>
+        <ul>
+          <li>A designed person who can recover or restore cryptographic keys</li>
+          <li>Microsoft BitLocker supperts a recovery agent with a second key that works</li>
+        </ul>
+      </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
