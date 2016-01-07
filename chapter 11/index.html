@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Chapter 11 Presentation.</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Sam Bowne">
+    <meta name="transcriber" content="Sonokamome">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <!-- Slide 1 Introduction -->
+        <section>
+          <h2>Chapter 11</h2>
+          <h3>Exploring Operational Security</h3>
+            <img src="../chapter 11/assets/images/Picture1.png" style="position: absolute; right: 610px;" alt="Security+ textbook by Darril Gibson">
+            <div style="position:absolute; left: 441px;">
+              <p>Comptia Security+:</p>
+              <p>Get Certified Get Ahead:</p>
+              <p> SY0-401 Study Guide</p>
+              <p>by Darril Gibson</p>
+            </div>
+        </section>
+
+      <!-- Slide 2 Exploring Security Policies-->
+      <section>
+        <h2>Exploring Security Policies</h2>
+      </section>
+      
+      <!-- Slide 3 Security Policies-->
+      <section>
+        <h2>Security Policies</h2>
+        <ul>
+          <li>Written documents</li>
+          <li>Created as an early step to mitigate risks</li>
+          <li>Brief, high-level statements that identify goals</li>
+          <li>Guidelines and Procedures are created later to support the policies
+            <ul>
+              <li>They provide details</li>
+            </ul>
+          </li>
+          <li>Security controls enforce the requirements of a security policy</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 4 Personnel Policies-->
+      <section>
+        <h2>Personnel Policies</h2>
+        <ul>
+          <li>Acceptable use</li>
+          <li>Mandatory vacations</li>
+          <li>Separation of duties</li>
+          <li>Job rotation</li>
+          <li>Clean desk</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 5 Acceptable Use-->
+      <section>
+        <h2>Acceptable Use</h2>
+        <ul>
+          <li>defines proper system usage</li>
+          <li>Includes definitions and examples of unacceptable use
+            <ul>
+              <li>Personal shopping on company computers</li>
+              <li>Web browsing</li>
+            </ul>
+          </li>
+          <li>User must agree to the policy
+            <ul>
+              <li>Sometimes a written document they sign</li>
+              <li>Sometimes a logon banner or email</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 6 Mandatory Vacations-->
+      <section>
+        <h2>Mandatory Vacations</h2>
+        <ul>
+          <li>Help detects fraud or embezzlement</li>
+          <li>Often used for financial workers</li>
+          <li>Good for administrators too</li>
+          <li>Good examples in the Computer Fraud Casebook
+            <ul>
+              <li>Link Ch 11b</li>
+            </ul>
+          </li>
+        </ul>
+        <br>
+        <img src="../chapter 11/assets/images/Picture2.png" alt="cover of 'Computer Fraud Casebook'" style="width:230px; height:auto;">
+      </section>
+      
+      <!-- Slide 7 Separation of Duties-->
+      <section>
+        <h2>Separation of Duties</h2>
+        <ul>
+          <li>Prevents any one person from completing all the steps of a critical or sensitive process</li>
+          <li>Prevents fraud, theft, and errors</li>
+          <li>Accounting is designed this way</li>
+          <li>IT systems need this protection too
+            <ul>
+              <li>The "all-powerful administrator" violates this principal</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 8 Image screenshot of article about the rouge Network admin named 'Terry'-->
+      <section>
+      <img src="../chapter 11/assets/images/Picture3.png" alt="screenshot of article about the rouge Network admin named 'Terry'">
+      <img src="../chapter 11/assets/images/Picture4.png" alt="screenshot of article about the rouge Network admin named 'Terry'">
+      <br>
+      <ul>
+        <li>Link Ch 11c</li>
+      </ul>
+      </section>
+      
+      <!-- Slide 9 Job Rotation-->
+      <section>
+        <h2>Job Rotation</h2>
+        <ul>
+          <li>Employees rotate through different jobs</li>
+          <li>They learn the processes and procedures for each job</li>
+          <li>Helps expose dangerous shorthcuts or fraudulent activity</li>
+          <li>No one person can retain control of any process or data</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 10 Clean Desk Policy-->
+      <section>
+        <h2>Clean Desk Policy</h2>
+        <ul>
+          <li>Keep desks organized and free of papers</li>
+          <li>Prevents data theft or inadvertent disclosure of information</li>
+          <li>Also presents a positive, professional image</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 11 Items Left on a Desk-->
+      <section>
+        <h2>Items Left on a Desk</h2>
+        <ul>
+          <li>Keys</li>
+          <li>Cell phones</li>
+          <li>Access cards</li>
+          <li>Sensitve papers</li>
+          <li>Logged-in computer</li>
+          <li>Printouts left in printer</li>
+          <li>Passwords on sticky notes</li>
+          <li>File cabinets left open or unlocked</li>
+          <li>Personal items such as mail with PII</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 12 Account Management Policies-->
+      <section>
+        <h2>Account Management Policies</h2>
+        <ul>
+          <li>Least privilege policy
+            <ul>
+              <li>Users have only the rights and permissions needed to do their jobs</li>
+            </ul>
+          </li>
+          <li>Account disablement policy
+            <ul>
+              <li>Administrators must diable accounts quickly when a user leave the organization</li>
+              <li>Audits and reviews can verify compliance with this policy</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 13 Require Administrators to Use Two Accounts-->
+      <section>
+        <h2>Require Administrators to Use Two Accounts</h2>
+        <ul>
+          <li>One account for regular work, with limited privilages</li>
+          <lil>Elevated account only for administrative work
+            <ul>
+              <li>This protects against the "Pass the Hash" and other privilege escalation attacks (Link Ch 11a)</li>
+              <li>Or the simpler problem of an administrator accidentally leaving a workstation logged in</li>
+            </ul>
+          </lil>
+        </ul>
+      </section>
+      
+      <!-- Slide 14 Never use Shared Accounts -->
+      <section>
+        <h2>Never use Shared Accounts</h2>
+        <ul>
+          <li>If two users share an account, you lose these things:
+            <ul>
+              <li>Identification</li>
+              <li>Authenticaion</li>
+              <li>Authorization</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 15 Third-Party Issues-->
+      <section>
+        <h2>Third-Party Issues</h2>
+        <ul>
+          <li>Business partners like contractors have access to user data</li>
+          <li>
+            <strong>Non-Disclosure agreement (NDA)</strong>
+            <ul>
+              <li>Privacy considerations</li>
+              <li>Data ownership</li>
+              <li>Data backups</li>
+              <li>Unauthorized data sharing</li>
+              <li>Security policy and procedures</li>
+              <li>Reviews</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 16 Interoperability Agreements-->
+      <section>
+        <h2>Interoperability Agreements</h2>
+        <ul>
+          <li>Interconnection Security Agreement (ISA)
+            <ul>
+              <li>Specifies technical and security requirements for a secure connection between entities</li>
+            </ul>
+          </li>
+          <li>Service Level Agreement (SLA)
+            <ul>
+              <li>Specifies minimum uptime and penalties</li>
+            </ul>
+          </li>
+          <li>Memorandum of Understanding (MOU)
+            <ul>
+              <li>Expresses an intention fo working together towards a common goal</li>
+              <li>Defines responsibilties, but not penalties</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 17 Interoperability Agreements II-->
+      <section>
+        <h2>Interoperability Agreements</h2>
+        <ul>
+          <li>Business Partner Agreement (BPA)
+            <ul>
+              <li>Details each partner's obligations</li>
+              <li>Details each partner's obligations</li>
+              <li>Shares of profit or loss</li>
+              <li>Responsibilites</li>
+              <li>What to do if one partner leaves</li>
+              <li>Helps to settle conflicts if they arise</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 18 Change Management Policy-->
+      <section>
+        <h2>Change Management Policy</h2>
+        <ul>
+          <li>Ensures that changes in IT systems don't cause unintended outages</li>
+          <li>Provides an accounting structure to document changes</li>
+          <li>
+            Includes <strong>patch management</strong>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 19 Change Management Process-->
+      <section>
+        <h2>Change Management Process</h2>
+        <ol>
+          <li>Change request</li>
+          <li>Review of request</li>
+          <li>Approval</li>
+          <li>Technician implements change</li>
+          <li>Every step is documented</li>
+          <li>Plan for reversal of change if necessary</li>
+        </ol>
+      </section>
+      
+      <!-- Slide 20 Data Policies-->
+      <section>
+        <h2>Data Policies</h2>
+        <ul>
+          <li>Companies must protect private data
+            <ul>
+              <li>Research &#x00026; Development</li>
+              <li>Customer Databse</li>
+              <li>Proprietary information on products</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 21 Data Policies-->
+      <section>
+        <h2>Data Policies</h2>
+        <ul>
+          <li>Types of Data Policies
+            <ul>
+              <li>Information classification</li>
+              <li>Data labeling and handling</li>
+              <li>Data wiping and disposing</li>
+              <li>Storage and retention</li>
+              <li>PII (Personally Idnetifiable Information)</li>
+              <li>Privacy policy for websites</li>
+              <li>Social media</li>
+              <li>P2P</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 22 Information Classification-->
+      <section>
+        <h2>Information Classification</h2>
+        <ul>
+          <li>Identify, classify, and label data</li>
+          <li>Gov't
+            <ul>
+              <li><span style="color:#E69818;">Top Secret</span>, <span style="color:#FFD800;">Secret</span>, <span style="color:#FFE97F;">Confidential</span>, Unclassified</li>
+            </ul>
+          </li>
+          <li>Companies
+            <ul>
+              <li><span style="color:#109125;">Proprietary</span>, <span style="color:#14BC2E;">Private</span>, <span style="color:#1EE63C;">Classified</span>, Public</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 23 Data Labeling and Handling-->
+      <section>
+        <h2>Data Labeling and Handling</h2>
+        <ul>
+          <li>Labeling media such as backup tapes</li>
+          <li>File labels
+            <ul>
+              <li>Properties, headers, footers, watermarks</li>
+            </ul>
+          </li>
+          <li>Prevents accidental disclosure of confidential data during talks, etc.</li>
+          <li>Backups need labeling and careful handling</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 24 eDisclaimers-->
+      <section>
+        <h2>eDisclaimers</h2>
+        <img src="../chapter 11/assets/images/Picture5.png" alt="iamge of a disclaimer electronicly given notice in">
+        <ul>
+          <li>A missing e-disclaimer nearly cost Google billions of dollars
+            <ul>
+              <li>Example disclaimer from link Ch 11d</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 25 Data Wiping And Disposing-->
+      <section>
+        <h2>Data Wiping And Disposing</h2>
+        <ul>
+          <li>Must clean computers before discarding or donating them</li>
+          <li>Hard drives are the greatest risk
+            <ul>
+              <li>Bit-level overwrite</li>
+              <li>Degaussing</li>
+              <li>Physical destruction</li>
+            </ul>
+          </li>
+          <li>Copiers also have hard drives</li>
+          <li>Paper must be shredded or burned</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 26 Wiping Files-->
+      <section>
+        <h2>Wiping Files</h2>
+        <ul>
+          <li>Securely erasing individual files</li>
+          <li>File shredders are included in some antivirus products</li>
+          <li>Must erase entiree cluster to eliminate all possible fragments of a file</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 27 Storage and Retention Policies-->
+      <section>
+        <h2>Storage and Retention Policies</h2>
+        <ul>
+          <li>Defines what dat is stored and for how long</li>
+          <li>Reduces legal liability
+            <ul>
+              <li>Old data has little value, and can be required as evidence in a lawsuit</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 28 PII (Personally Identifiable Information)-->
+      <section>
+        <h2>PII (Personally Identifiable Information)</h2>
+        <ul>
+          <li>Two or more of
+            <ul>
+              <li>Full name</li>
+              <li>Birthday or birth place</li>
+              <li>Medical or health information</li>
+              <li>Address</li>
+              <li>Biometric data</li>
+              <li>SSN, Driver's License #, or any other ID #</li>
+            </ul>
+          </li>
+          <li>One item is not enough to count as PII
+            <ul>
+              <li>Passwords don't count as PII</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 29 PII Data Beach-->
+      <section>
+        <h2>PII Data Beach</h2>
+        <ul>
+          <li>Many real data breaches each year</li>
+          <li>Two recent events that were NOT PII data beaches
+            <ul>
+              <li>LinkedIn's loss of thousands of password hashes</li>
+            </ul>
+          </li>
+          <li>CCSF's bogus "virus" scandal (even if thte viruses had been real)</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 30 Protecting PII-->
+      <section>
+        <h2>Protecting PII</h2>
+        <ul>
+          <li>if a company collects PII data, it must be protected</li>
+          <li>California and many other states require notification of customers when a PII breach occurs</li>
+          <li>Many breaches comefrom employees' sloppy handling of PII
+            <ul>
+              <li>USb sticks</li>
+              <li>Backup tapes</li>
+              <li>Files on public servers</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 31 Privacy Policy for Websites-->
+      <section>
+        <h2>Privacy Policy for Websites</h2>
+        <ul>
+          <li>States how a website collects data</li>
+          <li>Also how the data is used, and whom it is shared with</li>
+          <li>California law requires a conspicuously posted privacy policy
+            <ul>
+              <li>On websites that collect information about CA residents</li>
+              <li>Even if the website is hosted outside CA</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 32 Social Networking-->
+      <section>
+        <h2>Social Networking</h2>
+        <ul>
+          <li>Facebook, Twitter, etc.</li>
+          <li>Users psot personal information, including ansewrs to security questions, such as birthday, home town, etc.</li>
+          <li>Information can also be used in scams</li>
+          <li>Employers search social networking sites when hiring</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 33 SSO and Social Media-->
+      <section>
+        <h2>SSO and Social Media</h2>
+        <ul>
+          <li>Facebook can be used to log into many other sites</li>
+          <li>If someone gets your Facebook password, all those sites are compromised too</li>
+          <li>use two-factor authentication!</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 34 Banner Ads and Malvertisements-->
+      <section>
+        <h2>Banner Ads and Malvertisements</h2>
+        <ul>
+          <li>Malware delivered through ads</li>
+          <li>Have appeared on the New York Times and Yahoo!</li>
+          <li>Either through hacking the servers, or simply purchasing ad space</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 35 P2P-->
+      <section>
+        <h2>P2P</h2>
+        <ul>
+          <li>Peer-to-peer or file-sharing</li>
+          <li>Used to share pirated MP3s, videos, and software</li>
+          <li>Napster, MegaUpload, Bittorrent, Pirate Bay, etc.</li>
+          <li>Can be blocked by content-aware firewalls
+            <ul>
+              <li>Also called Layer 7 Firewalls</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 36 P2P Risks-->
+      <section>
+        <h2>P2P Risks</h2>
+        <ul>
+          <li>Copyright infringement</li>
+          <li>Bandwidth consumption</li>
+          <li>Data leakage
+            <ul>
+              <li>President's helicopter plans found in Iran in 2009, shared accidentially on P2P</li>
+              <li>A schoolgirl found pornography on her computer that she didn't put in there
+                <ul>
+                  <li>P2P stores files for others on your system</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 37 Responding to Incidents-->
+      <section>
+        <h2>Responding to Incidents</h2>
+      </section>
+      
+      <!-- Slide 38 Security Incident-->
+      <section>
+        <h2>Security Incident</h2>
+        <ul>
+          <li>Attacks</li>
+          <li>Malware Infection</li>
+          <li>Security policy violation</li>
+          <li>Unauthroized access to data</li>
+          <li>Inappropriate usage of systems</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 39 Incident Response Team-->
+      <section>
+        <h2>Incident Response Team</h2>
+        <ul>
+          <li>Senior management
+            <uL>
+              <li>With enough authrotiy to get things done</li>
+            </uL>
+          </li>
+          <li>Network administrator/engineer</li>
+          <li>Security expert
+            <ul>
+              <li>Able to perform forensic analysis</li>
+            </ul>
+          </li>
+          <li>Communications expert
+            <ul>
+              <li>Public relations</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 40 Incident Repsonse Procedures-->
+      <section>
+        <h2>Incident Repsonse Procedures</h2>
+        <ul>
+          <li>Preparation
+            <ul>
+              <li>Estalbishing procedures and reviewing them</li>
+              <li>Establishing incident prevention policies</li>
+            </ul>
+          </li>
+          <li>First Responder
+            <ul>
+              <li>First security-trained individual on the scene</li>
+            </ul>
+          </li>
+          <li>Incident indentification
+            <ul>
+              <li>Verify that this is an actual incidient, not just a false positive</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 41 Incident Repsonse Procedures II-->
+      <section>
+        <h2>Incident Repsonse Procedures <br> <small>(continued)</small></h2>
+        <ul>
+          <li>Incident isolation
+            <ul>
+              <li>Prevent problem from getting worse</li>
+              <li>May involve removing devices from the network</li>
+            </ul>
+          </li>
+          <li>Damage and loss control
+            <ul>
+              <li>Use a public relations specialist to communicate with the media to limit bad publicity</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 42 Incident Response Procedures III-->
+      <section>
+        <h2>Incident Response Procedures <br> <small>(continued)</small></h2>
+        <ul>
+          <li>Escalation and notification
+            <ul>
+              <li>Inform appropriate personnel, such as the Incident Response Team (if there is one)</li>
+              <li>IR policy will typically list other personnel to inform, such as security managers</li>
+              <li>Forensic examination may begin</li>
+            </ul>
+          </li>
+          <li>Reporting
+            <ul>
+              <li>May need to notify executives of serious incidents</li>
+              <li>Sometimes customers must be notified</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 43 Incident Response Procedures IV-->
+      <section>
+        <h2>Incident Response Procedures <br> <small>(continued)</small></h2>
+        <ul>
+          <li>Data breach
+            <ul>
+              <li>Must eb determine the extent of the loss</li>
+              <li>Determine if outside entiteis are affected</li>
+              <li>Breach notification requirements (vary from state to state)</li>
+            </ul>
+          </li>
+          <li>Recovery/reconstitution procesures
+            <ul>
+              <li>Restore system to service</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 44 Incident Repsonse Procedures V-->
+      <section>
+        <h2>Incident Repsonse Procedures</h2>
+        <ul>
+          <li>Lessons learned
+            <ul>
+              <li>Decide how to prevent another incident like this</li>
+            </ul>
+          </li>
+          <li>Mitigation steps
+            <ul>
+              <li>Recommend revised security controls, such as updates</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 45 Basic Forensic Procedures-->
+      <section>
+        <h2>Basic Forensic Procedures</h2>
+        <ul>
+          <li>Collect and preserve evidence</li>
+          <li>Forensic software suites
+            <ul>
+              <li>EnCase</li>
+              <li>FTK</li>
+              <li>ProDiscover</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 46 Order of Volatility-->
+      <section>
+        <h2>Order of Volatility</h2>
+        <ul>
+          <li>RAM
+            <ul>
+              <li>Running processes</li>
+              <li>network connections</li>
+              <li>Applications remnants</li>
+            </ul>
+          </li>
+          <li>Hard Disk</li>
+          <li>Logs stored on remote ssytems</li>
+          <li>Archived data</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 47 Capture Images-->
+      <section>
+        <h2>Capture Images</h2>
+        <ul>
+          <li>Image is a snapshot of a hard disk, or of RAM</li>
+          <li>ghost images are used to deploy operating syste,s but they don't include unused parts of the disk</li>
+          <li>Forensic images include every usable bit on the disk</li>
+          <li>Forensic images include every usable bit on the disk</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 48 Write-Blocker-->
+      <section>
+        <h2>Write-Blocker</h2>
+        <ul>
+          <li>Ensures that a disk is not modified during collection of data</li>
+          <li>All analysis uses copies of the data, not the orignal disk</li>
+          <li>MD5 or SHA-1 hash is stored with image, to verify that copies are exact</li>
+          <li>Original disk must be preserved to bring to court as evidence</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 49 Network Traffic and Logs-->
+      <section>
+        <h2>Network Traffic and Logs</h2>
+        <ul>
+          <li>IP address or MAC address used to identify system
+            <ul>
+              <li>MAC address is better, but neither are perfect</li>
+            </ul>
+          </li>
+          <li>Logs record events that happened during an incident</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 50 Chain of Custody -->
+      <section>
+        <h2>Chain of Custody</h2>
+        <ul>
+          <li>A document that identifies peopel who controlled and handled the evidence</li>
+          <li>Avoid gaps - or evdience may be worthless in court</li>
+          <li>Lock evidence in a safe or evidence locker</li>
+          <li>Record every time anyone accessed it</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 51 Video Surveillance-->
+      <section>
+        <h2>Video Surveillance</h2>
+        <ul>
+          <li>Video records are very common</li>
+          <li>Excellent source of evidence</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 52 Record time Offset-->
+      <section>
+        <h2>Record time Offset</h2>
+        <ul>
+          <li>Times are very important, to identify who was using the computer</li>
+          <li>Persps modify time settings to mislead investigators</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 53 Screenshots-->
+      <section>
+        <h2>Screenshots</h2>
+        <ul>
+          <li>Screen images of desktop display</li>
+          <li>You use them to turn in homework</li>
+          <li>One way to collect data from a cell phone is to just photograph the screen while paging trhough the messages</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 54 Witnesses-->
+      <section>
+        <h2>Witnesses</h2>
+        <ul>
+          <li>Eyewitness testimony is very influential in court</li>
+          <li>Despite studies that show how unreliable it is</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 55 screenshot of Youtube video titled 'selective attention test'-->
+      <section>
+      <img src="../chapter 11/assets/images/Picture6.png" alt="screenshot of Youtube video titled 'selective attention test'">
+      <br>
+      <ul>
+        <li>Link Ch 11e</li>
+      </ul>
+      </section>
+      
+      <!-- Slide 56 Track Hours and Expense-->
+      <section>
+        <h2>Track Hours and Expense</h2>
+        <ul>
+          <li>Investigations can take many hours and cost a lot of money</li>
+          <li>Include costs in quantitative risk assessment</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 57 Big Data Analysis-->
+      <section>
+        <h2>Big Data Analysis</h2>
+        <ul>
+          <li>Databases so large that tools don't exist to extract meaningful enformation from them</li>
+          <li>Specialists are required to develop custom tools for each case</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 58 Security Awareness and Training-->
+      <section>
+        <h2>Security Awareness and Training</h2>
+        <ul>
+          <li>Minimizes risk posed by users</li>
+          <li>Helps reinforce user compliance with policies</li>
+          <li>Risks of USB drives</li>
+          <li>Awareness and training plan needs support from senior management</li>
+          <li>Refresher training required periodically</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 59 Role-Based Training-->
+      <section>
+        <h2>Role-Based Training</h2>
+        <ul>
+          <li>Executive personnel
+            <ul>
+              <li>need high-level briefings</li>
+              <li>Warniing about whaling</li>
+            </ul>
+          </li>
+          <li>Incident response team
+            <ul>
+              <li>Detailed training on how to respond</li>
+              <li>Forensic procedures</li>
+            </ul>
+          </li>
+          <li>Administrators</li>
+          <li>End users</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 60 Training Topics-->
+      <section>
+        <h2>Training Topics</h2>
+        <ul>
+          <li>Security policy contents</li>
+          <li>Keeping cipher codes private</li>
+          <li>Acceptable use and user responsibilities</li>
+          <li>Protection of PII</li>
+          <li>Data labeling, handling, and disposal</li>
+          <li>Information classification</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 61 Training Topics II-->
+      <section>
+        <h2>Training Topics</h2>
+        <ul>
+          <li>Laws, best practices, and standards</li>
+          <li>Threat awareness</li>
+          <li> Risky user habits like sharing passwords and tailgating</li>
+          <li>Social networks and file-sharing</li>
+        </ul>
+      </section>
+      
+      <!-- Slide 62 Training and Compliance Issues-->
+      <section>
+        <h2>Training and Compliance Issues</h2>
+        <ul>
+          <li>Many laws cover PII</li>
+          <li>Other regulations may apply
+            <ul>
+              <li>Payment Card Industry Data Security Standard (PCI-DSS)</li>
+              <li>FERPA for collegs</li>
+              <li>FISMA for gov't entities</li>
+              <li>HIPPA for health-care companies</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <!-- Slide 63 Using Metric to Validate Compliance-->
+      <section>
+        <h2>Using Metric to Validate Compliance</h2>
+        <ul>
+          <li>Measuring compliance helps to measure the effect of training</li>
+        </ul>
+        <br>
+        <img src="../chapter 11/assets/images/Picture7.jpg" alt="Homer Simpsons mishandling a nuclear reactor rod">
+        <br>
+        <small>Image from askaboutfukushimanow.files.wordpress</small>
+      </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
