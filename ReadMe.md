@@ -4,7 +4,7 @@
 The following is a transcription of all the Power Point presentations (.pptx) for [Sam Bowne's CNIT 120 class](https://samsclass.info/120/120_S16.shtml) to individual web pages using Reveal.js
 
 ## Objective
-The purpose of this is to allow for any professor or student to have access to an alternative format to update, customize, amend or subtract from easily without - especially among those that don't have access to a copy of Microsoft Power Point or would prefer using a web-based alternative.
+The purpose of this is to allow for any professor or student to have access to an alternative format to update, customize, amend or subtract from easily without Microsoft Power Point- especially among those that don't have access to a copy of Microsoft Power Point or would prefer using a web-based alternative.
 
 ## How To Acquire
 There are two ways to obtain this collection of presentations:
