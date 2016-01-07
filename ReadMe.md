@@ -10,7 +10,7 @@ The purpose of this is to allow for any professor or student to have access to a
 There are two ways to obtain this collection of presentations:
 
 * You can get Github Desktop For [Windows](https://desktop.github.com) or [Mac](https://desktop.github.com/#) and git clone to your designated Github folder.
-* You can use *Git for Windows* and use the commandline or gui to git clone the entire repository locally
+* You can use [Git](https://git-scm.com/downloads) and use the commandline or gui to git clone the entire repository locally
 * If you don't have a machine with git installed (or are not familiar with git), you can download zip (you can use Windows .zip extractor or third party tool like 7zip to extract archive).
 
 ### After acquisition
