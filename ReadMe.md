@@ -25,4 +25,4 @@ Note to those who want to use this for a presentation: to understanding the feat
 
 **Note: At the moment, I'm trying to figure out what I'm doing on Github and how to use git so consider this repo perpetually never ready for prime time. mmmkay?**
 
-**Note of Disclaimer: I'm not responsible for any loss of employment, limb, physical welfare of any kind, professional political drama, etc etc for the usage of this material in places of work, school, et al for or non-profit.**
+**Note of Disclaimer: I'm not responsible for any loss of employment, limb, physical welfare of any kind, professional political drama, etc etc for the usage of this material in places of work, school, et al for or non-profit.** ( ﾟДﾟ)y─┛~~
