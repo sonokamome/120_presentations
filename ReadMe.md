@@ -1,5 +1,5 @@
 # CNIT 120
-##Presentations transcribed in reveal.js
+## Presentations transcribed in reveal.js
 
 The following is a transcription of all the Power Point presentations (.pptx) for [Sam Bowne's CNIT 120 class](https://samsclass.info/120/120_S16.shtml) to individual web pages using Reveal.js
 
